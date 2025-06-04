@@ -192,9 +192,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   </section>
 
   <section class="section">
-    <h2>Starter eSIM</h2>
+    <h2>₵500 Starter Price</h2>
     <div class="card">
-      <h3>₵500 - Send "yεnim-bεεbi" on What'App for 30% discount by hitting on "Buy Now"</h3>
+      <h3> Send "yεnim-bεεbi" on What'App for 30% discount by hitting on "Buy Now"</h3>
       <p>Includes:</p>
       <ul>
         <li>✅ eSIM QR Code</li>
