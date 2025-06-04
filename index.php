@@ -3,7 +3,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $to = "yenkoverify@gmail.com"; // change to your email
     $subject = "New Refill Order";
     $name = $_POST["name"];
-    $whatsapp = $_POST["whatsapp"];
+    $whatsapp = $_POST["whatsapp"];https://github.com/Thewordasem/YenkoVerify/blob/main/index.html
     $esim = $_POST["esim"];
     $package = $_POST["package"];
 
