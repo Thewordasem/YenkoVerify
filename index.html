@@ -243,6 +243,36 @@
     <p style="margin-top:20px;">All data is global, valid with your eSIM, and usable anywhere including Ghana, USA, UK, and beyond.</p>
   </section>
 
+  <section class="section">
+  <h2>Refill Order Form</h2>
+  <form action="submit_refill.php" method="POST" enctype="multipart/form-data" style="max-width: 500px; margin: auto; text-align: left;">
+    <label for="name">Full Name:</label><br />
+    <input type="text" id="name" name="name" required style="width:100%; padding:10px; margin-bottom:15px; border-radius:6px; border:1px solid #ccc;"><br />
+
+    <label for="whatsapp">WhatsApp Number:</label><br />
+    <input type="tel" id="whatsapp" name="whatsapp" required style="width:100%; padding:10px; margin-bottom:15px; border-radius:6px; border:1px solid #ccc;"><br />
+
+    <label for="esim">eSIM Number (if known):</label><br />
+    <input type="text" id="esim" name="esim" style="width:100%; padding:10px; margin-bottom:15px; border-radius:6px; border:1px solid #ccc;"><br />
+
+    <label for="package">Select Refill Package:</label><br />
+    <select id="package" name="package" required style="width:100%; padding:10px; margin-bottom:15px; border-radius:6px; border:1px solid #ccc;">
+      <option value="">-- Choose a package --</option>
+      <option>1 GB / 7 days – GHS 12</option>
+      <option>3 GB / 30 days – GHS 32</option>
+      <option>5 GB / 30 days – GHS 48</option>
+      <option>10 GB / 30 days – GHS 83</option>
+      <option>20 GB / 30 days – GHS 145</option>
+      <option>50 GB / 90 days – GHS 1,202</option>
+      <option>100 GB / 180 days – GHS 2,285</option>
+    </select><br />
+
+    <label for="proof">Upload Payment Proof (optional):</label><br />
+    <input type="file" id="proof" name="proof" accept="image/*" style="margin-bottom:15px;"><br />
+
+    <button type="submit" class="btn">Submit Order</button>
+  </form>
+</section>
   <footer>
     © 2025 YenkoVerify. Built with 🔥 by DAEFOUR. All rights reserved.
   </footer>
