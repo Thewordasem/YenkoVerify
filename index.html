@@ -1,3 +1,26 @@
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $to = "yenkoverify@gmail.com"; // change to your email
+    $subject = "New Refill Order";
+    $name = $_POST["name"];
+    $whatsapp = $_POST["whatsapp"];
+    $esim = $_POST["esim"];
+    $package = $_POST["package"];
+
+    $message = "Name: $name\n";
+    $message .= "WhatsApp: $whatsapp\n";
+    $message .= "eSIM Number: $esim\n";
+    $message .= "Selected Package: $package\n";
+
+    $headers = "From: refill@yourdomain.com";
+
+    mail($to, $subject, $message, $headers);
+    echo "<p style='text-align:center;'>Thank you! Your order has been submitted.</p>";
+} else {
+    echo "Invalid submission.";
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -153,7 +176,7 @@
 
   <div>
     <a href="https://wa.me/233505858712" class="btn">Buy Now</a>
-    <a href="https://t.me/@an00q" class="btn">Chat on Telegram</a>
+    <a href="https://t.me/an00q" class="btn">Chat on Telegram</a>
   </div>
 
   <section class="section">
