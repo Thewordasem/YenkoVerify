@@ -3,337 +3,163 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>YenkoVerify - Lifetime eSIM</title>
+  <title>DAEFOUR eSIM Services</title>
   <style>
     body {
-      margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: url('bckgrnd.jpg') no-repeat center center fixed;
-      background-size: cover;
-      color: #e6c67a;
-      text-align: center;
-      padding: 0 15px;
-    }
-
-    .logo {
-      width: 180px;
-      margin: 40px auto 20px;
-      display: block;
-    }
-
-    h1 {
-      font-size: 2.4em;
-      margin: 10px 0;
-    }
-
-    .intro {
-      font-size: 1.2em;
-      margin: 15px 0 30px;
-      line-height: 1.6;
-    }
-
-    .btn {
-      background-color: #e6c67a;
-      color: #1a1a1a;
-      padding: 12px 28px;
-      border: none;
-      border-radius: 8px;
-      font-size: 1em;
-      cursor: pointer;
-      transition: background-color 0.3s ease, transform 0.3s ease;
-      margin: 10px;
-      text-decoration: none;
-      display: inline-block;
-    }
-
-    .btn:hover {
-      background-color: #cfb254;
-      transform: scale(1.05);
-    }
-
-    .section {
-      background: rgba(0, 0, 0, 0.75);
-      margin: 30px auto;
-      padding: 20px;
-      border-radius: 10px;
-      max-width: 700px;
-    }
-
-    h2 {
-      font-size: 1.6em;
-      margin-bottom: 15px;
-    }
-
-    p, li {
-      font-size: 1em;
-      margin: 10px 0;
-      line-height: 1.6;
-    }
-
-    ul {
-      list-style: none;
+      margin: 0;
       padding: 0;
-    }
-
-    ul li::before {
-      content: "• ";
-      color: #e6c67a;
-    }
-
-    .pricing {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-    }
-
-    .price-card {
-      background: rgba(255, 255, 255, 0.05);
-      padding: 20px;
-      border-radius: 12px;
-      width: 260px;
-      text-align: left;
-    }
-
-    .price-card h3 {
-      margin-top: 0;
+      background-color: #0c0c0c;
       color: #fff;
     }
 
-    .price {
-      font-size: 1.6em;
+    header {
+      background-color: #1c1c1c;
+      padding: 20px;
+      text-align: center;
+      border-bottom: 2px solid #e6c67a;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2em;
       color: #e6c67a;
+    }
+
+    .section {
+      padding: 30px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    h2 {
+      color: #e6c67a;
+      border-bottom: 1px solid #333;
+      padding-bottom: 10px;
+    }
+
+    .price-card {
+      background-color: #1a1a1a;
+      padding: 20px;
       margin: 10px 0;
+      border: 1px solid #444;
+      border-left: 5px solid #e6c67a;
+    }
+
+    .price-card h3 {
+      margin: 0;
+      color: #e6c67a;
+    }
+
+    .price-card p {
+      margin: 5px 0 0;
+    }
+
+    a {
+      color: #e6c67a;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .faq-toggle {
+      cursor: pointer;
+      font-weight: bold;
+      color: #e6c67a;
+      margin-top: 20px;
+    }
+
+    .faq-content {
+      display: none;
+      padding-top: 10px;
     }
 
     footer {
-      margin: 40px 0 20px;
-      font-size: 0.9em;
-      color: #bbb;
-    }
-
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 2em;
-      }
-
-      .btn {
-        width: 100%;
-        padding: 14px 0;
-      }
-
-      .logo {
-        width: 130px;
-      }
-
-      .pricing {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .price-card {
-        width: 90%;
-      }
+      text-align: center;
+      padding: 20px;
+      background-color: #1c1c1c;
+      color: #777;
+      margin-top: 40px;
     }
   </style>
+  <script>
+    function toggleFAQ(el) {
+      const content = el.nextElementSibling;
+      content.style.display = content.style.display === 'block' ? 'none' : 'block';
+    }
+  </script>
 </head>
 <body>
 
-  <img src="logo.jpg" alt="YenkoVerify Logo" class="logo" />
-  <h1>YenkoVerify</h1>
-  <p class="intro">
-    “akwaaba!..." We sell lifetime USA & UK eSIMs, no expiry, no monthly fees. Own your number. No stress, no hassle.
-  </p>
-
-  <div>
-    <a href="https://wa.me/233505858712" class="btn">Buy Now</a>
-    <a href="https://t.me/@an00q" class="btn">Chat on Telegram</a>
-  </div>
+  <header>
+    <h1>DAEFOUR eSIM Services</h1>
+  </header>
 
   <section class="section">
-    <h2>How It Works</h2>
-    <ul>
-      <li>1. Hit on Buy Now to place an order or chat our Telegram</li>
-      <li>2. Choose your country and eSIM plan</li>
-      <li>3. Make secure payment</li>
-      <li>4. Receive your lifetime eSIM QR code</li>
-      <li>5. Scan & activate instantly</li>
-    </ul>
-  </section>
+    <h2>FAQs - Tap to Expand</h2>
 
-  <section class="section">
-    <h2>Pricing (Lifetime eSIMs)</h2>
-    <div class="pricing">
-      <div class="price-card">
-        <h3>USA Number</h3>
-        <p class="price">Ghs 500 </p>
-        <p>Lifetime access • No expiry • Use for WhatsApp, SMS, calls & more</p>
-      </div>
-      <div class="price-card">
-        <h3>UK Number</h3>
-        <p class="price">Ghs 300</p>
-        <p>Lifetime • Clean registration • Works on any eSIM-enabled device</p>
-      </div>
-      <h2>Refill Prices (GHS)</h2>
-<ul class="price-list">
-  <li>1 GB / 7 days – GHS 12</li>
-  <li>3 GB / 30 days – GHS 32</li>
-  <li>5 GB / 30 days – GHS 48</li>
-  <li>10 GB / 30 days – GHS 83</li>
-  <li>20 GB / 30 days – GHS 145</li>
-  <li>50 GB / 90 days – GHS 1,202</li>
-  <li>100 GB / 180 days – GHS 2,285</li>
-</ul>
+    <div class="faq-toggle" onclick="toggleFAQ(this)">📱 Can I use the USA or UK eSIM while in Ghana?</div>
+    <div class="faq-content">
+      Yes! Once activated, your eSIM connects to Ghanaian networks using international roaming. You can browse, use WhatsApp, and access your number locally. <br>
+      <a href="https://wa.me/233505858712?text=Hi!%20I%20want%20to%20ask%20if%20the%20USA%20eSIM%20will%20work%20in%20Ghana.">Ask on WhatsApp 🔗</a>
+    </div>
 
-      <h2>Starter eSIM</h2>
-<div class="card">
-  <h3>₵45 - Starter eSIM</h3>
-  <p>Includes:</p>
-  <ul>
-    <li>✅ Lifetime eSIM profile</li>
-    <li>✅ 100MB included data</li>
-    <li>✅ Works worldwide</li>
-    <li>✅ Reusable & refillable</li>
-    <li>❌ No phone number/SMS</li>
-    <li>✅ Use WhatsApp, Telegram, etc.</li>
-  </ul>
-  <a href="#buy-now" class="btn">Get Yours</a>
-</div>
-      <div class="price-card">
-        <h3>Custom Country</h3>
-        <p class="price">Ask</p>
-        <p>We’ll help you find rare countries or special routes, menim bεεbi</p>
-      </div>
+    <div class="faq-toggle" onclick="toggleFAQ(this)">📞 Will I receive calls and SMS directly?</div>
+    <div class="faq-content">
+      Not through the native Phone/SMS apps. Use apps like Google Voice, WhatsApp, or Talkatone to receive calls/messages over data. <br>
+      <a href="https://wa.me/233505858712?text=Can%20people%20call%20or%20text%20me%20directly%20on%20this%20eSIM%3F">Ask on WhatsApp 🔗</a>
+    </div>
+
+    <div class="faq-toggle" onclick="toggleFAQ(this)">💾 Can I buy the eSIM without data?</div>
+    <div class="faq-content">
+      No. All eSIMs come preloaded with 100MB starter data (included in price). Just scan and use. More data = more options. <br>
+      <a href="https://wa.me/233505858712?text=Can%20I%20buy%20the%20eSIM%20without%20data%3F">Ask on WhatsApp 🔗</a>
+    </div>
+
+    <div class="faq-toggle" onclick="toggleFAQ(this)">🔋 What happens when I run out of data?</div>
+    <div class="faq-content">
+      Your number remains valid, but you’ll need data to use internet-based services like WhatsApp or Google Voice. Top up anytime with our refill plans. <br>
+      <a href="https://wa.me/233505858712?text=What%20happens%20when%20my%20eSIM%20data%20runs%20out%3F">Ask on WhatsApp 🔗</a>
     </div>
   </section>
 
   <section class="section">
-    <h2>What People Say</h2>
-    <ul>
-      <li>"Got my USA number within 15 mins! Legit & stress-free. 🔥" – Kwame A.</li>
-      <li>"Perfect for my business WhatsApp. No expiry, no wahala." – Ama S.</li>
-      <li>"Been scammed before, but YenkoVerify came through hard. 💯" – Jerry M.</li>
-      <li>"eSIM worked instantly on my iPhone. Menim bεεbi vibes are real!" – Nana K.</li>
-      <li>"I’m a reseller now thanks to DAEFOUR. Highly recommend!" – Blessing T.</li>
-    </ul>
-  </section>
-
-  <section class="section">
-    <h2>Terms & Conditions</h2>
-    <p>
-      - All services are provided “as is.” Refunds are not guaranteed after delivery.<br>
-      - Resellers must follow ethical use practices.<br>
-      - We do not support illegal activity or platform violations.<br>
-      - Branding includes spiritual identity themes — no metaphysical guarantees.
-    </p>
-  </section>
-
-  <section class="section">
-    <h2>FAQ — Lifetime eSIMs</h2>
-
-    <h3>📲 What is a Lifetime eSIM?</h3>
-    <p>Our eSIMs never expire — keep your number for life! Just top up at least once every 365 days to maintain active status. No subscriptions, no hidden charges.</p>
-
-    <h3>🧾 Is this for data only or does it include calls/SMS?</h3>
-    <p>These are data-only eSIMs. But you can use WhatsApp, Telegram, VoIP, and SMS verification apps without issues. Dual SIM devices can combine this with your voice SIM.</p>
-
-    <h3>🔁 Can I transfer the eSIM to another phone?</h3>
-    <p>No, the QR code is one-time use. But if you change devices, we can issue you a new QR code (limit: once per year). Just contact support with your order details before switching.</p>
-
-    <h3>🌍 Which countries are supported?</h3>
-    <p>Our eSIMs support over 150+ countries including USA, UK, Canada, Nigeria, Ghana, France, South Africa, and more. Contact us to confirm support for your location.</p>
-
-    <h3>💸 How much is top-up?</h3>
-    <p>Top-up plans are flexible. Starts at $3 for 100MB. We offer 1GB, 3GB, 5GB, and 10GB bundles too. Prices vary by country, message us for latest rates.</p>
-
-    <h3>🕊️ Do I need to verify ID?</h3>
-    <p>No ID or SIM registration is required. No KYC. Just buy, scan, and connect. We respect your privacy.</p>
-
-    <h3>✅ Can I use it to verify WhatsApp or apps?</h3>
-    <p>Yes. Many clients use our SIMs for WhatsApp, Telegram, app signups, and email verification. We cannot guarantee 100% compatibility with every app, but most work fine.</p>
-
-    <h3>📱 What devices are supported?</h3>
-    <p>All eSIM-compatible devices including iPhones XR and newer, Samsung S20+, Pixel 3+, iPads with cellular, and laptops with eSIM chips. Ask if unsure.</p>
-
-    <h3>💼 Can I become a reseller?</h3>
-    <p>Yes! We offer wholesale plans for agents and resellers. DM us “YENKO PARTNER” on WhatsApp to begin. Earn and grow with us.</p>
-
-    <div class="faq-item">
-  <h3>Can I receive phone calls or SMS with this eSIM?</h3>
-  <p>No, our eSIMs are data-only, which means you cannot receive regular phone calls or text messages. However, you can make and receive calls using apps like WhatsApp, Telegram, Google Voice, Talkatone, and more.</p>
-</div>
-
-<div class="faq-item">
-  <h3>Do I need data to use the eSIM?</h3>
-  <p>Yes, this eSIM only works with active data. If you run out of data, all internet services will stop until you top up. That's why every eSIM comes with a free 100MB starter plan so you can connect instantly.</p>
-</div>
-
-<div class="faq-item">
-  <h3>What’s included in the $3 starter eSIM?</h3>
-  <p>You get an activated eSIM profile and 100MB of data to test it right away. You can top up anytime using our refill plans in Ghana Cedis.</p>
-</div>
-
-  </section>
-  <section class="section">
-    <h2>FAQs - Common Questions</h2>
-
-    <h3>Can I use the USA or UK eSIM while in Ghana?</h3>
-    <p>
-      Yes! Once activated, your eSIM connects to local Ghana networks through global roaming partners. You can browse, chat on WhatsApp, and access the internet from anywhere in Ghana. Even though the number is USA or UK, it works seamlessly here — as long as you have data.
-    </p>
-
-    <h3>Will I receive calls and SMS on the USA/UK number directly?</h3>
-    <p>
-      Not directly through the default Phone or Messages apps. To receive calls and texts, you'll need apps like <strong>Google Voice, TextNow, WhatsApp, Talkatone</strong> or others. These work perfectly over data and keep your USA/UK number active.
-    </p>
-
-    <h3>Can I buy the eSIM without data?</h3>
-    <p>
-      No. Every eSIM purchase includes <strong>starter data (e.g., 100MB)</strong> so you can activate and start using it immediately. You can top up data anytime based on your needs.
-    </p>
-
-    <h3>What happens when I run out of data?</h3>
-    <p>
-      Your number and eSIM remain active, but you won’t be able to browse, send WhatsApp messages, or receive calls via data-based apps until you refill. We offer flexible and affordable top-up packages below.
-    </p>
-  </section>
-
-  <section class="section">
-    <h2>Data Refill Packages (Pay As You Go)</h2>
-    <div class="pricing">
-      <div class="price-card">
-        <h3>1 GB / 7 days</h3>
-        <p class="price">GHS 10</p>
-      </div>
-      <div class="price-card">
-        <h3>3 GB / 30 days</h3>
-        <p class="price">GHS 26</p>
-      </div>
-      <div class="price-card">
-        <h3>5 GB / 30 days</h3>
-        <p class="price">GHS 39</p>
-      </div>
-      <div class="price-card">
-        <h3>10 GB / 30 days</h3>
-        <p class="price">GHS 68</p>
-      </div>
-      <div class="price-card">
-        <h3>20 GB / 30 days</h3>
-        <p class="price">GHS 119</p>
-      </div>
-      <div class="price-card">
-        <h3>50 GB / 90 days</h3>
-        <p class="price">GHS 991</p>
-      </div>
-      <div class="price-card">
-        <h3>100 GB / 180 days</h3>
-        <p class="price">GHS 1,882</p>
-      </div>
+    <h2>Data Refill Packages</h2>
+    <div class="price-card">
+      <h3>1 GB / 7 days</h3>
+      <p class="price">GHS 10</p>
     </div>
-    <p style="margin-top:20px;">All data is global, valid with your eSIM, and usable anywhere including Ghana, USA, UK, and beyond.</p>
+    <div class="price-card">
+      <h3>3 GB / 30 days</h3>
+      <p class="price">GHS 26</p>
+    </div>
+    <div class="price-card">
+      <h3>5 GB / 30 days</h3>
+      <p class="price">GHS 39</p>
+    </div>
+    <div class="price-card">
+      <h3>10 GB / 30 days</h3>
+      <p class="price">GHS 68</p>
+    </div>
+    <div class="price-card">
+      <h3>20 GB / 30 days</h3>
+      <p class="price">GHS 119</p>
+    </div>
+    <div class="price-card">
+      <h3>50 GB / 90 days</h3>
+      <p class="price">GHS 991</p>
+    </div>
+    <div class="price-card">
+      <h3>100 GB / 180 days</h3>
+      <p class="price">GHS 1,882</p>
+    </div>
+    <p style="margin-top:20px;">Refills work instantly — no downtime, no long wait.</p>
   </section>
+
   <footer>
-    © 2025 YenkoVerify. Built with 🔥 by DAEFOUR. All rights reserved.
+    &copy; 2025 DAEFOUR eSIM Services. All rights reserved.
   </footer>
 
 </body>
