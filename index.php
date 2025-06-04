@@ -176,7 +176,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   <div>
     <a href="https://wa.me/233505858712" class="btn">Buy Now</a>
-    <a href="https://t.me/an00q" class="btn">Chat on Telegram</a>
+    <a href="https://t.me/@An00_q" class="btn">Chat on Telegram</a>
   </div>
 
   <section class="section">
