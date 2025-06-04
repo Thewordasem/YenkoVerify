@@ -2,48 +2,67 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>YenkoVerify - Lifetime eSIM</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>YenkoVerify – Lifetime eSIMs</title>
   <style>
-    body {
+    * {
+      box-sizing: border-box;
+    }
+    body, html {
       margin: 0;
+      padding: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: url('bckgrnd.jpg') no-repeat center center fixed;
-      background-size: cover;
       color: #e6c67a;
       text-align: center;
-      padding: 0 15px;
+      height: 100%;
+      background: black;
+    }
+
+    video.bg-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      min-width: 100%;
+      min-height: 100%;
+      z-index: -1;
+      object-fit: cover;
+      filter: brightness(0.4);
+    }
+
+    .container {
+      padding: 40px 20px;
+      max-width: 800px;
+      margin: auto;
     }
 
     .logo {
-      width: 180px;
-      margin: 40px auto 20px;
+      width: 160px;
+      margin: 0 auto 20px;
       display: block;
     }
 
     h1 {
-      font-size: 2.4em;
+      font-size: 2.5em;
       margin: 10px 0;
     }
 
-    .intro {
-      font-size: 1.2em;
-      margin: 15px 0 30px;
+    p, h2 {
+      font-size: 1.1em;
       line-height: 1.6;
+      margin-bottom: 20px;
     }
 
     .btn {
       background-color: #e6c67a;
       color: #1a1a1a;
-      padding: 12px 28px;
+      padding: 14px 28px;
+      margin: 10px;
       border: none;
       border-radius: 8px;
       font-size: 1em;
-      cursor: pointer;
-      transition: background-color 0.3s ease, transform 0.3s ease;
-      margin: 10px;
       text-decoration: none;
       display: inline-block;
+      transition: 0.3s ease;
     }
 
     .btn:hover {
@@ -53,37 +72,15 @@
 
     .section {
       background: rgba(0, 0, 0, 0.7);
-      margin: 30px auto;
-      padding: 20px;
+      padding: 30px;
+      margin: 30px 0;
       border-radius: 10px;
-      max-width: 700px;
-    }
-
-    h2 {
-      font-size: 1.6em;
-      margin-bottom: 15px;
-    }
-
-    p, li {
-      font-size: 1em;
-      margin: 10px 0;
-      line-height: 1.6;
-    }
-
-    ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    ul li::before {
-      content: "• ";
-      color: #e6c67a;
     }
 
     footer {
-      margin: 40px 0 20px;
       font-size: 0.9em;
-      color: #bbb;
+      color: #999;
+      margin: 40px 0 20px;
     }
 
     @media (max-width: 600px) {
@@ -95,48 +92,71 @@
         width: 100%;
         padding: 14px 0;
       }
-
-      .logo {
-        width: 130px;
-      }
     }
   </style>
 </head>
 <body>
 
-  <img src="logo.jpg" alt="YenkoVerify Logo" class="logo" />
-  <h1>YenkoVerify</h1>
-  <p class="intro"><strong>Buy Lifetime eSIMs — USA, UK & more.</strong> No expiry, no monthly fees. Own your number. Hassle-free and private.</p>
+  <!-- Hosted background video -->
+  <video autoplay muted loop class="bg-video">
+    <source src="https://player.vimeo.com/external/484204327.sd.mp4?s=53ff128ab9a40cd60907f7da1e8c8e510b49127c&profile_id=164&oauth2_token_id=57447761" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
 
-  <div>
-    <a href="https://wa.me/233505858712" class="btn">Message on WhatsApp</a>
-    <a href="https://t.me/YenkoVerifyBot" class="btn">Chat on Telegram</a>
+  <div class="container">
+    <img src="logo.png" alt="YenkoVerify Logo" class="logo" />
+
+    <h1>Buy Lifetime eSIMs – USA & UK</h1>
+    <p>No expiry. No monthly fees. Full ownership. Hassle-free setup. Instant activation.</p>
+
+    <div>
+      <a href="https://wa.me/233505858712" class="btn">📱 WhatsApp</a>
+      <a href="https://t.me/YenkoVerifyBot" class="btn">💬 Telegram</a>
+    </div>
+
+    <section class="section">
+      <h2>How It Works</h2>
+      <p>
+        ✅ Choose your country (USA or UK)<br>
+        ✅ Message us on WhatsApp or Telegram<br>
+        ✅ We guide you step-by-step and activate your eSIM instantly<br>
+        ✅ You scan the code and enjoy lifetime connectivity
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Why Choose YenkoVerify?</h2>
+      <p>
+        - Lifetime eSIMs with no renewals or expiry<br>
+        - Secure & discreet service with identity branding<br>
+        - Personal human support, no bots<br>
+        - Perfect for travelers, business use, and second numbers
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Testimonials</h2>
+      <p><em>“Got my UK eSIM in 5 mins. No issues at all. Highly recommend!” – Sarah K.</em></p>
+      <p><em>“Been using it for 3 months now. Solid internet speed and never dropped.” – Daniel A.</em></p>
+      <p><em>“No monthly fee? I'm sold. Great support team as well.” – Nana B.</em></p>
+      <p><em>“Their branding is spiritual and modern. Stands out from any service I've used.” – Kofi M.</em></p>
+      <p><em>“Setup was fast. Now I use the number for my US business.” – Gloria T.</em></p>
+    </section>
+
+    <section class="section">
+      <h2>Terms & Conditions</h2>
+      <p>
+        - All eSIMs are sold as lifetime, but carrier policies may change<br>
+        - Refunds are not guaranteed after QR delivery<br>
+        - No illegal use permitted. Buyer assumes responsibility<br>
+        - Branding reflects our identity — no metaphysical claims made
+      </p>
+    </section>
+
+    <footer>
+      © 2025 YenkoVerify. Powered by DAEFOUR. All rights reserved.
+    </footer>
   </div>
-
-  <section class="section">
-    <h2>How It Works</h2>
-    <ul>
-      <li>1. Message us on WhatsApp or Telegram</li>
-      <li>2. Choose your country and eSIM plan</li>
-      <li>3. Make secure payment</li>
-      <li>4. Receive your lifetime eSIM QR code instantly</li>
-      <li>5. Scan & activate on your phone</li>
-    </ul>
-  </section>
-
-  <section class="section">
-    <h2>Terms & Conditions</h2>
-    <p>
-      - All services are provided “as is.” Refunds are not guaranteed after delivery.<br>
-      - Resellers must adhere to ethical use policies.<br>
-      - We do not support activities that violate the terms of the platforms we verify for.<br>
-      - Spiritual branding is for identity only — no metaphysical claims made.
-    </p>
-  </section>
-
-  <footer>
-    © 2025 YenkoVerify. Built with 🔥 by DAEFOUR. All rights reserved.
-  </footer>
 
 </body>
 </html>
