@@ -1,26 +1,44 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $to = "yenkoverify@gmail.com"; // change to your email
-    $subject = "New Refill Order";
+    // --- Telegram bot configuration ---
+    $botToken = "YOUR_BOT_TOKEN";
+    $chatID = "YOUR_CHAT_ID";
+
+    // Get posted data
     $name = $_POST["name"];
-    $whatsapp = $_POST["whatsapp"];https://github.com/Thewordasem/YenkoVerify/blob/main/index.html
+    $whatsapp = $_POST["whatsapp"];
     $esim = $_POST["esim"];
     $package = $_POST["package"];
 
-    $message = "Name: $name\n";
-    $message .= "WhatsApp: $whatsapp\n";
-    $message .= "eSIM Number: $esim\n";
-    $message .= "Selected Package: $package\n";
+    // Build message
+    $message = "📦 New Refill Order:\n";
+    $message .= "👤 Name: $name\n";
+    $message .= "📱 WhatsApp: $whatsapp\n";
+    $message .= "💾 eSIM Number: $esim\n";
+    $message .= "📦 Package: $package\n";
 
-    $headers = "From: refill@yourdomain.com";
+    // Send text message to Telegram
+    $sendTextUrl = "https://api.telegram.org/bot$botToken/sendMessage?chat_id=$chatID&text=" . urlencode($message);
+    file_get_contents($sendTextUrl);
 
-    mail($to, $subject, $message, $headers);
-    echo "<p style='text-align:center;'>Thank you! Your order has been submitted.</p>";
-} else {
-    echo "Invalid submission.";
+    // Handle optional proof image
+    if (!empty($_FILES["proof"]["tmp_name"])) {
+        $file = new CURLFile($_FILES["proof"]["tmp_name"], $_FILES["proof"]["type"], $_FILES["proof"]["name"]);
+
+        $ch = curl_init("https://api.telegram.org/bot$botToken/sendDocument");
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, [
+            'chat_id' => $chatID,
+            'caption' => "🧾 Proof of Payment from $name",
+            'document' => $file
+        ]);
+        curl_exec($ch);
+        curl_close($ch);
+    }
+
+    echo "<p style='text-align:center; font-weight:bold;'>✅ Thank you! Your order has been submitted successfully.</p>";
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
