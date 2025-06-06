@@ -239,7 +239,7 @@
     </div>
 
     <div id="confirmation" style="margin-top:20px; padding:15px; background:#e7ffe7; border:1px solid #3c763d; color:#3c763d; border-radius:6px; display:none; text-align:center;">
-      ✅ Your order is being sent. Please wait...
+      ✅ Order sent. Continue in app.
     </div>
   </form>
 </section>
@@ -280,31 +280,29 @@
     const name = document.getElementById("name").value.trim();
     const number = document.getElementById("whatsapp").value.trim();
     const esim = document.getElementById("esim").value.trim();
-    const package = document.getElementById("package").value;
+    const selectedPackage = document.getElementById("package").value;
 
-    if (!name || !number || !package) {
+    if (!name || !number || !selectedPackage) {
       alert("Please fill all required fields.");
       return;
     }
 
-    const message = `Hello, I just submitted a refill order:\n\n🧍 Name: ${name}\n📞 WhatsApp: ${number}\n💳 eSIM: ${esim || 'N/A'}\n📦 Package: ${package}`;
+    const message = `Hello, I just submitted a refill order:\n\n🧍 Name: ${name}\n📞 WhatsApp: ${number}\n💳 eSIM: ${esim || 'N/A'}\n📦 Package: ${selectedPackage}`;
 
-    const confirmation = document.getElementById("confirmation");
-    confirmation.style.display = "block";
+    // Show confirmation
+    document.getElementById("confirmation").style.display = "block";
 
-    setTimeout(() => {
-      confirmation.style.display = "none";
-
-      if (platform === "whatsapp") {
-        const whatsappURL = `https://wa.me/233538984839?text=${encodeURIComponent(message)}`;
-        window.open(whatsappURL, "_blank");
-      } else if (platform === "telegram") {
-        const telegramURL = `https://t.me/an00_q`;
-        window.open(telegramURL, "_blank");
-      }
-    }, 1200);
+    // Redirect immediately — essential for mobile
+    if (platform === "whatsapp") {
+      const url = `https://wa.me/233538984839?text=${encodeURIComponent(message)}`;
+      window.location.href = url;
+    } else if (platform === "telegram") {
+      const url = `https://t.me/an00_q`;
+      window.location.href = url;
+    }
   }
 </script>
+
 
 
 
