@@ -277,6 +277,7 @@
 
 <script>
   function submitOrder(platform) {
+    const form = document.getElementById("refillForm");
     const name = document.getElementById("name").value.trim();
     const number = document.getElementById("whatsapp").value.trim();
     const esim = document.getElementById("esim").value.trim();
@@ -290,18 +291,24 @@
     const message = `Hello, I just submitted a refill order:\n\n🧍 Name: ${name}\n📞 WhatsApp: ${number}\n💳 eSIM: ${esim || 'N/A'}\n📦 Package: ${selectedPackage}`;
 
     // Show confirmation
-    document.getElementById("confirmation").style.display = "block";
+    const confirmationBox = document.getElementById("confirmation");
+    confirmationBox.style.display = "block";
 
-    // Redirect immediately — essential for mobile
+    // Reset form after a slight delay
+    setTimeout(() => {
+      form.reset();
+      confirmationBox.style.display = "none";
+    }, 2000);
+
+    // Redirect instantly (works on mobile)
     if (platform === "whatsapp") {
-      const url = `https://wa.me/233538984839?text=${encodeURIComponent(message)}`;
-      window.location.href = url;
+      window.location.href = `https://wa.me/233538984839?text=${encodeURIComponent(message)}`;
     } else if (platform === "telegram") {
-      const url = `https://t.me/an00_q`;
-      window.location.href = url;
+      window.location.href = `https://t.me/an00_q`;
     }
   }
 </script>
+
 
 
 
