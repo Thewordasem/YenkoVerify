@@ -161,6 +161,8 @@
       .btn {
         width: 100%;
         padding: 14px 0;
+        margin: 10px auto;
+        display: block;
       }
 
       .logo {
@@ -175,6 +177,10 @@
       .price-card {
         width: 90%;
       }
+
+      .faq-toggle {
+        font-size: 1em;
+      }
     }
   </style>
 </head>
@@ -184,9 +190,10 @@
   <h1>YenkoVerify</h1>
   <p class="intro">
     akwaaba!...We provide lifetime global eSIMs with refillable data, bundled with a verified U.S. phone number for WhatsApp, SMS, and calls via Hushed (1-year plan included). No contracts. No expiry. Full setup done for you.
+  </p>
 
   <div>
-    <a href="https://wa.me/233505858712" class="btn">Buy Now</a>
+    <a href="https://wa.me/233505858712?text=Hello%2C%20I%E2%80%99m%20interested%20in%20your%20lifetime%20eSIM%20%2B%20U.S.%20number%20bundle." class="btn">Buy Now</a>
     <a href="https://t.me/@An00_q" class="btn">Chat on Telegram</a>
   </div>
 
@@ -196,7 +203,7 @@
       <li>1. Hit on Buy Now to place an order or chat our Telegram</li>
       <li>2. Choose your country and eSIM plan</li>
       <li>3. Make secure payment</li>
-      <li>4. Receive your lifetime eSIM QR code plus verified U.S. phone number setup guide </li>
+      <li>4. Receive your lifetime eSIM QR code plus verified U.S. phone number setup guide</li>
       <li>5. Scan & activate instantly</li>
       <li>6. For data refills scroll down to the button and submit the form</li>
     </ul>
@@ -205,7 +212,7 @@
   <section class="section">
     <h2>GH₵500.00 Starter Price</h2>
     <div class="card">
-      <h3> Send "yεnim-bεεbi" on WhatsApp for 30% discount by hitting on "Buy Now"</h3>
+      <h3>Send "yεnim-bεεbi" on WhatsApp for 30% discount by hitting on "Buy Now"</h3>
       <p>Includes:</p>
       <ul>
         <li>✅ eSIM QR Code</li>
@@ -248,32 +255,33 @@
     <h2>FAQs - Common Questions</h2>
 
     <div class="faq">
-  <button class="faq-toggle"><span class="icon">+</span> What's included in the GH₵500 bundle?</button>
-  <div class="faq-content">
-    <p>Your one-time payment includes: (1) a lifetime KeepGo eSIM with global data access (refillable anytime), and (2) a U.S. phone number from Hushed valid for 1 year – fully activated and ready to use for WhatsApp and SMS. We set everything up for you.</p>
-  </div>
-</div>
+      <button class="faq-toggle"><span class="icon">+</span> What's included in the GH₵500 bundle?</button>
+      <div class="faq-content">
+        <p>Your one-time payment includes: (1) a lifetime KeepGo eSIM with global data access (refillable anytime), and (2) a U.S. phone number from Hushed valid for 1 year – fully activated and ready to use for WhatsApp and SMS. We set everything up for you.</p>
+      </div>
+    </div>
 
-<div class="faq">
-  <button class="faq-toggle"><span class="icon">+</span> Do I need credit to use the U.S. number?</button>
-  <div class="faq-content">
-    <p>No. Your number comes with 1 year of full service. You can receive WhatsApp codes, SMS, and calls without any additional top-up. If you want to make outbound calls or send texts, credit can be added later.</p>
-  </div>
-</div>
+    <div class="faq">
+      <button class="faq-toggle"><span class="icon">+</span> Do I need credit to use the U.S. number?</button>
+      <div class="faq-content">
+        <p>No. Your number comes with 1 year of full service. You can receive WhatsApp codes, SMS, and calls without any additional top-up. If you want to make outbound calls or send texts, credit can be added later.</p>
+      </div>
+    </div>
 
-<div class="faq">
-  <button class="faq-toggle"><span class="icon">+</span> How do I use WhatsApp with this?</button>
-  <div class="faq-content">
-    <p>We help you set up WhatsApp using the U.S. number from Hushed. You’ll receive the verification code through the app, then continue using WhatsApp over your eSIM data connection. No extra SIM needed.</p>
-  </div>
-</div>
+    <div class="faq">
+      <button class="faq-toggle"><span class="icon">+</span> How do I use WhatsApp with this?</button>
+      <div class="faq-content">
+        <p>We help you set up WhatsApp using the U.S. number from Hushed. You’ll receive the verification code through the app, then continue using WhatsApp over your eSIM data connection. No extra SIM needed.</p>
+      </div>
+    </div>
 
-<div class="faq">
-  <button class="faq-toggle"><span class="icon">+</span> What happens after 1 year?</button>
-  <div class="faq-content">
-    <p>We’ll remind you before your U.S. number expires. You can renew it for another year through us. Pricing is based on the USD rate at the time (around $15/year), and we'll give you the current GHS equivalent when it's time to renew.</p>
-  </div>
-</div>
+    <div class="faq">
+      <button class="faq-toggle"><span class="icon">+</span> What happens after 1 year?</button>
+      <div class="faq-content">
+        <p>We’ll remind you before your U.S. number expires. You can renew it for another year through us. Pricing is based on the USD rate at the time (around $15/year), and we'll give you the current GHS equivalent when it's time to renew.</p>
+      </div>
+    </div>
+
     <div class="faq">
       <button class="faq-toggle"><span class="icon">+</span> Can I use the USA or UK eSIM while in Ghana?</button>
       <div class="faq-content"><p>Yes! Our eSIMs connect to local Ghana networks via roaming, letting you access the internet, WhatsApp, and more from anywhere in Ghana.</p></div>
@@ -310,111 +318,112 @@
     </div>
   </section>
 
-   <section class="section">
-  <h2>Refill Order Form</h2>
-  <form id="refillForm" style="max-width: 500px; margin: auto; text-align: left;" onsubmit="event.preventDefault();">
-    <label for="name">Full Name:</label><br />
-    <input type="text" id="name" name="name" required style="width:100%; padding:10px; margin-bottom:15px; border-radius:6px; border:1px solid #ccc;"><br />
+<section class="section">
+    <h2>Refill Order Form</h2>
+    <form id="refillForm" style="max-width: 500px; margin: auto; text-align: left;" onsubmit="event.preventDefault();">
+      <label for="name">Full Name:</label><br />
+      <input type="text" id="name" name="name" required style="width:100%; padding:10px; margin-bottom:15px; border-radius:6px; border:1px solid #ccc;"><br />
 
-    <label for="whatsapp">WhatsApp Number:</label><br />
-    <input type="tel" id="whatsapp" name="whatsapp" required style="width:100%; padding:10px; margin-bottom:15px; border-radius:6px; border:1px solid #ccc;"><br />
+      <label for="whatsapp">WhatsApp Number:</label><br />
+      <input type="tel" id="whatsapp" name="whatsapp" required style="width:100%; padding:10px; margin-bottom:15px; border-radius:6px; border:1px solid #ccc;"><br />
 
-    <label for="esim">eSIM Number (if known):</label><br />
-    <input type="text" id="esim" name="esim" style="width:100%; padding:10px; margin-bottom:15px; border-radius:6px; border:1px solid #ccc;"><br />
+      <label for="esim">eSIM Number (if known):</label><br />
+      <input type="text" id="esim" name="esim" style="width:100%; padding:10px; margin-bottom:15px; border-radius:6px; border:1px solid #ccc;"><br />
 
-    <label for="package">Select Refill Package:</label><br />
-    <select id="package" name="package" required style="width:100%; padding:10px; margin-bottom:15px; border-radius:6px; border:1px solid #ccc;">
-      <option value="">-- Choose a package --</option>
-      <option>1 GB / 7 days – GHS 12</option>
-      <option>3 GB / 30 days – GHS 32</option>
-      <option>5 GB / 30 days – GHS 48</option>
-      <option>10 GB / 30 days – GHS 83</option>
-      <option>20 GB / 30 days – GHS 145</option>
-      <option>50 GB / 90 days – GHS 1,202</option>
-      <option>100 GB / 180 days – GHS 2,285</option>
-    </select><br />
+      <label for="package">Select Refill Package:</label><br />
+      <select id="package" name="package" required style="width:100%; padding:10px; margin-bottom:15px; border-radius:6px; border:1px solid #ccc;">
+        <option value="">-- Choose a package --</option>
+        <option>1 GB / 7 days – GHS 12</option>
+        <option>3 GB / 30 days – GHS 32</option>
+        <option>5 GB / 30 days – GHS 48</option>
+        <option>10 GB / 30 days – GHS 83</option>
+        <option>20 GB / 30 days – GHS 145</option>
+        <option>50 GB / 90 days – GHS 1,202</option>
+        <option>100 GB / 180 days – GHS 2,285</option>
+      </select><br />
 
-    <div style="text-align:center; margin-top: 20px;">
-      <button type="button" onclick="submitOrder('whatsapp')" class="btn whatsapp">Submit via WhatsApp</button>
-      <button type="button" onclick="submitOrder('telegram')" class="btn telegram">Submit via Telegram</button>
-    </div>
+      <div style="text-align:center; margin-top: 20px;">
+        <button type="button" onclick="submitOrder('whatsapp')" class="btn whatsapp">Submit via WhatsApp</button>
+        <button type="button" onclick="submitOrder('telegram')" class="btn telegram">Submit via Telegram</button>
+      </div>
 
-    <div id="confirmation" style="margin-top:20px; padding:15px; background:#e7ffe7; border:1px solid #3c763d; color:#3c763d; border-radius:6px; display:none; text-align:center;">
-      ✅ Order sent. Continue in app.
-    </div>
-  </form>
-</section>
+      <div id="confirmation" style="margin-top:20px; padding:15px; background:#e7ffe7; border:1px solid #3c763d; color:#3c763d; border-radius:6px; display:none; text-align:center;">
+        ✅ Order sent. Continue in app.
+      </div>
+    </form>
+  </section>
 
-<style>
-  .btn {
-    padding: 12px 20px;
-    margin: 10px;
-    font-size: 16px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    color: white;
-  }
-
-  .whatsapp {
-    background-color: #25D366;
-  }
-
-  .whatsapp:hover {
-    background-color: #1da851;
-    transform: scale(1.05);
-  }
-
-  .telegram {
-    background-color: #0088cc;
-  }
-
-  .telegram:hover {
-    background-color: #007bb6;
-    transform: scale(1.05);
-  }
-</style>
-
-<script>
-  function submitOrder(platform) {
-    const form = document.getElementById("refillForm");
-    const name = document.getElementById("name").value.trim();
-    const number = document.getElementById("whatsapp").value.trim();
-    const esim = document.getElementById("esim").value.trim();
-    const selectedPackage = document.getElementById("package").value;
-
-    if (!name || !number || !selectedPackage) {
-      alert("Please fill all required fields.");
-      return;
+  <style>
+    .btn {
+      padding: 12px 20px;
+      margin: 10px auto;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      color: white;
+      display: block;
     }
 
-    const message = `Hello, I just submitted a refill order:\n\n🧍 Name: ${name}\n📞 WhatsApp: ${number}\n💳 eSIM: ${esim || 'N/A'}\n📦 Package: ${selectedPackage}`;
-
-    // Show confirmation
-    const confirmationBox = document.getElementById("confirmation");
-    confirmationBox.style.display = "block";
-
-    // Reset form after a slight delay
-    setTimeout(() => {
-      form.reset();
-      confirmationBox.style.display = "none";
-    }, 2000);
-
-    // Redirect instantly (works on mobile)
-    if (platform === "whatsapp") {
-      window.location.href = `https://wa.me/233505858712?text=${encodeURIComponent(message)}`;
-    } else if (platform === "telegram") {
-      window.location.href = `https://t.me/an00_q`;
+    .whatsapp {
+      background-color: #25D366;
     }
-  }
-</script>
+
+    .whatsapp:hover {
+      background-color: #1da851;
+      transform: scale(1.05);
+    }
+
+    .telegram {
+      background-color: #0088cc;
+    }
+
+    .telegram:hover {
+      background-color: #007bb6;
+      transform: scale(1.05);
+    }
+  </style>
+
+  <script>
+    function submitOrder(platform) {
+      const form = document.getElementById("refillForm");
+      const name = document.getElementById("name").value.trim();
+      const number = document.getElementById("whatsapp").value.trim();
+      const esim = document.getElementById("esim").value.trim();
+      const selectedPackage = document.getElementById("package").value;
+
+      if (!name  !number  !selectedPackage) {
+        alert("Please fill all required fields.");
+        return;
+      }
+
+      const message = Hello, I just submitted a refill order:\n\n🧍 Name: ${name}\n📞 WhatsApp: ${number}\n💳 eSIM: ${esim || 'N/A'}\n📦 Package: ${selectedPackage};
+
+      // Show confirmation
+      const confirmationBox = document.getElementById("confirmation");
+      confirmationBox.style.display = "block";
+
+      // Reset form after a slight delay
+      setTimeout(() => {
+        form.reset();
+        confirmationBox.style.display = "none";
+      }, 2000);
+
+      // Redirect instantly (works on mobile)
+      if (platform === "whatsapp") {
+        window.location.href = https://wa.me/233505858712?text=${encodeURIComponent(message)};
+      } else if (platform === "telegram") {
+        window.location.href = "https://t.me/an00_q";
+      }
+    }
+  </script>
+
   <footer>&copy; 2025 YenkoVerify. All rights reserved.</footer>
 
   <script>
     document.querySelectorAll('.faq-toggle').forEach(button => {
-      button.addEventListener('click', () => {
-        const faq = button.parentElement;
+      button.addEventListener('click', () => {const faq = button.parentElement;
         faq.classList.toggle('open');
         const icon = button.querySelector('.icon');
         icon.textContent = faq.classList.contains('open') ? '−' : '+';
@@ -424,3 +433,5 @@
 
 </body>
 </html>
+
+  
