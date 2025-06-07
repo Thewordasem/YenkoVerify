@@ -384,25 +384,44 @@
 </section>
 
   <section class="section">
-    <h2>Refill Order Form</h2>
-    <form id="refillForm" onsubmit="event.preventDefault();" style="max-width: 500px; margin: auto; text-align: left;">
-      <label for="name">Full Name:</label><br />
-      <input type="text" id="name" name="name" required><br />
+  <h2>Refill Order Form</h2>
+  <small style="display:block; margin-bottom: 15px; color: #ccc;">
+    *Note: All refill prices are based on current USD exchange rates. Prices may adjust slightly when the dollar changes.
+  </small>
 
-      <label for="whatsapp">WhatsApp Number:</label><br />
-      <input type="tel" id="whatsapp" name="whatsapp" required><br />
+  <form id="refillForm" onsubmit="event.preventDefault();" style="max-width: 500px; margin: auto; text-align: left;">
 
-      <label for="esim">eSIM ICCID number(if known):</label><br />
-      <input type="text" id="esim" name="esim"><br />
+    <label for="name">Full Name:</label><br />
+    <input type="text" id="name" name="name" required style="width:100%; padding:10px; margin-bottom:15px; border-radius:6px; border:1px solid #ccc;"><br />
 
-      <label for="package">Select Refill Package:</label><br />
-      <select id="package" name="package" required>
-        <option value="">-- Select Package --</option>
-        <option value="500mb">500MB</option>
-        <option value="1gb">1GB</option>
-        <option value="5gb">5GB</option>
-        <option value="10gb">10GB</option>
-      </select><br />
+    <label for="whatsapp">WhatsApp Number:</label><br />
+    <input type="tel" id="whatsapp" name="whatsapp" required style="width:100%; padding:10px; margin-bottom:15px; border-radius:6px; border:1px solid #ccc;"><br />
+
+    <label for="esim">eSIM ICCID Number (if known):</label><br />
+    <input type="text" id="esim" name="esim" style="width:100%; padding:10px; margin-bottom:15px; border-radius:6px; border:1px solid #ccc;"><br />
+
+    <label for="package">Select Refill Package:</label><br />
+    <select id="package" name="package" required style="width:100%; padding:10px; margin-bottom:15px; border-radius:6px; border:1px solid #ccc;">
+      <option value="">-- Choose a package --</option>
+      <option>100MB – GHS 25</option>
+      <option>1GB – GHS 100</option>
+      <option>3GB – GHS 250</option>
+      <option>5GB – GHS 380</option>
+      <option>10GB – GHS 700</option>
+      <option>25GB – GHS 1,450</option>
+      <option>50GB – GHS 1,800</option>
+    </select><br />
+
+    <div style="text-align:center; margin-top: 20px;">
+      <button type="button" onclick="submitOrder('whatsapp')" class="btn whatsapp">Submit via WhatsApp</button>
+      <button type="button" onclick="submitOrder('telegram')" class="btn telegram">Submit via Telegram</button>
+    </div>
+
+    <div id="confirmation" style="margin-top:20px; padding:15px; background:#e7ffe7; border:1px solid #3c763d; color:#3c763d; border-radius:6px; display:none; text-align:center;">
+      ✅ Order sent. Continue in app.
+    </div>
+  </form>
+</section>
 
       <button type="submit" class="btn" style="width: 100%;">Submit Order</button>
     </form>
