@@ -401,16 +401,23 @@
     <input type="text" id="esim" name="esim" style="width:100%; padding:10px; margin-bottom:15px; border-radius:6px; border:1px solid #ccc;"><br />
 
     <label for="package">Select Refill Package:</label><br />
-    <select id="package" name="package" required style="width:100%; padding:10px; margin-bottom:15px; border-radius:6px; border:1px solid #ccc;">
-      <option value="">-- Choose a package --</option>
-      <option>100MB – GHS 25</option>
-      <option>1GB – GHS 100</option>
-      <option>3GB – GHS 250</option>
-      <option>5GB – GHS 380</option>
-      <option>10GB – GHS 700</option>
-      <option>25GB – GHS 1,450</option>
-      <option>50GB – GHS 1,800</option>
-    </select><br />
+<select id="package" name="package" required style="width:100%; padding:10px; margin-bottom:15px; border-radius:6px; border:1px solid #ccc;">
+  <option value="">-- Choose a package --</option>
+
+  <option disabled>--- Short-Term (Expires) ---</option>
+  <option value="1GB – GHS 30 (7 days)">1GB – GHS 30 (7 days)</option>
+  <option value="3GB – GHS 65 (30 days)">3GB – GHS 65 (30 days)</option>
+  <option value="5GB – GHS 100 (30 days)">5GB – GHS 100 (30 days)</option>
+
+  <option disabled>--- Lifetime (No Expiry) ---</option>
+  <option value="100MB – GHS 25">100MB – GHS 25</option>
+  <option value="1GB – GHS 100">1GB – GHS 100</option>
+  <option value="3GB – GHS 250">3GB – GHS 250</option>
+  <option value="5GB – GHS 380">5GB – GHS 380</option>
+  <option value="10GB – GHS 700">10GB – GHS 700</option>
+  <option value="25GB – GHS 1,450">25GB – GHS 1,450</option>
+  <option value="50GB – GHS 1,800">50GB – GHS 1,800</option>
+</select><br />
 
     <div style="text-align:center; margin-top: 20px;">
       <button type="button" onclick="submitOrder('whatsapp')" class="btn whatsapp">Submit via WhatsApp</button>
