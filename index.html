@@ -382,31 +382,29 @@
     </div>
   </div>
 </section>
-
- <section class="section">
+<section class="section">
   <h2>Refill Order Form</h2>
   <small style="display:block; margin-bottom: 15px; color: #ccc;">
     *Note: All refill prices are based on current USD exchange rates. Prices may adjust slightly when the dollar changes.
   </small>
 
-  <form id="refillForm" style="max-width: 500px; margin: auto; text-align: left;">
+  <div id="refillForm" style="max-width: 500px; margin: auto; text-align: left;">
     <label for="name">Full Name:</label><br />
-    <input type="text" id="name" name="name" required style="width:100%; padding:10px; margin-bottom:15px; border-radius:6px; border:1px solid #ccc;"><br />
+    <input type="text" id="name" required style="width:100%; padding:10px; margin-bottom:15px;"><br />
 
     <label for="whatsapp">WhatsApp Number:</label><br />
-    <input type="tel" id="whatsapp" name="whatsapp" required style="width:100%; padding:10px; margin-bottom:15px; border-radius:6px; border:1px solid #ccc;"><br />
+    <input type="tel" id="whatsapp" required style="width:100%; padding:10px; margin-bottom:15px;"><br />
 
     <label for="esim">eSIM ICCID Number (if known):</label><br />
-    <input type="text" id="esim" name="esim" style="width:100%; padding:10px; margin-bottom:15px; border-radius:6px; border:1px solid #ccc;"><br />
+    <input type="text" id="esim" style="width:100%; padding:10px; margin-bottom:15px;"><br />
 
     <label for="package">Select Refill Package:</label><br />
-    <select id="package" name="package" required style="width:100%; padding:10px; margin-bottom:15px; border-radius:6px; border:1px solid #ccc;">
+    <select id="package" required style="width:100%; padding:10px; margin-bottom:15px;">
       <option value="">-- Choose a package --</option>
       <option disabled>--- Short-Term (Expires) ---</option>
       <option value="1GB – GHS 30 (7 days)">1GB – GHS 30 (7 days)</option>
       <option value="3GB – GHS 65 (30 days)">3GB – GHS 65 (30 days)</option>
       <option value="5GB – GHS 100 (30 days)">5GB – GHS 100 (30 days)</option>
-
       <option disabled>--- Lifetime (No Expiry) ---</option>
       <option value="100MB – GHS 25">100MB – GHS 25</option>
       <option value="1GB – GHS 100">1GB – GHS 100</option>
@@ -418,17 +416,16 @@
     </select><br />
 
     <div style="text-align:center; margin-top: 20px;">
-      <button type="button" onclick="submitOrder('whatsapp')" class="btn whatsapp">Submit via WhatsApp</button>
-      <button type="button" onclick="submitOrder('telegram')" class="btn telegram">Submit via Telegram</button>
+      <button onclick="submitOrder('whatsapp')" class="btn whatsapp">Submit via WhatsApp</button>
+      <button onclick="submitOrder('telegram')" class="btn telegram">Submit via Telegram</button>
     </div>
 
     <div id="confirmation" style="margin-top:20px; padding:15px; background:#e7ffe7; border:1px solid #3c763d; color:#3c763d; border-radius:6px; display:none; text-align:center;">
       ✅ Order sent. Continue in app.
     </div>
-  </form>
+  </div>
 </section>
 
-<!-- ✅ SCRIPT: Place this before </body> -->
 <script>
   function submitOrder(platform) {
     const name = document.getElementById("name").value.trim();
@@ -446,14 +443,13 @@
     document.getElementById("confirmation").style.display = "block";
 
     setTimeout(() => {
-      document.getElementById("refillForm").reset();
       document.getElementById("confirmation").style.display = "none";
-    }, 2000);
+    }, 3000);
 
     if (platform === "whatsapp") {
-      window.open(`https://wa.me/233505858712?text=${encodeURIComponent(message)}`, "_blank");
+      window.open(`https://wa.me/233505858712?text=${encodeURIComponent(message)}`, '_blank');
     } else if (platform === "telegram") {
-      window.open("https://t.me/an00_q", "_blank");
+      window.open("https://t.me/an00_q", '_blank');
     }
   }
 </script>
