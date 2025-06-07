@@ -430,14 +430,44 @@
   </form>
 </section>
 
-      <button type="submit" class="btn" style="width: 100%;">Submit Order</button>
-    </form>
-  </section>
+    
 
   <footer>
     &copy; 2025 YenkoVerify. Powered by The Word // Asem Technologies All rights reserved.
   </footer>
 
+<script>
+  function submitOrder(platform) {
+    const form = document.getElementById("refillForm");
+    const name = document.getElementById("name").value.trim();
+    const number = document.getElementById("whatsapp").value.trim();
+    const esim = document.getElementById("esim").value.trim();
+    const selectedPackage = document.getElementById("package").value;
+
+    if (!name  !number  !selectedPackage) {
+      alert("Please fill all required fields.");
+      return;
+    }
+
+    const message = Hello, I just submitted a refill order:\n\n🧍 Name: ${name}\n📞 WhatsApp: ${number}\n💳 eSIM ICCID: ${esim || 'N/A'}\n📦 Package: ${selectedPackage};
+
+    const confirmationBox = document.getElementById("confirmation");
+    confirmationBox.style.display = "block";
+
+    setTimeout(() => {
+      form.reset();
+      confirmationBox.style.display = "none";
+    }, 2000);
+
+    if (platform === "whatsapp") {
+      window.location.href = https://wa.me/233505858712?text=${encodeURIComponent(message)};
+    } else if (platform === "telegram") {
+      window.location.href = https://t.me/an00_q;
+    }
+  }
+</script>
+
+  
   <script>
     // Toggle FAQ logic
     document.querySelectorAll('.faq-toggle').forEach(btn => {
