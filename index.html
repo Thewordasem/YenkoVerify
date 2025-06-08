@@ -330,18 +330,17 @@
 </section>
 
 <script>
-// ----- FAQ Toggle Logic -----
-document.addEventListener("DOMContentLoaded", function () {
-  const faqToggles = document.querySelectorAll(".faq-toggle");
-  faqToggles.forEach(toggle => {
-    toggle.addEventListener("click", () => {
-      const parent = toggle.parentElement;
-      parent.classList.toggle("open");
-      const icon = toggle.querySelector(".icon");
-      icon.textContent = parent.classList.contains("open") ? "−" : "+";
+    document.querySelectorAll('.faq-toggle').forEach(button => {
+      button.addEventListener('click', () => {
+        const faq = button.parentElement;
+        faq.classList.toggle('open');
+        const icon = button.querySelector('.icon');
+        icon.textContent = faq.classList.contains('open') ? '−' : '+';
+      });
     });
-  });
+  </script>
 
+  <script>
   // ----- Refill Form Button Logic -----
   const whatsappBtn = document.getElementById("whatsappBtn");
   const telegramBtn = document.getElementById("telegramBtn");
