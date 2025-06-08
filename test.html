@@ -105,22 +105,22 @@
 <div class="faq">
   <button type="button" class="faq-toggle"><span class="icon">+</span> Is this legal?</button>
   <div class="faq-content">
-    <p>Yes. We work with verified global telecom partners to offer these numbers for personal use. It’s just like buying any SIM or eSIM online.</p>
+    <p>Yes. We work with verified global telecom partners to offer these numbers for personal use.</p>
   </div>
 </div>
 
 <h2>Refill Order Form</h2>
-<form id="refillForm" style="max-width: 500px; margin: auto; text-align: left;" onsubmit="event.preventDefault();">
-  <label for="name">Full Name:</label><br />
-  <input type="text" id="name" name="name" required><br />
+<form id="refillForm" style="max-width: 500px; margin: auto;" onsubmit="event.preventDefault();">
+  <label for="name">Full Name:</label>
+  <input type="text" id="name" name="name" required />
 
-  <label for="whatsapp">WhatsApp Number:</label><br />
-  <input type="tel" id="whatsapp" name="whatsapp" required><br />
+  <label for="whatsapp">WhatsApp Number:</label>
+  <input type="tel" id="whatsapp" name="whatsapp" required />
 
-  <label for="esim">eSIM Number (if known):</label><br />
-  <input type="text" id="esim" name="esim"><br />
+  <label for="esim">eSIM Number (if known):</label>
+  <input type="text" id="esim" name="esim" />
 
-  <label for="package">Select Refill Package:</label><br />
+  <label for="package">Select Refill Package:</label>
   <select id="package" name="package" required>
     <option value="">-- Choose a package --</option>
     <option>1 GB / 7 days – GHS 12</option>
@@ -130,18 +130,18 @@
     <option>20 GB / 30 days – GHS 145</option>
     <option>50 GB / 90 days – GHS 1,202</option>
     <option>100 GB / 180 days – GHS 2,285</option>
-  </select><br />
+  </select>
 
-  <div style="text-align:center; margin-top: 20px;">
-    <button type="button" onclick="submitOrder('whatsapp')" class="btn whatsapp">Submit via WhatsApp</button>
-    <button type="button" onclick="submitOrder('telegram')" class="btn telegram">Submit via Telegram</button>
+  <div style="text-align:center;">
+    <button type="button" class="btn whatsapp" onclick="submitOrder('whatsapp')">Submit via WhatsApp</button>
+    <button type="button" class="btn telegram" onclick="submitOrder('telegram')">Submit via Telegram</button>
   </div>
 
   <div id="confirmation">✅ Order sent. Continue in app.</div>
 </form>
 
 <script>
-  // FAQ toggle functionality
+  // FAQ toggles
   document.querySelectorAll('.faq-toggle').forEach(button => {
     button.addEventListener('click', () => {
       const faq = button.closest('.faq');
@@ -151,13 +151,12 @@
     });
   });
 
-  // Submit handler
+  // Form submission logic
   function submitOrder(platform) {
-    const form = document.getElementById("refillForm");
-    const name = document.getElementById("name").value.trim();
-    const number = document.getElementById("whatsapp").value.trim();
-    const esim = document.getElementById("esim").value.trim();
-    const selectedPackage = document.getElementById("package").value;
+    const name = document.getElementById('name').value.trim();
+    const number = document.getElementById('whatsapp').value.trim();
+    const esim = document.getElementById('esim').value.trim();
+    const selectedPackage = document.getElementById('package').value;
 
     if (!name  !number  !selectedPackage) {
       alert("Please fill all required fields.");
@@ -165,20 +164,22 @@
     }
 
     const message = Hello, I just submitted a refill order:\n\n🧍 Name: ${name}\n📞 WhatsApp: ${number}\n💳 eSIM: ${esim || 'N/A'}\n📦 Package: ${selectedPackage};
+    const encodedMsg = encodeURIComponent(message);
 
     // Show confirmation
     const confirmationBox = document.getElementById("confirmation");
     confirmationBox.style.display = "block";
 
+    // Hide after delay
     setTimeout(() => {
-      form.reset();
       confirmationBox.style.display = "none";
+      document.getElementById("refillForm").reset();
     }, 3000);
 
     if (platform === "whatsapp") {
-      window.location.href = https://wa.me/233505858712?text=${encodeURIComponent(message)};
+      window.open(`https://wa.me/233505858712?text=${encodedMsg}`, '_blank');
     } else if (platform === "telegram") {
-      window.location.href = https://t.me/an00_q;
+      window.open(`https://t.me/an00_q`, '_blank');
     }
   }
 </script>
