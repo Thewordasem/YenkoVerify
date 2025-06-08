@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Test FAQ + Refill</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #111;
+      color: #e6c67a;
+      padding: 20px;
+    }
+    .faq {
+      margin-bottom: 10px;
+    }
+    .faq-toggle {
+      background: none;
+      border: none;
+      color: #e6c67a;
+      font-size: 1.05em;
+      cursor: pointer;
+      width: 100%;
+      text-align: left;
+      border-bottom: 1px solid #555;
+      padding: 10px;
+    }
+    .faq-toggle .icon {
+      font-weight: bold;
+      margin-right: 10px;
+    }
+    .faq-content {
+      display: none;
+      padding: 10px;
+      background: rgba(255,255,255,0.05);
+      border-radius: 6px;
+    }
+    .faq.open .faq-content {
+      display: block;
+    }
+    .btn {
+      padding: 10px 15px;
+      background-color: #25D366;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    #confirmation {
+      display: none;
+      margin-top: 15px;
+      color: #3c763d;
+    }
+  </style>
+</head>
+<body>
+
+<h2>FAQs</h2>
+
+<div class="faq">
+  <button class="faq-toggle"><span class="icon">+</span> Does this number work with WhatsApp?</button>
+  <div class="faq-content">
+    <p>We don’t guarantee WhatsApp or 3rd party compatibility.</p>
+  </div>
+</div>
+
+<div class="faq">
+  <button class="faq-toggle"><span class="icon">+</span> Will it work in Ghana?</button>
+  <div class="faq-content">
+    <p>Yes. Our eSIMs roam globally, including Ghana.</p>
+  </div>
+</div>
+
+<h2>Refill Form</h2>
+<form id="refillForm">
+  <label>Full Name:</label><br />
+  <input type="text" id="name" required><br /><br />
+
+  <label>WhatsApp Number:</label><br />
+  <input type="text" id="whatsapp" required><br /><br />
+
+  <label>eSIM ICCID:</label><br />
+  <input type="text" id="esim"><br /><br />
+
+  <label>Select Package:</label><br />
+  <select id="package" required>
+    <option value="">-- Choose --</option>
+    <option value="1GB – GHS 30">1GB – GHS 30</option>
+    <option value="10GB – GHS 700">10GB – GHS 700</option>
+  </select><br /><br />
+
+  <button type="button" class="btn" id="whatsappBtn">Submit via WhatsApp</button>
+  <div id="confirmation">✅ Message prepared. Sending you now...</div>
+</form>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  // FAQ logic
+  document.querySelectorAll('.faq-toggle').forEach(button => {
+    button.addEventListener('click', () => {
+      const faq = button.parentElement;
+      faq.classList.toggle('open');
+      const icon = button.querySelector('.icon');
+      icon.textContent = faq.classList.contains('open') ? '−' : '+';
+    });
+  });
+
+  // Refill logic
+  document.getElementById("whatsappBtn").addEventListener("click", function () {
+    const name = document.getElementById("name").value.trim();
+    const number = document.getElementById("whatsapp").value.trim();
+    const esim = document.getElementById("esim").value.trim();
+    const pkg = document.getElementById("package").value;
+
+    if (!name  !number  !pkg) {
+      alert("Please fill in all required fields.");
+      return;
+    }
+
+    const msg = Hello, I just submitted a refill order:\n\n🧍 Name: ${name}\n📞 WhatsApp: ${number}\n💳 eSIM ICCID: ${esim || 'N/A'}\n📦 Package: ${pkg};
+
+    document.getElementById("confirmation").style.display = "block";
+    window.open(`https://wa.me/233505858712?text=${encodeURIComponent(msg)}`, '_blank');
+  });
+});
+</script>
+
+</body>
+</html>
