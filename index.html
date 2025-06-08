@@ -330,41 +330,41 @@
 </section>
 
 <script>
-// FAQ toggle logic
-document.addEventListener("DOMContentLoaded", () => {
-  document.querySelectorAll('.faq-toggle').forEach(button => {
-    button.addEventListener('click', () => {
-      const parent = button.parentElement;
-      parent.classList.toggle('open');
-      const icon = button.querySelector('.icon');
-      icon.textContent = parent.classList.contains('open') ? '−' : '+';
+// ----- FAQ Toggle Logic -----
+document.addEventListener("DOMContentLoaded", function () {
+  const faqToggles = document.querySelectorAll(".faq-toggle");
+  faqToggles.forEach(toggle => {
+    toggle.addEventListener("click", () => {
+      const parent = toggle.parentElement;
+      parent.classList.toggle("open");
+      const icon = toggle.querySelector(".icon");
+      icon.textContent = parent.classList.contains("open") ? "−" : "+";
     });
   });
-});
 
-// WhatsApp/Telegram refill form logic
-function getRefillMessage() {
-  const name = document.getElementById("name").value.trim();
-  const number = document.getElementById("whatsapp").value.trim();
-  const esim = document.getElementById("esim").value.trim();
-  const pkg = document.getElementById("package").value;
-
-  if (!name  !number  !pkg) {
-    alert("Please fill in all required fields.");
-    return null;
-  }
-
-  return Hello, I just submitted a refill order:\n\n🧍 Name: ${name}\n📞 WhatsApp: ${number}\n💳 eSIM ICCID: ${esim || 'N/A'}\n📦 Package: ${pkg};
-}
-
-document.addEventListener("DOMContentLoaded", () => {
+  // ----- Refill Form Button Logic -----
   const whatsappBtn = document.getElementById("whatsappBtn");
   const telegramBtn = document.getElementById("telegramBtn");
 
+  function generateMessage() {
+    const name = document.getElementById("name").value.trim();
+    const number = document.getElementById("whatsapp").value.trim();
+    const esim = document.getElementById("esim").value.trim();
+    const selectedPackage = document.getElementById("package").value;
+
+    if (!name  !number  !selectedPackage) {
+      alert("Please fill all required fields.");
+      return null;
+    }
+
+    return Hello, I just submitted a refill order:\n\n🧍 Name: ${name}\n📞 WhatsApp: ${number}\n💳 eSIM ICCID: ${esim || 'N/A'}\n📦 Package: ${selectedPackage};
+  }
+
   if (whatsappBtn) {
     whatsappBtn.addEventListener("click", () => {
-      const msg = getRefillMessage();
+      const msg = generateMessage();
       if (msg) {
+        document.getElementById("confirmation").style.display = "block";
         window.open(`https://wa.me/233505858712?text=${encodeURIComponent(msg)}`, "_blank");
       }
     });
@@ -372,8 +372,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (telegramBtn) {
     telegramBtn.addEventListener("click", () => {
-      const msg = getRefillMessage();
+      const msg = generateMessage();
       if (msg) {
+        document.getElementById("confirmation").style.display = "block";
         window.open("https://t.me/an00_q", "_blank");
       }
     });
