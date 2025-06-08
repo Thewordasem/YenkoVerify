@@ -1,110 +1,63 @@
-<section class="section">
-  <h2>Refill Order Form</h2>
-  <form id="refillForm" style="max-width: 500px; margin: auto; text-align: left;" onsubmit="event.preventDefault();">
-    <label for="name">Full Name:</label><br />
-    <input type="text" id="name" name="name" required style="width:100%; padding:10px; margin-bottom:15px; border-radius:6px; border:1px solid #ccc;"><br />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Refill Form</title>
+  <style>
+    /* (Your existing CSS here) */
+  </style>
+</head>
+<body>
 
-    <label for="whatsapp">WhatsApp Number:</label><br />
-    <input type="tel" id="whatsapp" name="whatsapp" required style="width:100%; padding:10px; margin-bottom:15px; border-radius:6px; border:1px solid #ccc;"><br />
-
-    <label for="esim">eSIM Number (if known):</label><br />
-    <input type="text" id="esim" name="esim" style="width:100%; padding:10px; margin-bottom:15px; border-radius:6px; border:1px solid #ccc;"><br />
-
-    <label for="package">Select Refill Package:</label><br />
-    <select id="package" name="package" required style="width:100%; padding:10px; margin-bottom:15px; border-radius:6px; border:1px solid #ccc;">
-      <option value="">-- Choose a package --</option>
-      <option>1 GB / 7 days – GHS 12</option>
-      <option>3 GB / 30 days – GHS 32</option>
-      <option>5 GB / 30 days – GHS 48</option>
-      <option>10 GB / 30 days – GHS 83</option>
-      <option>20 GB / 30 days – GHS 145</option>
-      <option>50 GB / 90 days – GHS 1,202</option>
-      <option>100 GB / 180 days – GHS 2,285</option>
-    </select><br />
-
-    <div style="text-align:center; margin-top: 20px;">
-      <button type="button" onclick="submitOrder('whatsapp')" class="btn whatsapp">Submit via WhatsApp</button>
-      <button type="button" onclick="submitOrder('telegram')" class="btn telegram">Submit via Telegram</button>
-    </div>
-
-    <div id="confirmation" style="margin-top:20px; padding:15px; background:#e7ffe7; border:1px solid #3c763d; color:#3c763d; border-radius:6px; display:none; text-align:center;">
-      ✅ Order sent. Continue in app.
-    </div>
-  </form>
-</section>
-
-<style>
-  .btn {
-    padding: 12px 20px;
-    margin: 10px;
-    font-size: 16px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    color: white;
-  }
-
-  .whatsapp {
-    background-color: #25D366;
-  }
-
-  .whatsapp:hover {
-    background-color: #1da851;
-    transform: scale(1.05);
-  }
-
-  .telegram {
-    background-color: #0088cc;
-  }
-
-  .telegram:hover {
-    background-color: #007bb6;
-    transform: scale(1.05);
-  }
-</style>
+<h2>Refill Order Form</h2>
+<form id="refillForm">
+  <!-- Your input fields here... -->
+  <button type="button" onclick="submitOrder('whatsapp')">WhatsApp</button>
+  <button type="button" onclick="submitOrder('telegram')">Telegram</button>
+</form>
+<div id="confirmation" style="display:none;">✅ Order sent!</div>
 
 <script>
-  function submitOrder(platform) {
-    const form = document.getElementById("refillForm");
-    const name = document.getElementById("name").value.trim();
-    const number = document.getElementById("whatsapp").value.trim();
-    const esim = document.getElementById("esim").value.trim();
-    const selectedPackage = document.getElementById("package").value;
+  const TG_TOKEN = 'YOUR_BOT_TOKEN'; 
+  const TG_CHAT_ID = 'YOUR_CHAT_ID';
 
-    if (!name  !number  !selectedPackage) {
+  function showConfirmation() {
+    const box = document.getElementById("confirmation");
+    box.style.display = "block";
+    setTimeout(() => box.style.display = "none", 2000);
+  }
+
+  function submitOrder(platform) {
+    const name = document.getElementById("name").value.trim();
+    const phone = document.getElementById("whatsapp").value.trim();
+    const esim = document.getElementById("esim").value.trim() || 'N/A';
+    const pkg = document.getElementById("package").value;
+    if (!name  !phone  !pkg) {
       alert("Please fill all required fields.");
       return;
     }
 
-    const message = Hello, I just submitted a refill order:\n\n🧍 Name: ${name}\n📞 WhatsApp: ${number}\n💳 eSIM: ${esim || 'N/A'}\n📦 Package: ${selectedPackage};
+    const message = Hello! Refill order:\nName: ${name}\nPhone: ${phone}\neSIM: ${esim}\nPackage: ${pkg};
+    showConfirmation();
 
-    // Show confirmation
-    const confirmationBox = document.getElementById("confirmation");
-    confirmationBox.style.display = "block";
-
-    // Reset form after a slight delay
-    setTimeout(() => {
-      form.reset();
-      confirmationBox.style.display = "none";
-    }, 2000);
-
-    // Redirect instantly (works on mobile)
     if (platform === "whatsapp") {
-      window.location.href = https://wa.me/233505858712?text=${encodeURIComponent(message)};
-    } else if (platform === "telegram") {
-      window.location.href = https://t.me/an00_q;
+      const url = https://wa.me/233505858712?text=${encodeURIComponent(message)};
+      window.location.href = url;
+    } else {
+      const url = https://api.telegram.org/bot${TG_TOKEN}/sendMessage;
+      fetch(url, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ chat_id: TG_CHAT_ID, text: message })
+      })
+      .then(r => {
+        if (!r.ok) console.error("Telegram error", r.status);
+      })
+      .catch(err => console.error("Fetch error", err));
     }
   }
 </script>
-  <footer>&copy; 2025 YenkoVerify. All rights reserved.</footer>
 
-  <script>
-    document.querySelectorAll('.faq-toggle').forEach(button => {
-      button.addEventListener('click', () => {
-        const faq = button.parentElement;
-        faq.classList.toggle('open');
-        const icon = button.querySelector('.icon');
-        icon.textContent = faq.classList.contains('open') ? '−' : '+';});
-    });
-  </script>
+</body>
+</html>
