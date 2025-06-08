@@ -192,7 +192,21 @@ our end.</p></div>
     }
   }
 </script>
-  <footer>&copy; 2025 YenkoVerify. All
+ rights reserved.</footer>
+
+  <script>
+    document.querySelectorAll('.faq-toggle').forEach(button => {
+      button.addEventListener('click', () => {
+        const faq = button.parentElement;
+        faq.classList.toggle('open');
+        const icon = button.querySelector('.icon');
+        icon.textContent = faq.classList.contains('open') ? '−' : '+';
+      });
+    });
+  </script>
+
+</body>
+</html>
 
 </body>
 </html>
