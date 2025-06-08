@@ -386,15 +386,21 @@
     const msg = generateMessage();
     if (msg) {
       document.getElementById("confirmation").style.display = "block";
+      document.getElementById("refillForm").reset(); // ✅ Reset form
       window.open(`https://wa.me/233505858712?text=${encodeURIComponent(msg)}`, "_blank");
     }
   });
 
   telegramBtn.addEventListener("click", () => {
-    // Opens Telegram DM securely
-    window.open("https://t.me/an00_q", "_blank");
+    const msg = generateMessage();
+    if (msg) {
+      document.getElementById("confirmation").style.display = "block";
+      document.getElementById("refillForm").reset(); // ✅ Reset form
+      window.open("https://t.me/an00_q", "_blank");
+    }
   });
 </script>
+
 
 
   <script>
