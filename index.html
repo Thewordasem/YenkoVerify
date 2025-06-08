@@ -373,7 +373,6 @@
   </script>
 
 <script>
-  // ----- Refill Form Button Logic -----
   const whatsappBtn = document.getElementById("whatsappBtn");
   const telegramBtn = document.getElementById("telegramBtn");
 
@@ -391,26 +390,18 @@
     return `Hello, I just submitted a refill order:\n\n🧍 Name: ${name}\n📞 WhatsApp: ${number}\n💳 eSIM ICCID: ${esim || 'N/A'}\n📦 Package: ${selectedPackage}`;
   }
 
-  if (whatsappBtn) {
-    whatsappBtn.addEventListener("click", () => {
-      const msg = generateMessage();
-      if (msg) {
-        document.getElementById("confirmation").style.display = "block";
-        window.open(`https://wa.me/233505858712?text=${encodeURIComponent(msg)}`, "_blank");
-      }
-    });
-  }
+  whatsappBtn.addEventListener("click", () => {
+    const msg = generateMessage();
+    if (msg) {
+      document.getElementById("confirmation").style.display = "block";
+      window.open(`https://wa.me/233505858712?text=${encodeURIComponent(msg)}`, "_blank");
+    }
+  });
 
-  if (telegramBtn) {
-    telegramBtn.addEventListener("click", () => {
-      const msg = generateMessage();
-      if (msg) {
-        document.getElementById("confirmation").style.display = "block";
-        // You can also pass the message to Telegram via t.me/share URL
-        window.open(`https://t.me/share/url?url=${encodeURIComponent(msg)}&text=${encodeURIComponent(msg)}`, "_blank");
-      }
-    });
-  }
+  telegramBtn.addEventListener("click", () => {
+    // Just open your Telegram username in app
+    window.open("https://t.me/your_username", "_blank");
+  });
 </script>
 
   <footer>
