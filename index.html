@@ -372,7 +372,7 @@
     });
   </script>
 
-  <script>
+<script>
   // ----- Refill Form Button Logic -----
   const whatsappBtn = document.getElementById("whatsappBtn");
   const telegramBtn = document.getElementById("telegramBtn");
@@ -383,12 +383,12 @@
     const esim = document.getElementById("esim").value.trim();
     const selectedPackage = document.getElementById("package").value;
 
-    if (!name  !number  !selectedPackage) {
+    if (!name || !number || !selectedPackage) {
       alert("Please fill all required fields.");
       return null;
     }
 
-    return Hello, I just submitted a refill order:\n\n🧍 Name: ${name}\n📞 WhatsApp: ${number}\n💳 eSIM ICCID: ${esim || 'N/A'}\n📦 Package: ${selectedPackage};
+    return `Hello, I just submitted a refill order:\n\n🧍 Name: ${name}\n📞 WhatsApp: ${number}\n💳 eSIM ICCID: ${esim || 'N/A'}\n📦 Package: ${selectedPackage}`;
   }
 
   if (whatsappBtn) {
@@ -406,12 +406,13 @@
       const msg = generateMessage();
       if (msg) {
         document.getElementById("confirmation").style.display = "block";
-        window.open("https://t.me/an00_q", "_blank");
+        // You can also pass the message to Telegram via t.me/share URL
+        window.open(`https://t.me/share/url?url=${encodeURIComponent(msg)}&text=${encodeURIComponent(msg)}`, "_blank");
       }
     });
   }
-});
 </script>
+
   <footer>
     &copy; 2025 YenkoVerify. Powered by The Word // Asem Technologies. All rights reserved.
   </footer>
