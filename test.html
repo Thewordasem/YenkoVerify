@@ -174,17 +174,14 @@ our end.</p></div>
 
     const message = Hello, I just submitted a refill order:\n\n🧍 Name: ${name}\n📞 WhatsApp: ${number}\n💳 eSIM: ${esim || 'N/A'}\n📦 Package: ${selectedPackage};
 
-    // Show confirmation
     const confirmationBox = document.getElementById("confirmation");
     confirmationBox.style.display = "block";
 
-    // Reset form after a slight delay
     setTimeout(() => {
       form.reset();
       confirmationBox.style.display = "none";
     }, 2000);
 
-    // Redirect instantly (works on mobile)
     if (platform === "whatsapp") {
       window.location.href = https://wa.me/233505858712?text=${encodeURIComponent(message)};
     } else if (platform === "telegram") {
@@ -192,6 +189,7 @@ our end.</p></div>
     }
   }
 </script>
+  <footer> 
  rights reserved.</footer>
 
   <script>
