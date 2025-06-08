@@ -86,32 +86,6 @@
       color: #e6c67a;
     }
 
-    .pricing {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-    }
-
-    .price-card {
-      background: rgba(255, 255, 255, 0.05);
-      padding: 20px;
-      border-radius: 12px;
-      width: 260px;
-      text-align: left;
-    }
-
-    .price-card h3 {
-      margin-top: 0;
-      color: #fff;
-    }
-
-    .price {
-      font-size: 1.6em;
-      color: #e6c67a;
-      margin: 10px 0;
-    }
-
     .faq {
       margin-bottom: 15px;
       text-align: left;
@@ -177,15 +151,6 @@
         width: 130px;
       }
 
-      .pricing {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .price-card {
-        width: 90%;
-      }
-
       .section {
         padding: 15px;
       }
@@ -196,276 +161,214 @@
 
   <img src="logo.jpg" alt="YenkoVerify Logo" class="logo" />
   <h1>YenkoVerify</h1>
- <p class="intro">
-  Akwaaba! Get a lifetime global eSIM with refillable data, bundled with a verified U.S., Canada, or UK phone number that works with WhatsApp, SMS, and calls. Plans start from 3 months to 1 year. Full setup done for you.
-</p>
+  <p class="intro">
+    Akwaaba! We deliver lifetime global eSIMs with refillable data, bundled with verified USA, Canada, or UK virtual numbers. These numbers support SMS, calls, and may work with apps like WhatsApp or Telegram. No contracts. Full setup done for you.
+  </p>
+
   <div>
-    <a href="https://wa.me/233505858712" class="btn">Buy Now</a>
+    <a href="https://wa.me/233505858712?text=Hi%2C+I%27m+interested+in+your+eSIM+bundle+plans." class="btn">Buy Now</a>
     <a href="https://t.me/@An00_q" class="btn">Chat on Telegram</a>
   </div>
 
   <section class="section">
     <h2>How It Works</h2>
     <ul>
-      <li>1. Hit on Buy Now to place an order or chat our Telegram</li>
-      <li>2. Choose any of our bundle options</li>
-      <li>3. Make secure payment</li>
-      <li>4. Receive your lifetime eSIM QR code plus verified 🇺🇸 🇨🇦 🇬🇧 number setup guide</li>
-      <li>5. Scan & activate instantly</li>
-      <li>6. For data refills scroll down to the button and submit the form</li>
+      <li>1. Click "Buy Now" or "Chat on Telegram"</li>
+      <li>2. Choose your bundle (USA / UK / Canada)</li>
+      <li>3. Make payment via mobile money or card</li>
+      <li>4. Receive your eSIM + phone number + setup guide</li>
+      <li>5. Scan your eSIM QR and start using it</li>
+      <li>6. Data refills and number renewals available anytime</li>
     </ul>
   </section>
 
-<section class="section">
-  <h2>Bundle Options & Pricing </h2>
- <small>*Prices may change if USD rate shifts.</small>
-  <div class="pricing">
-    <!-- Starter Lite -->
-    <div class="price-card">
-      <h3>🟢 Starter Lite – GHS 499</h3>
-      <p><strong>🇺🇸 🇨🇦 🇬🇧 3-Month Number + eSIM</strong></p>
-      <ul>
-        <li>✅ Lifetime eSIM</li>
-        <li>✅ 90-day Number (U.S./Canada/UK)</li>
-        <li>✅ 100MB Starter Data</li>
-        <li>✅ Full Setup Included</li>
-        <li>✅ Works with WhatsApp, SMS, Calls</li>
-        <li>🌀 Can be renewed or upgraded anytime</li>
-      </ul>
+  <section class="section">
+    <h2>Bundle Options</h2>
+    <div class="pricing">
+      <div class="price-card">
+        <h3>🇺🇸 Starter Lite</h3>
+        <p>90-day U.S./Canada number<br>+ 100MB Data</p>
+        <div class="price">GHS 499</div>
+        <small>Can be renewed or upgraded anytime</small>
+      </div>
+
+      <div class="price-card">
+        <h3>🇺🇸 Starter Full</h3>
+        <p>1-Year U.S./Canada number<br>+ 1GB Data</p>
+        <div class="price">GHS 899</div>
+        <small>Includes full setup & 12-month number support</small>
+      </div>
+
+      <div class="price-card">
+        <h3>🇬🇧 UK Bundle</h3>
+        <p>1-Year UK number<br>+ 1GB Data</p>
+        <div class="price">GHS 1,050</div>
+        <small>UK numbers cost more due to network licensing</small>
+      </div>
+    </div>
+    <p style="margin-top: 15px; font-size: 0.95em; color: #ccc;">
+      📌 Prices may adjust if the USD exchange rate changes. All bundles include eSIM activation, phone number, and user setup guide.
+    </p>
+  </section>
+
+  <section class="section">
+    <h2>FAQs - Common Questions</h2>
+
+    <div class="faq">
+      <button class="faq-toggle"><span class="icon">+</span> Will my number work with WhatsApp or SMS apps?</button>
+      <div class="faq-content">
+        <p>Your number supports SMS and calls via the Hushed app. While many customers use them with WhatsApp, we don't guarantee third-party compatibility — as these apps may change their policies at any time.</p>
+      </div>
     </div>
 
-    <!-- Starter Full -->
-    <div class="price-card">
-      <h3>🟡 Starter Full – GHS 899</h3>
-      <p><strong>🇺🇸 🇨🇦 1-Year Number + eSIM</strong></p>
-      <ul>
-        <li>✅ Lifetime eSIM</li>
-        <li>✅ 1-Year U.S/Canada Number (Hushed)</li>
-        <li>✅ 1GB Starter Data</li>
-        <li>✅ Instant Activation</li>
-        <li>✅ Full Setup Included</li>
-        <li>✅ Works with WhatsApp, Telegram, SMS etc</li>
-      </ul>
+    <div class="faq">
+      <button class="faq-toggle"><span class="icon">+</span> How long does the number last?</button>
+      <div class="faq-content">
+        <p>Starter Lite includes a 90-day number (renewable or upgradable). Full plans offer 1-year numbers. We’ll remind you when it's time to renew.</p>
+      </div>
     </div>
 
-    <!-- UK Bundle -->
-    <div class="price-card">
-      <h3>🔴 UK Bundle – GHS 1,050</h3>
-      <p><strong>🇬🇧 1-Year Number + eSIM</strong></p>
-      <ul>
-        <li>✅ Lifetime eSIM</li>
-        <li>✅ 1-Year UK Number (Hushed)</li>
-        <li>✅ 1GB Starter Data</li>
-        <li>✅ Instant Activation</li>
-        <li>✅ Full Setup Included</li>
-        <li>✅ WhatsApp, SMS & Calls Ready etc</li>
-      </ul>
-      <small>*UK numbers cost more to provide, so we’ve adjusted pricing accordingly.</small>
-    </div>
-  </div>
-</section>
-
- <section class="section" id="testimonials">
-  <h2>What Our Customers Say</h2>
-  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 20px;">
-    
-    <div style="background-color: #222; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px #111;">
-      <p>"Got my U.S. number and eSIM set up in under 30 minutes. Used it for WhatsApp and Airbnb signups with no issues!"</p>
-      <strong>- Elorm T., Digital Freelancer</strong>
+    <div class="faq">
+      <button class="faq-toggle"><span class="icon">+</span> Can I upgrade later?</button>
+      <div class="faq-content">
+        <p>Yes! You can upgrade from Lite to Full, or extend your number anytime. We make renewals simple.</p>
+      </div>
     </div>
 
-    <div style="background-color: #222; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px #111;">
-      <p>"I chose the UK bundle. It activated fast and now I can verify WhatsApp and make calls even while in Ghana. Impressive!"</p>
-      <strong>- Adjoa B., Remote Designer</strong>
+    <div class="faq">
+      <button class="faq-toggle"><span class="icon">+</span> Will it work in Ghana?</button>
+      <div class="faq-content">
+        <p>Yes. Our eSIM connects to local Ghana networks using international roaming. You’ll stay connected across 100+ supported countries.</p>
+      </div>
     </div>
 
-    <div style="background-color: #222; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px #111;">
-      <p>"The Lite plan was just what I needed. Cheap, quick, and perfect for WhatsApp use. Will upgrade later!"</p>
-      <strong>- Nana Kojo, Student</strong>
+    <div class="faq">
+      <button class="faq-toggle"><span class="icon">+</span> Do I need credit for the number?</button>
+      <div class="faq-content">
+        <p>No. Incoming SMS and calls are active during the plan period. To make outbound calls or send SMS, you can add credit inside the Hushed app.</p>
+      </div>
     </div>
 
-    <div style="background-color: #222; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px #111;">
-      <p>"Using my eSIM with a U.S. number while traveling in Dubai and Ghana. Smooth experience and great support from the team."</p>
-      <strong>- Sandra M., Business Consultant</strong>
+    <div class="faq">
+      <button class="faq-toggle"><span class="icon">+</span> What happens when I run out of data?</button>
+      <div class="faq-content">
+        <p>Your number stays active, but you’ll need to top up your eSIM to use internet-based services like WhatsApp or email.</p>
+      </div>
     </div>
 
-    <div style="background-color: #222; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px #111;">
-      <p>"No MTN stress. I use this for WhatsApp and work calls daily. Fast setup and refills are simple too."</p>
-      <strong>- Jeff A., Content Creator</strong>
-    </div>
-  </div>
-</section>
-
- <section class="section">
-  <h2>FAQs – Common Questions</h2>
-
-  <div class="faq">
-    <button class="faq-toggle"><span class="icon">+</span> What’s included in each bundle?</button>
-    <div class="faq-content">
-      <p>
-        Every bundle includes a lifetime eSIM (no expiry) with global roaming, plus a U.S., UK, or Canada number from Hushed. <br><br>
-        - Starter Lite (GHS 499): 90-day number + 100MB data<br>
-        - Starter Full (GHS 899): 1-year U.S./Canada number + 1GB data<br>
-        - UK Bundle (GHS 1,050): 1-year UK number + 1GB data<br><br>
-        All plans include full setup and WhatsApp-ready numbers. Prices may change if USD rate shifts.
-      </p>
-    </div>
-  </div>
-
-  <div class="faq">
-    <button class="faq-toggle"><span class="icon">+</span> Will the number work with WhatsApp and SMS?</button>
-    <div class="faq-content">
-      <p>Yes. All numbers work with WhatsApp, SMS codes, and calls. We help you complete setup so you can use the number immediately on your favorite apps.</p>
-    </div>
-  </div>
-
-  <div class="faq">
-    <button class="faq-toggle"><span class="icon">+</span> How long does the number last?</button>
-    <div class="faq-content">
-      <p>Starter Lite includes a 90-day number (renewable or upgradable anytime). Starter Full and UK Bundle include a 1-year number. We'll remind you when it's time to renew through us.</p>
-    </div>
-  </div>
-
-  <div class="faq">
-    <button class="faq-toggle"><span class="icon">+</span> Can I renew or upgrade my number later?</button>
-    <div class="faq-content">
-      <p>Yes. You can renew your number at the end of your plan, or upgrade from Lite to Full at any time. We make it seamless to continue using the same number. Prices may change if USD rate shifts.</p>
-    </div>
-  </div>
-
-  <div class="faq">
-    <button class="faq-toggle"><span class="icon">+</span> Does this work in Ghana?</button>
-    <div class="faq-content">
-      <p>Yes! Our eSIMs connect to local Ghana networks via global roaming. You can use your data and number anywhere in Ghana and in 100+ supported countries.</p>
-    </div>
-  </div>
-
-  <div class="faq">
-    <button class="faq-toggle"><span class="icon">+</span> Do I need credit to use the number?</button>
-    <div class="faq-content">
-      <p>No. Incoming SMS, WhatsApp codes, and calls are covered during the plan. If you want to make outgoing calls or texts, credit can be added later inside the Hushed app.</p>
-    </div>
-  </div>
-
-  <div class="faq">
-    <button class="faq-toggle"><span class="icon">+</span> What happens if I run out of data?</button>
-    <div class="faq-content">
-      <p>Your number remains active, but you’ll need to top up your eSIM data to continue using WhatsApp or other internet-based apps. Refills are available anytime.</p>
-    </div>
-  </div>
-
-  <div class="faq">
-    <button class="faq-toggle"><span class="icon">+</span> Can I buy the eSIM without data?</button>
-    <div class="faq-content">
-      <p>No. Every bundle includes starter data (100MB or 1GB) so you can activate and use it instantly. Refills are sold separately.</p>
-    </div>
-  </div>
-
-  <div class="faq">
-    <button class="faq-toggle"><span class="icon">+</span> What devices support eSIM?</button>
-    <div class="faq-content">
-      <p>Most modern phones support eSIM: iPhones XS and newer, Google Pixel, Samsung Galaxy S20/S21 and newer, and many more. Please confirm your device supports eSIM before purchase.</p>
-    </div>
-  </div>
-
-  <div class="faq">
-    <button class="faq-toggle"><span class="icon">+</span> Do I need a Ghana card or ID to buy?</button>
-    <div class="faq-content">
-      <p>No ID or Ghana Card is required. We provide pre-registered numbers with verified providers, ready to use worldwide.</p>
-    </div>
-  </div>
-
-  <div class="faq">
-    <button class="faq-toggle"><span class="icon">+</span> Is this service legal?</button>
-    <div class="faq-content">
-      <p>Yes. We work with verified global telecom providers to deliver this service. It’s like buying any eSIM or app-based number, secure and 100% legit.</p>
-    </div>
-  </div>
-</section>
-<section class="section">
-  <h2>Refill Order Form</h2>
-  <small style="display:block; margin-bottom: 15px; color: #ccc;">
-    *Note: All refill prices are based on current USD exchange rates. Prices may adjust slightly when the dollar changes.
-  </small>
-
-  <div id="refillForm" style="max-width: 500px; margin: auto; text-align: left;">
-    <label for="name">Full Name:</label><br />
-    <input type="text" id="name" required style="width:100%; padding:10px; margin-bottom:15px;"><br />
-
-    <label for="whatsapp">WhatsApp Number:</label><br />
-    <input type="tel" id="whatsapp" required style="width:100%; padding:10px; margin-bottom:15px;"><br />
-
-    <label for="esim">eSIM ICCID Number (if known):</label><br />
-    <input type="text" id="esim" style="width:100%; padding:10px; margin-bottom:15px;"><br />
-
-    <label for="package">Select Refill Package:</label><br />
-    <select id="package" required style="width:100%; padding:10px; margin-bottom:15px;">
-      <option value="">-- Choose a package --</option>
-      <option disabled>--- Short-Term (Expires) ---</option>
-      <option value="1GB – GHS 30 (7 days)">1GB – GHS 30 (7 days)</option>
-      <option value="3GB – GHS 65 (30 days)">3GB – GHS 65 (30 days)</option>
-      <option value="5GB – GHS 100 (30 days)">5GB – GHS 100 (30 days)</option>
-      <option disabled>--- Lifetime (No Expiry) ---</option>
-      <option value="100MB – GHS 25">100MB – GHS 25</option>
-      <option value="1GB – GHS 100">1GB – GHS 100</option>
-      <option value="3GB – GHS 250">3GB – GHS 250</option>
-      <option value="5GB – GHS 380">5GB – GHS 380</option>
-      <option value="10GB – GHS 700">10GB – GHS 700</option>
-      <option value="25GB – GHS 1,450">25GB – GHS 1,450</option>
-      <option value="50GB – GHS 1,800">50GB – GHS 1,800</option>
-    </select><br />
-
-    <div style="text-align:center; margin-top: 20px;">
-      <button onclick="submitOrder('whatsapp')" class="btn whatsapp">Submit via WhatsApp</button>
-      <button onclick="submitOrder('telegram')" class="btn telegram">Submit via Telegram</button>
+    <div class="faq">
+      <button class="faq-toggle"><span class="icon">+</span> Can I buy the eSIM without data?</button>
+      <div class="faq-content">
+        <p>No. Every plan comes with starter data (100MB or 1GB). Refills can be ordered anytime later.</p>
+      </div>
     </div>
 
-    <div id="confirmation" style="margin-top:20px; padding:15px; background:#e7ffe7; border:1px solid #3c763d; color:#3c763d; border-radius:6px; display:none; text-align:center;">
-      ✅ Order sent. Continue in app.
+    <div class="faq">
+      <button class="faq-toggle"><span class="icon">+</span> What devices support eSIM?</button>
+      <div class="faq-content">
+        <p>Most iPhones from XS and newer, Google Pixel, Samsung Galaxy S20/S21 and newer. Please check your phone supports eSIM before ordering.</p>
+      </div>
     </div>
-  </div>
-</section>
 
-<script>
-  function submitOrder(platform) {
-    const name = document.getElementById("name").value.trim();
-    const number = document.getElementById("whatsapp").value.trim();
-    const esim = document.getElementById("esim").value.trim();
-    const selectedPackage = document.getElementById("package").value;
+    <div class="faq">
+      <button class="faq-toggle"><span class="icon">+</span> Do I need a Ghana ID?</button>
+      <div class="faq-content">
+        <p>No. You don’t need any local ID. We provide pre-registered numbers from verified providers.</p>
+      </div>
+    </div>
 
-    if (!name  !number  !selectedPackage) {
-      alert("Please fill all required fields.");
-      return;
-    }
+    <div class="faq">
+      <button class="faq-toggle"><span class="icon">+</span> Is this service legal?</button>
+      <div class="faq-content">
+        <p>Yes. This service is powered by KeepGo and Hushed — trusted global telecom platforms. It’s just like purchasing an eSIM or app-based number online.</p>
+      </div>
+    </div>
+  </section>
 
-    const message = Hello, I just submitted a refill order:\n\n🧍 Name: ${name}\n📞 WhatsApp: ${number}\n💳 eSIM ICCID: ${esim || 'N/A'}\n📦 Package: ${selectedPackage};
+  <section class="section">
+    <h2>Refill Order Form</h2>
+    <small style="display:block; margin-bottom: 15px; color: #ccc;">
+      *Note: All refill prices are based on current USD exchange rates. Prices may adjust slightly when the dollar changes.
+    </small>
 
-    document.getElementById("confirmation").style.display = "block";
+    <div id="refillForm" style="max-width: 500px; margin: auto; text-align: left;">
+      <label for="name">Full Name:</label><br />
+      <input type="text" id="name" required><br />
 
-    setTimeout(() => {
-      document.getElementById("confirmation").style.display = "none";
-    }, 3000);
+      <label for="whatsapp">WhatsApp Number:</label><br />
+      <input type="tel" id="whatsapp" required><br />
 
-    if (platform === "whatsapp") {
-      window.open(`https://wa.me/233505858712?text=${encodeURIComponent(message)}`, '_blank');
-    } else if (platform === "telegram") {
-      window.open("https://t.me/an00_q", '_blank');
-    }
-  }
-</script>
+      <label for="esim">eSIM ICCID Number (if known):</label><br />
+      <input type="text" id="esim"><br />
+
+      <label for="package">Select Refill Package:</label><br />
+      <select id="package" required>
+        <option value="">-- Choose a package --</option>
+        <option disabled>--- Short-Term (Expires) ---</option>
+        <option value="1GB – GHS 30 (7 days)">1GB – GHS 30 (7 days)</option>
+        <option value="3GB – GHS 65 (30 days)">3GB – GHS 65 (30 days)</option>
+        <option value="5GB – GHS 100 (30 days)">5GB – GHS 100 (30 days)</option>
+        <option disabled>--- Lifetime (No Expiry) ---</option>
+        <option value="100MB – GHS 25">100MB – GHS 25</option>
+        <option value="1GB – GHS 100">1GB – GHS 100</option>
+        <option value="3GB – GHS 250">3GB – GHS 250</option>
+        <option value="5GB – GHS 380">5GB – GHS 380</option>
+        <option value="10GB – GHS 700">10GB – GHS 700</option>
+        <option value="25GB – GHS 1,450">25GB – GHS 1,450</option>
+        <option value="50GB – GHS 1,800">50GB – GHS 1,800</option>
+      </select><br />
+
+      <div style="text-align:center; margin-top: 20px;">
+        <button onclick="submitOrder('whatsapp')" class="btn whatsapp">Submit via WhatsApp</button>
+        <button onclick="submitOrder('telegram')" class="btn telegram">Submit via Telegram</button>
+      </div>
+
+      <div id="confirmation" style="margin-top:20px; padding:15px; background:#e7ffe7; border:1px solid #3c763d; color:#3c763d; border-radius:6px; display:none; text-align:center;">
+        ✅ Order sent. Continue in app.
+      </div>
+    </div>
+  </section>
+
   <script>
-    // Toggle FAQ logic
-    document.querySelectorAll('.faq-toggle').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const parent = btn.parentElement;
-        parent.classList.toggle('open');
-        btn.querySelector('.icon').textContent = parent.classList.contains('open') ? '−' : '+';
+    function submitOrder(platform) {
+      const name = document.getElementById("name").value.trim();
+      const number = document.getElementById("whatsapp").value.trim();
+      const esim = document.getElementById("esim").value.trim();
+      const selectedPackage = document.getElementById("package").value;
+
+      if (!name  !number  !selectedPackage) {
+        alert("Please fill all required fields.");
+        return;
+      }
+
+      const message = Hello, I just submitted a refill order:\n\n🧍 Name: ${name}\n📞 WhatsApp: ${number}\n💳 eSIM ICCID: ${esim || 'N/A'}\n📦 Package: ${selectedPackage};
+
+      document.getElementById("confirmation").style.display = "block";
+
+      setTimeout(() => {
+        document.getElementById("confirmation").style.display = "none";
+      }, 3000);
+
+      if (platform === "whatsapp") {
+        window.open(`https://wa.me/233505858712?text=${encodeURIComponent(message)}`, '_blank');
+      } else if (platform === "telegram") {
+        window.open("https://t.me/an00_q", '_blank');
+      }
+    }
+
+    // Toggle FAQ
+    document.querySelectorAll('.faq-toggle').forEach(button => {
+      button.addEventListener('click', () => {
+        const faq = button.parentElement;
+        faq.classList.toggle('open');
+        const icon = button.querySelector('.icon');
+        icon.textContent = faq.classList.contains('open') ? '−' : '+';
       });
     });
   </script>
 
-   <footer>
-    &copy; 2025 YenkoVerify. Powered by The Word // Asem Technologies All rights reserved.
+  <footer>
+    &copy; 2025 YenkoVerify. Powered by The Word // Asem Technologies. All rights reserved.
   </footer>
 </body>
 </html>
