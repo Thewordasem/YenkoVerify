@@ -285,53 +285,79 @@
     </div>
   </section>
 
-  <section class="section">
-    <h2>Refill Order Form</h2>
-    <small style="display:block; margin-bottom: 15px; color: #ccc;">
-      *Note: All refill prices are based on current USD exchange rates. Prices may adjust slightly when the dollar changes.
-    </small>
+ <section class="section">
+  <h2>Refill Order Form</h2>
+  <small style="display:block; margin-bottom: 15px; color: #ccc;">
+    *Note: All refill prices are based on current USD exchange rates. Prices may adjust slightly when the dollar changes.
+  </small>
 
-    <div id="refillForm" style="max-width: 500px; margin: auto; text-align: left;">
-      <label for="name">Full Name:</label><br />
-      <input type="text" id="name" required><br />
+  <form id="refillForm" style="max-width: 500px; margin: auto; text-align: left;" onsubmit="return false;">
+    <label for="name">Full Name:</label><br />
+    <input type="text" id="name" required><br />
 
-      <label for="whatsapp">WhatsApp Number:</label><br />
-      <input type="tel" id="whatsapp" required><br />
+    <label for="whatsapp">WhatsApp Number:</label><br />
+    <input type="tel" id="whatsapp" required><br />
 
-      <label for="esim">eSIM ICCID Number (if known):</label><br />
-      <input type="text" id="esim"><br />
+    <label for="esim">eSIM ICCID Number (if known):</label><br />
+    <input type="text" id="esim"><br />
 
-      <label for="package">Select Refill Package:</label><br />
-      <select id="package" required>
-        <option value="">-- Choose a package --</option>
-        <option disabled>--- Short-Term (Expires) ---</option>
-        <option value="1GB – GHS 30 (7 days)">1GB – GHS 30 (7 days)</option>
-        <option value="3GB – GHS 65 (30 days)">3GB – GHS 65 (30 days)</option>
-        <option value="5GB – GHS 100 (30 days)">5GB – GHS 100 (30 days)</option>
-        <option disabled>--- Lifetime (No Expiry) ---</option>
-        <option value="100MB – GHS 25">100MB – GHS 25</option>
-        <option value="1GB – GHS 100">1GB – GHS 100</option>
-        <option value="3GB – GHS 250">3GB – GHS 250</option>
-        <option value="5GB – GHS 380">5GB – GHS 380</option>
-        <option value="10GB – GHS 700">10GB – GHS 700</option>
-        <option value="25GB – GHS 1,450">25GB – GHS 1,450</option>
-        <option value="50GB – GHS 1,800">50GB – GHS 1,800</option>
-      </select><br />
+    <label for="package">Select Refill Package:</label><br />
+    <select id="package" required>
+      <option value="">-- Choose a package --</option>
+      <option disabled>--- Short-Term (Expires) ---</option>
+      <option value="1GB – GHS 30 (7 days)">1GB – GHS 30 (7 days)</option>
+      <option value="3GB – GHS 65 (30 days)">3GB – GHS 65 (30 days)</option>
+      <option value="5GB – GHS 100 (30 days)">5GB – GHS 100 (30 days)</option>
+      <option disabled>--- Lifetime (No Expiry) ---</option>
+      <option value="100MB – GHS 25">100MB – GHS 25</option>
+      <option value="1GB – GHS 100">1GB – GHS 100</option>
+      <option value="3GB – GHS 250">3GB – GHS 250</option>
+      <option value="5GB – GHS 380">5GB – GHS 380</option>
+      <option value="10GB – GHS 700">10GB – GHS 700</option>
+      <option value="25GB – GHS 1,450">25GB – GHS 1,450</option>
+      <option value="50GB – GHS 1,800">50GB – GHS 1,800</option>
+    </select><br />
 
-      <div style="text-align:center; margin-top: 20px;">
-        <button onclick="submitOrder('whatsapp')" class="btn whatsapp">Submit via WhatsApp</button>
-        <button onclick="submitOrder('telegram')" class="btn telegram">Submit via Telegram</button>
-      </div>
-
-      <div id="confirmation" style="margin-top:20px; padding:15px; background:#e7ffe7; border:1px solid #3c763d; color:#3c763d; border-radius:6px; display:none; text-align:center;">
-        ✅ Order sent. Continue in app.
-      </div>
+    <div style="text-align:center; margin-top: 20px;">
+      <button type="button" onclick="submitOrder('whatsapp')" class="btn whatsapp">Submit via WhatsApp</button>
+      <button type="button" onclick="submitOrder('telegram')" class="btn telegram">Submit via Telegram</button>
     </div>
-  </section>
+
+    <div id="confirmation" style="margin-top:20px; padding:15px; background:#e7ffe7; border:1px solid #3c763d; color:#3c763d; border-radius:6px; display:none; text-align:center;">
+      ✅ Order sent. Continue in app.
+    </div>
+  </form>
+</section>
 
 <script>
-  window.onload = function () {
-    // FAQ toggle
+  function submitOrder(platform) {
+    const name = document.getElementById("name").value.trim();
+    const number = document.getElementById("whatsapp").value.trim();
+    const esim = document.getElementById("esim").value.trim();
+    const selectedPackage = document.getElementById("package").value;
+
+    if (!name  !number  !selectedPackage) {
+      alert("Please fill all required fields.");
+      return;
+    }
+
+    const message = Hello, I just submitted a refill order:\n\n🧍 Name: ${name}\n📞 WhatsApp: ${number}\n💳 eSIM ICCID: ${esim || 'N/A'}\n📦 Package: ${selectedPackage};
+
+    document.getElementById("confirmation").style.display = "block";
+
+    setTimeout(() => {
+      document.getElementById("confirmation").style.display = "none";
+    }, 3000);
+
+    if (platform === "whatsapp") {
+      window.open(`https://wa.me/233505858712?text=${encodeURIComponent(message)}`, '_blank');
+    } else if (platform === "telegram") {
+      window.open("https://t.me/an00_q", '_blank');
+    }
+  }
+
+  // Fix FAQ toggle
+  window.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll('.faq-toggle').forEach(button => {
       button.addEventListener('click', () => {
         const faq = button.parentElement;
@@ -340,37 +366,7 @@
         icon.textContent = faq.classList.contains('open') ? '−' : '+';
       });
     });
-
-    // Refill submission
-    document.getElementById("refillForm").addEventListener("submit", function (e) {
-      e.preventDefault();
-
-      const name = document.getElementById("name").value.trim();
-      const number = document.getElementById("whatsapp").value.trim();
-      const esim = document.getElementById("esim").value.trim();
-      const selectedPackage = document.getElementById("package").value;
-
-      if (!name  !number  !selectedPackage) {
-        alert("Please fill all required fields.");
-        return;
-      }
-
-      const message = Hello, I just submitted a refill order:\n\n🧍 Name: ${name}\n📞 WhatsApp: ${number}\n💳 eSIM ICCID: ${esim || 'N/A'}\n📦 Package: ${selectedPackage};
-
-      document.getElementById("confirmation").style.display = "block";
-
-      setTimeout(() => {
-        document.getElementById("confirmation").style.display = "none";
-      }, 3000);
-
-      const platform = e.submitter.dataset.platform;
-      if (platform === "whatsapp") {
-        window.open(`https://wa.me/233505858712?text=${encodeURIComponent(message)}`, '_blank');
-      } else if (platform === "telegram") {
-        window.open("https://t.me/an00_q", '_blank');
-      }
-    });
-  }
+  });
 </script>
   <footer>
     &copy; 2025 YenkoVerify. Powered by The Word // Asem Technologies. All rights reserved.
