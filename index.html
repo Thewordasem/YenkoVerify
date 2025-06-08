@@ -288,10 +288,10 @@
 <section class="section">
   <h2>Refill Order Form</h2>
   <small style="display:block; margin-bottom: 15px; color: #ccc;">
-    *Note: Refill prices adjust with dollar rates.
+    *Note: Prices may adjust slightly based on dollar rate.
   </small>
 
-  <form id="refillForm" style="max-width: 500px; margin: auto; text-align: left;">
+  <form id="refillForm" style="max-width: 500px; margin: auto; text-align: left;" onsubmit="return false;">
     <label for="name">Full Name:</label><br />
     <input type="text" id="name" required><br />
 
@@ -319,8 +319,8 @@
     </select><br />
 
     <div style="text-align:center; margin-top: 20px;">
-      <button type="button" class="btn whatsapp" onclick="submitOrder('whatsapp')">Submit via WhatsApp</button>
-      <button type="button" class="btn telegram" onclick="submitOrder('telegram')">Submit via Telegram</button>
+      <button type="button" class="btn whatsapp" id="whatsappBtn">Submit via WhatsApp</button>
+      <button type="button" class="btn telegram" id="telegramBtn">Submit via Telegram</button>
     </div>
 
     <div id="confirmation" style="margin-top:20px; padding:15px; background:#e7ffe7; border:1px solid #3c763d; color:#3c763d; border-radius:6px; display:none; text-align:center;">
@@ -330,7 +330,7 @@
 </section>
 
 <script>
-  function submitOrder(platform) {
+  function generateMessage() {
     const name = document.getElementById("name").value.trim();
     const number = document.getElementById("whatsapp").value.trim();
     const esim = document.getElementById("esim").value.trim();
@@ -338,35 +338,26 @@
 
     if (!name  !number  !selectedPackage) {
       alert("Please fill all required fields.");
-      return;
+      return null;
     }
 
-    const message = Hello, I just submitted a refill order:\n\n🧍 Name: ${name}\n📞 WhatsApp: ${number}\n💳 eSIM ICCID: ${esim || 'N/A'}\n📦 Package: ${selectedPackage};
-
-    // Show confirmation
-    document.getElementById("confirmation").style.display = "block";
-
-    setTimeout(() => {
-      document.getElementById("confirmation").style.display = "none";
-    }, 3000);
-
-    if (platform === "whatsapp") {
-      window.open(`https://wa.me/233505858712?text=${encodeURIComponent(message)}`, "_blank");
-    } else if (platform === "telegram") {
-      window.open(`https://t.me/an00_q`, "_blank");
-    }
+    return Hello, I just submitted a refill order:\n\n🧍 Name: ${name}\n📞 WhatsApp: ${number}\n💳 eSIM ICCID: ${esim || 'N/A'}\n📦 Package: ${selectedPackage};
   }
 
-  // FAQ toggle fix
-  document.addEventListener("DOMContentLoaded", () => {
-    document.querySelectorAll('.faq-toggle').forEach(button => {
-      button.addEventListener('click', () => {
-        const faq = button.parentElement;
-        faq.classList.toggle('open');
-        const icon = button.querySelector('.icon');
-        icon.textContent = faq.classList.contains('open') ? '−' : '+';
-      });
-    });
+  document.getElementById("whatsappBtn").addEventListener("click", () => {
+    const msg = generateMessage();
+    if (msg) {
+      document.getElementById("confirmation").style.display = "block";
+      window.open(`https://wa.me/233505858712?text=${encodeURIComponent(msg)}`, '_blank');
+    }
+  });
+
+  document.getElementById("telegramBtn").addEventListener("click", () => {
+    const msg = generateMessage();
+    if (msg) {
+      document.getElementById("confirmation").style.display = "block";
+      window.open(`https://t.me/an00_q`, '_blank');
+    }
   });
 </script>
   <footer>
