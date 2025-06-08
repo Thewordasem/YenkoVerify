@@ -330,35 +330,55 @@
 </section>
 
 <script>
-  function generateMessage() {
-    const name = document.getElementById("name").value.trim();
-    const number = document.getElementById("whatsapp").value.trim();
-    const esim = document.getElementById("esim").value.trim();
-    const selectedPackage = document.getElementById("package").value;
+// FAQ toggle logic
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll('.faq-toggle').forEach(button => {
+    button.addEventListener('click', () => {
+      const parent = button.parentElement;
+      parent.classList.toggle('open');
+      const icon = button.querySelector('.icon');
+      icon.textContent = parent.classList.contains('open') ? '−' : '+';
+    });
+  });
+});
 
-    if (!name  !number  !selectedPackage) {
-      alert("Please fill all required fields.");
-      return null;
-    }
+// WhatsApp/Telegram refill form logic
+function getRefillMessage() {
+  const name = document.getElementById("name").value.trim();
+  const number = document.getElementById("whatsapp").value.trim();
+  const esim = document.getElementById("esim").value.trim();
+  const pkg = document.getElementById("package").value;
 
-    return Hello, I just submitted a refill order:\n\n🧍 Name: ${name}\n📞 WhatsApp: ${number}\n💳 eSIM ICCID: ${esim || 'N/A'}\n📦 Package: ${selectedPackage};
+  if (!name  !number  !pkg) {
+    alert("Please fill in all required fields.");
+    return null;
   }
 
-  document.getElementById("whatsappBtn").addEventListener("click", () => {
-    const msg = generateMessage();
-    if (msg) {
-      document.getElementById("confirmation").style.display = "block";
-      window.open(`https://wa.me/233505858712?text=${encodeURIComponent(msg)}`, '_blank');
-    }
-  });
+  return Hello, I just submitted a refill order:\n\n🧍 Name: ${name}\n📞 WhatsApp: ${number}\n💳 eSIM ICCID: ${esim || 'N/A'}\n📦 Package: ${pkg};
+}
 
-  document.getElementById("telegramBtn").addEventListener("click", () => {
-    const msg = generateMessage();
-    if (msg) {
-      document.getElementById("confirmation").style.display = "block";
-      window.open(`https://t.me/an00_q`, '_blank');
-    }
-  });
+document.addEventListener("DOMContentLoaded", () => {
+  const whatsappBtn = document.getElementById("whatsappBtn");
+  const telegramBtn = document.getElementById("telegramBtn");
+
+  if (whatsappBtn) {
+    whatsappBtn.addEventListener("click", () => {
+      const msg = getRefillMessage();
+      if (msg) {
+        window.open(`https://wa.me/233505858712?text=${encodeURIComponent(msg)}`, "_blank");
+      }
+    });
+  }
+
+  if (telegramBtn) {
+    telegramBtn.addEventListener("click", () => {
+      const msg = getRefillMessage();
+      if (msg) {
+        window.open("https://t.me/an00_q", "_blank");
+      }
+    });
+  }
+});
 </script>
   <footer>
     &copy; 2025 YenkoVerify. Powered by The Word // Asem Technologies. All rights reserved.
