@@ -86,16 +86,16 @@
 
 <h2>Refill Order Form</h2>
 <form id="refillForm">
-  <label>Full Name:</label>
+  <label for="name">Full Name:</label>
   <input type="text" id="name" required />
 
-  <label>WhatsApp Number:</label>
+  <label for="whatsapp">WhatsApp Number:</label>
   <input type="tel" id="whatsapp" required />
 
-  <label>eSIM ICCID:</label>
+  <label for="esim">eSIM ICCID:</label>
   <input type="text" id="esim" />
 
-  <label>Select Package:</label>
+  <label for="package">Select Package:</label>
   <select id="package" required>
     <option value="">-- Choose Package --</option>
     <option value="1GB – GHS 30 (7 days)">1GB – GHS 30 (7 days)</option>
@@ -111,14 +111,14 @@
   // FAQ toggle
   document.querySelectorAll('.faq-toggle').forEach(button => {
     button.addEventListener('click', () => {
-      const parent = button.parentElement;
+      const parent = button.closest('.faq');
       parent.classList.toggle('open');
       const icon = button.querySelector('.icon');
       icon.textContent = parent.classList.contains('open') ? '−' : '+';
     });
   });
 
-  // Refill logic
+  // Refill form submission
   document.getElementById("whatsappBtn").addEventListener("click", () => {
     const name = document.getElementById("name").value.trim();
     const number = document.getElementById("whatsapp").value.trim();
@@ -138,7 +138,8 @@
       document.getElementById("confirmation").style.display = "none";
     }, 5000);
 
-    window.open(`https://wa.me/233505858712?text=${encodeURIComponent(msg)}`, '_blank');
+    const waUrl = https://wa.me/233505858712?text=${encodeURIComponent(msg)};
+    window.open(waUrl, '_blank');
   });
 </script>
 
