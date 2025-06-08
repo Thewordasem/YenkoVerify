@@ -329,8 +329,22 @@
     </div>
   </section>
 
-  <script>
-    function submitOrder(platform) {
+<script>
+  window.onload = function () {
+    // FAQ toggle
+    document.querySelectorAll('.faq-toggle').forEach(button => {
+      button.addEventListener('click', () => {
+        const faq = button.parentElement;
+        faq.classList.toggle('open');
+        const icon = button.querySelector('.icon');
+        icon.textContent = faq.classList.contains('open') ? '−' : '+';
+      });
+    });
+
+    // Refill submission
+    document.getElementById("refillForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+
       const name = document.getElementById("name").value.trim();
       const number = document.getElementById("whatsapp").value.trim();
       const esim = document.getElementById("esim").value.trim();
@@ -349,24 +363,15 @@
         document.getElementById("confirmation").style.display = "none";
       }, 3000);
 
+      const platform = e.submitter.dataset.platform;
       if (platform === "whatsapp") {
         window.open(`https://wa.me/233505858712?text=${encodeURIComponent(message)}`, '_blank');
       } else if (platform === "telegram") {
         window.open("https://t.me/an00_q", '_blank');
       }
-    }
-
-    // Toggle FAQ
-    document.querySelectorAll('.faq-toggle').forEach(button => {
-      button.addEventListener('click', () => {
-        const faq = button.parentElement;
-        faq.classList.toggle('open');
-        const icon = button.querySelector('.icon');
-        icon.textContent = faq.classList.contains('open') ? '−' : '+';
-      });
     });
-  </script>
-
+  }
+</script>
   <footer>
     &copy; 2025 YenkoVerify. Powered by The Word // Asem Technologies. All rights reserved.
   </footer>
