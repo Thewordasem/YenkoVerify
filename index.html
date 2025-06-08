@@ -285,13 +285,13 @@
     </div>
   </section>
 
- <section class="section">
+<section class="section">
   <h2>Refill Order Form</h2>
   <small style="display:block; margin-bottom: 15px; color: #ccc;">
-    *Note: All refill prices are based on current USD exchange rates. Prices may adjust slightly when the dollar changes.
+    *Note: Refill prices adjust with dollar rates.
   </small>
 
-  <form id="refillForm" style="max-width: 500px; margin: auto; text-align: left;" onsubmit="return false;">
+  <form id="refillForm" style="max-width: 500px; margin: auto; text-align: left;">
     <label for="name">Full Name:</label><br />
     <input type="text" id="name" required><br />
 
@@ -319,12 +319,12 @@
     </select><br />
 
     <div style="text-align:center; margin-top: 20px;">
-      <button type="button" onclick="submitOrder('whatsapp')" class="btn whatsapp">Submit via WhatsApp</button>
-      <button type="button" onclick="submitOrder('telegram')" class="btn telegram">Submit via Telegram</button>
+      <button type="button" class="btn whatsapp" onclick="submitOrder('whatsapp')">Submit via WhatsApp</button>
+      <button type="button" class="btn telegram" onclick="submitOrder('telegram')">Submit via Telegram</button>
     </div>
 
     <div id="confirmation" style="margin-top:20px; padding:15px; background:#e7ffe7; border:1px solid #3c763d; color:#3c763d; border-radius:6px; display:none; text-align:center;">
-      ✅ Order sent. Continue in app.
+      ✅ Order message ready. Continue in app.
     </div>
   </form>
 </section>
@@ -343,6 +343,7 @@
 
     const message = Hello, I just submitted a refill order:\n\n🧍 Name: ${name}\n📞 WhatsApp: ${number}\n💳 eSIM ICCID: ${esim || 'N/A'}\n📦 Package: ${selectedPackage};
 
+    // Show confirmation
     document.getElementById("confirmation").style.display = "block";
 
     setTimeout(() => {
@@ -350,14 +351,14 @@
     }, 3000);
 
     if (platform === "whatsapp") {
-      window.open(`https://wa.me/233505858712?text=${encodeURIComponent(message)}`, '_blank');
+      window.open(`https://wa.me/233505858712?text=${encodeURIComponent(message)}`, "_blank");
     } else if (platform === "telegram") {
-      window.open("https://t.me/an00_q", '_blank');
+      window.open(`https://t.me/an00_q`, "_blank");
     }
   }
 
-  // Fix FAQ toggle
-  window.addEventListener("DOMContentLoaded", () => {
+  // FAQ toggle fix
+  document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll('.faq-toggle').forEach(button => {
       button.addEventListener('click', () => {
         const faq = button.parentElement;
