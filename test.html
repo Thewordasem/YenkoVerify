@@ -71,14 +71,14 @@
 <h2>FAQs</h2>
 
 <div class="faq">
-  <button class="faq-toggle"><span class="icon">+</span> Does this number work with WhatsApp?</button>
+  <button type="button" class="faq-toggle"><span class="icon">+</span> Does this number work with WhatsApp?</button>
   <div class="faq-content">
     <p>Numbers may work with third-party apps like WhatsApp, but compatibility is not guaranteed.</p>
   </div>
 </div>
 
 <div class="faq">
-  <button class="faq-toggle"><span class="icon">+</span> Will it work in Ghana?</button>
+  <button type="button" class="faq-toggle"><span class="icon">+</span> Will it work in Ghana?</button>
   <div class="faq-content">
     <p>Yes! Our eSIMs connect to local networks using international roaming.</p>
   </div>
@@ -108,38 +108,43 @@
 <div id="confirmation">✅ Order message ready. Continue in WhatsApp.</div>
 
 <script>
-  // FAQ toggle
-  document.querySelectorAll('.faq-toggle').forEach(button => {
-    button.addEventListener('click', () => {
-      const parent = button.closest('.faq');
-      parent.classList.toggle('open');
-      const icon = button.querySelector('.icon');
-      icon.textContent = parent.classList.contains('open') ? '−' : '+';
+  window.addEventListener('DOMContentLoaded', () => {
+    // FAQ toggle functionality
+    const faqToggles = document.querySelectorAll('.faq-toggle');
+    faqToggles.forEach(button => {
+      button.addEventListener('click', () => {
+        const faq = button.closest('.faq');
+        faq.classList.toggle('open');
+        const icon = button.querySelector('.icon');
+        icon.textContent = faq.classList.contains('open') ? '−' : '+';
+      });
     });
-  });
 
-  // Refill form submission
-  document.getElementById("whatsappBtn").addEventListener("click", () => {
-    const name = document.getElementById("name").value.trim();
-    const number = document.getElementById("whatsapp").value.trim();
-    const esim = document.getElementById("esim").value.trim();
-    const pkg = document.getElementById("package").value;
+    // WhatsApp form submission
+    const whatsappBtn = document.getElementById("whatsappBtn");
+    whatsappBtn.addEventListener("click", () => {
+      const name = document.getElementById("name").value.trim();
+      const number = document.getElementById("whatsapp").value.trim();
+      const esim = document.getElementById("esim").value.trim();
+      const pkg = document.getElementById("package").value;
 
-    if (!name  !number  !pkg) {
-      alert("Please fill in all required fields.");
-      return;
-    }
+      if (!name  !number  !pkg) {
+        alert("Please fill in all required fields.");
+        return;
+      }
 
-    const msg = Hello, I just submitted a refill order:\n\n🧍 Name: ${name}\n📞 WhatsApp: ${number}\n💳 eSIM ICCID: ${esim || 'N/A'}\n📦 Package: ${pkg};
+      const msg = Hello, I just submitted a refill order:\n\n🧍 Name: ${name}\n📞 WhatsApp: ${number}\n💳 eSIM ICCID: ${esim || 'N/A'}\n📦 Package: ${pkg};
+      const encodedMsg = encodeURIComponent(msg);
+      const waUrl = https://wa.me/233505858712?text=${encodedMsg};
 
-    document.getElementById("confirmation").style.display = "block";
+      document.getElementById("confirmation").style.display = "block";
 
-    setTimeout(() => {
-      document.getElementById("confirmation").style.display = "none";
-    }, 5000);
+      setTimeout(() => {
+        document.getElementById("confirmation").style.display = "none";
+      }, 5000);
 
-    const waUrl = https://wa.me/233505858712?text=${encodeURIComponent(msg)};
-    window.open(waUrl, '_blank');
+      window.open(waUrl, '_blank');
+    });
   });
 </script>
 
