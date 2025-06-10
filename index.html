@@ -33,17 +33,19 @@
   <!-- Styles (already in your original index.html) -->
   <style>
     /* keep your main CSS here */
-   body {
+  body {
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background: url('photo_5927259820480644994_y.jpg') no-repeat center center fixed;
-  background-size: contain; /* or try 'auto' or '100% auto' */
+  background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-position: top center;
+  background-position: center center;
   color: #e6c67a;
   text-align: center;
   padding: 0 15px;
+  position: relative;
+  z-index: 0;
 }
     body::before {
   content: "";
