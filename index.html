@@ -33,15 +33,25 @@
   <!-- Styles (already in your original index.html) -->
   <style>
     /* keep your main CSS here */
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: url('photo_5927259820480644994_y.jpg') no-repeat center center fixed;
-      background-size: cover;
-      color: #e6c67a;
-      text-align: center;
-      padding: 0 15px;
-    }
+   body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: url('photo_5927259820480644994_y.jpg') no-repeat center center fixed;
+  background-size: contain; /* or try 'auto' or '100% auto' */
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: top center;
+  color: #e6c67a;
+  text-align: center;
+  padding: 0 15px;
+}
+    body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* adjust darkness */
+  z-index: -1;
+}
 
     .logo {
       width: 180px;
