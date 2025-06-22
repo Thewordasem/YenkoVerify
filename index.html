@@ -435,26 +435,28 @@
 
     <label for="esim">eSIM ICCID Number (if known):</label><br />
     <input type="text" id="esim"><br />
+<label for="package">Select Refill Package:</label><br />
+<select id="package" required>
+  <option value="">-- Choose a package --</option>
 
-    <label for="package">Select Refill Package:</label><br />
-    <select id="package" required>
-      <option value="">-- Choose a package --</option>
-      <option disabled>--- Lifetime eSIM data (No Expiry) ---</option>
-      <option value="100MB – GHS 25">100MB – GHS 25</option>
-      <option value="1GB – GHS 100">1GB – GHS 99</option>
-      <option value="3GB – GHS 250">3GB – GHS 249</option>
-      <option value="5GB – GHS 380">5GB – GHS 379</option>
-      <option value="10GB – GHS 700">10GB – GHS 699</option>
-      <option value="25GB – GHS 1,450">25GB – GHS 1,449</option>
-      <option value="50GB – GHS 1,800">50GB – GHS 1,799</option>
+  <option disabled>--- Lifetime eSIM Data (No Expiry) ---</option>
+  <option value="100MB – GHS 25">100MB – GHS 25</option>
+  <option value="1GB – GHS 99">1GB – GHS 99</option>
+  <option value="3GB – GHS 249">3GB – GHS 249</option>
+  <option value="5GB – GHS 379">5GB – GHS 379</option>
+  <option value="10GB – GHS 699">10GB – GHS 699</option>
+  <option value="25GB – GHS 1,449">25GB – GHS 1,449</option>
+  <option value="50GB – GHS 1,799">50GB – GHS 1,799</option>
 
-      <option disabled>--- Hushed Talktime & Sms) ---</option>
-      <option value=" 2 Credit – GHS 60"> 2 credit – GHS 60</option>
-      <option value="5.25 +5% MORE credit – GHS 99">5.25 +5% MORE credit – GHS 99</option>
-      <option value="11 +10% MORE credit – GHS 149">11 +10% MORE credit – GHS 149</option>
-      <option value="60 +20% MORE credit – GHS 599">60 +20% MORE credit – GHS 599</option>
-      <option value="130 +30% MORE credit – GHS 1,149">130 +30% MORE credit – GHS 1,149</option>
-      <option disabled>--- *Some bonus credits expire after 6 months. ---</option>
+  <option disabled>--- Hushed Talktime & SMS Credits ---</option>
+  <option value="2 Credits – GHS 60">2 Credits – GHS 60</option>
+  <option value="5.25 Credits (+5% Bonus) – GHS 99">5.25 Credits (+5% Bonus) – GHS 99</option>
+  <option value="11 Credits (+10% Bonus) – GHS 149">11 Credits (+10% Bonus) – GHS 149</option>
+  <option value="60 Credits (+20% Bonus) – GHS 599">60 Credits (+20% Bonus) – GHS 599</option>
+  <option value="130 Credits (+30% Bonus) – GHS 1,149">130 Credits (+30% Bonus) – GHS 1,149</option>
+
+  <option disabled>--- *Some bonus credits expire after 6 months. ---</option>
+</select><br />
 
     </select><br />
 
