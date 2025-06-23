@@ -53,14 +53,12 @@
   <!-- Styles (already in your original index.html) -->
   <style>
     /* keep your main CSS here */
- body {
+body {
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: url('photo_5098294560706113184_y.jpg') no-repeat top center fixed;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-color: #000; /* fallback background */
+  background: url('photo_5098294560706113184_y.jpg') no-repeat center center fixed;
+  background-size: cover;
+  background-color: #000;
   color: #e6c67a;
   text-align: center;
   padding: 0 15px;
@@ -70,10 +68,9 @@ body::before {
   content: "";
   position: fixed;
   top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0, 0, 0, 0.55); /* dim layer for readability */
+  background: rgba(0, 0, 0, 0.5); /* overlay darkness */
   z-index: -1;
 }
-
     .logo {
       width: 180px;
       margin: 40px auto 20px;
@@ -217,12 +214,6 @@ body::before {
     a:hover {
   text-decoration: underline;
   color: #66ccff;
-}
-    @media (max-width: 768px) {
-  body {
-    background-position: center top;
-    background-size: cover;
-  }
 }
 
   </style>
