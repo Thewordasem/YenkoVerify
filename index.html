@@ -220,6 +220,66 @@ body::before {
   color: #66ccff;
 }
 
+
+    .pricing {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.price-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.8rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.price-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+}
+
+.price-card h3 {
+  color: #2B3A67;
+  margin-bottom: 0.5rem;
+}
+
+.price-card p {
+  color: #555;
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+.price {
+  font-size: 1.4rem;
+  color: #111;
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+}
+
+.price-card ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 0.8rem;
+}
+
+.price-card li {
+  font-size: 0.95rem;
+  color: #444;
+  padding: 0.2rem 0;
+}
+
+.price-card small {
+  color: #777;
+  font-size: 0.85rem;
+}
+
+.price-card.highlight {
+  background: #f4f8ff;
+  border: 2px solid #2B3A67;
+}
   </style>
 </head>
 <body>
