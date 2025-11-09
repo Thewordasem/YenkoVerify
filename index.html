@@ -742,60 +742,27 @@ body::before {
 
 
   <script>
-  // Step 1: Capture ?ref= code from URL
+  // Step 1: Capture ?ref= from the URL
   const params = new URLSearchParams(window.location.search);
   const ref = params.get("ref");
 
-  // Step 2: If referral code exists, store it locally
+  // Step 2: Store it for later if found
   if (ref) {
     localStorage.setItem("yenko_ref", ref);
   }
 
-  // Step 3: Retrieve referral (even if user navigates other pages)
+  // Step 3: Apply it to all WhatsApp links
   const savedRef = localStorage.getItem("yenko_ref");
 
-  // Step 4: Attach referral code to the WhatsApp link automatically
-  const whatsappBtn = document.getElementById("whatsapp-btn");
-
-  if (whatsappBtn) {
-    // Base link for your WhatsApp chat
-    const baseUrl = "https://wa.me/233505858712?text=";
-
-    // Default message
-    let message = "Yenko, I'm interested in a verified U.S. number.";
-
-    // If referral exists, include it in message
-    if (savedRef) {
-      message +=  Referral Code: ${savedRef};
-    }
-
-    // Encode and set new link
-    whatsappBtn.href = baseUrl + encodeURIComponent(message);
-  }
-</script>
-
-
-  <script>
-  // Capture ?ref=CODE from the URL
-  const urlParams = new URLSearchParams(window.location.search);
-  const refCode = urlParams.get('ref');
-
-  // If found, save to localStorage
-  if (refCode) {
-    localStorage.setItem('yenko_ref', refCode);
-  }
-
-  // Update all WhatsApp links with the referral code
-  document.querySelectorAll('a[href*="wa.me"]').forEach(link => {
-    const savedRef = localStorage.getItem('yenko_ref');
-    if (savedRef) {
+  if (savedRef) {
+    document.querySelectorAll('a[href*="wa.me"]').forEach(link => {
       const url = new URL(link.href);
-      let msg = url.searchParams.get('text') || '';
-      msg += %0AReferral+Code:+${savedRef}; // Adds new line + code
-      url.searchParams.set('text', msg);
+      let message = url.searchParams.get("text") || "";
+      message += %0AReferral+Code:+${savedRef}; // Add referral code nicely formatted
+      url.searchParams.set("text", message);
       link.href = url.toString();
-    }
-  });
+    });
+  }
 </script>
  <footer>
   <p><strong>Verified U.S. & global numbers, your key to effortless verification.</strong></p>
