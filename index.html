@@ -774,6 +774,30 @@ body::before {
     whatsappBtn.href = baseUrl + encodeURIComponent(message);
   }
 </script>
+
+
+  <script>
+  // Capture ?ref=CODE from the URL
+  const urlParams = new URLSearchParams(window.location.search);
+  const refCode = urlParams.get('ref');
+
+  // If found, save to localStorage
+  if (refCode) {
+    localStorage.setItem('yenko_ref', refCode);
+  }
+
+  // Update all WhatsApp links with the referral code
+  document.querySelectorAll('a[href*="wa.me"]').forEach(link => {
+    const savedRef = localStorage.getItem('yenko_ref');
+    if (savedRef) {
+      const url = new URL(link.href);
+      let msg = url.searchParams.get('text') || '';
+      msg += %0AReferral+Code:+${savedRef}; // Adds new line + code
+      url.searchParams.set('text', msg);
+      link.href = url.toString();
+    }
+  });
+</script>
  <footer>
   <p><strong>Verified U.S. & global numbers, your key to effortless verification.</strong></p>
   <p>&copy; 2025 YenkoVerify. Powered by <strong>The Word // Asem Technologies</strong>. All rights reserved.</p>
