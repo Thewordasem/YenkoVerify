@@ -296,7 +296,9 @@ body::before {
 
 </p>
 <div>
-  <a href="https://wa.me/233505858712?text=Yenko%2C+I%27m+interested+in+getting+a+verified+number+for+OTP+verifications." class="btn">Get Verified</a>
+ <a href="https://wa.me/233505858712?text=Yenko%2C+I%27m+interested+in+a+verified+U.S.+number." 
+   id="whatsapp-btn" 
+   class="btn">Get Verified</a>
 
 <a href="https://wa.me/233505858712?text=Yenko%2C+I%27m+interested+in+the+Reseller+Program."
    class="btn">
@@ -738,6 +740,44 @@ body::before {
       });
     });
   </script>
+
+
+  <script>
+  // Capture ?ref= code from URL
+  const urlParams = new URLSearchParams(window.location.search);
+  const refCode = urlParams.get('ref');
+
+  // If referral exists, store in browser
+  if (refCode) {
+    localStorage.setItem('yenko_ref', refCode);
+  }
+
+  // Apply referral to all forms on the page
+  const savedRef = localStorage.getItem('yenko_ref');
+  if (savedRef) {
+    document.querySelectorAll('input#referralCode').forEach(input => {
+      input.value = savedRef;
+    });
+  }
+</script>
+
+  <script>
+  const params = new URLSearchParams(window.location.search);
+  const ref = params.get("ref");
+
+  // Save referral code in case user navigates around
+  if (ref) localStorage.setItem("yenko_ref", ref);
+
+  // When user clicks "Get Verified", append code to message
+  const savedRef = localStorage.getItem("yenko_ref");
+  const whatsappBtn = document.getElementById("whatsapp-btn");
+
+  if (whatsappBtn && savedRef) {
+    const baseUrl = "https://wa.me/233505858712?text=";
+    const message = Yenko, I'm interested in a verified U.S. number. Referral Code: ${savedRef};
+    whatsappBtn.href = baseUrl + encodeURIComponent(message);
+  }
+</script>
   
  <footer>
   <p><strong>Verified U.S. & global numbers, your key to effortless verification.</strong></p>
