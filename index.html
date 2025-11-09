@@ -296,9 +296,12 @@ body::before {
 
 </p>
 <div>
-<a href="https://wa.me/233505858712?text=Yenko%2C+I'm+interested+in+getting+a+verified+U.S.+number."
-   class="btn">Get Verified</a>
-
+<a id="whatsapp-btn"
+   href="https://wa.me/233505858712?text=Yenko%2C+I'm+interested+in+getting+a+verified+U.S.+number."
+   class="btn">
+   Get Verified
+</a>
+  
 <a href="https://wa.me/233505858712?text=Yenko%2C+I%27m+interested+in+the+Reseller+Program."
    class="btn">
    🔗 Join as a Yenko Reseller
@@ -741,28 +744,39 @@ body::before {
   </script>
 
 
-  <script>
-  // Step 1: Capture ?ref= from the URL
-  const params = new URLSearchParams(window.location.search);
-  const ref = params.get("ref");
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    // Capture referral from URL
+    const params = new URLSearchParams(window.location.search);
+    const ref = params.get("ref");
 
-  // Step 2: Store it for later if found
-  if (ref) {
-    localStorage.setItem("yenko_ref", ref);
-  }
+    // If referral code exists, store it
+    if (ref) {
+      localStorage.setItem("yenko_ref", ref);
+    }
 
-  // Step 3: Apply it to all WhatsApp links
-  const savedRef = localStorage.getItem("yenko_ref");
+    // Retrieve stored referral (for other pages or reloads)
+    const savedRef = localStorage.getItem("yenko_ref");
 
-  if (savedRef) {
-    document.querySelectorAll('a[href*="wa.me"]').forEach(link => {
-      const url = new URL(link.href);
-      let message = url.searchParams.get("text") || "";
-      message += %0AReferral+Code:+${savedRef}; // Add referral code nicely formatted
-      url.searchParams.set("text", message);
-      link.href = url.toString();
-    });
-  }
+    // Find WhatsApp button
+    const whatsappBtn = document.getElementById("whatsapp-btn");
+
+    if (whatsappBtn) {
+      // Base WhatsApp link
+      const baseUrl = "https://wa.me/233505858712?text=";
+
+      // Default message
+      let message = "Yenko, I'm interested in a verified U.S. number.";
+
+      // If referral code exists, include it
+      if (savedRef) {
+        message +=  (Referral Code: ${savedRef});
+      }
+
+      // Set encoded link
+      whatsappBtn.href = baseUrl + encodeURIComponent(message);
+    }
+  });
 </script>
  <footer>
   <p><strong>Verified U.S. & global numbers, your key to effortless verification.</strong></p>
