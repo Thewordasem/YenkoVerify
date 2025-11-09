@@ -743,42 +743,37 @@ body::before {
 
 
   <script>
-  // Capture ?ref= code from URL
-  const urlParams = new URLSearchParams(window.location.search);
-  const refCode = urlParams.get('ref');
-
-  // If referral exists, store in browser
-  if (refCode) {
-    localStorage.setItem('yenko_ref', refCode);
-  }
-
-  // Apply referral to all forms on the page
-  const savedRef = localStorage.getItem('yenko_ref');
-  if (savedRef) {
-    document.querySelectorAll('input#referralCode').forEach(input => {
-      input.value = savedRef;
-    });
-  }
-</script>
-
-  <script>
+  // Step 1: Capture ?ref= code from URL
   const params = new URLSearchParams(window.location.search);
   const ref = params.get("ref");
 
-  // Save referral code in case user navigates around
-  if (ref) localStorage.setItem("yenko_ref", ref);
+  // Step 2: If referral code exists, store it locally
+  if (ref) {
+    localStorage.setItem("yenko_ref", ref);
+  }
 
-  // When user clicks "Get Verified", append code to message
+  // Step 3: Retrieve referral (even if user navigates other pages)
   const savedRef = localStorage.getItem("yenko_ref");
+
+  // Step 4: Attach referral code to the WhatsApp link automatically
   const whatsappBtn = document.getElementById("whatsapp-btn");
 
-  if (whatsappBtn && savedRef) {
+  if (whatsappBtn) {
+    // Base link for your WhatsApp chat
     const baseUrl = "https://wa.me/233505858712?text=";
-    const message = Yenko, I'm interested in a verified U.S. number. Referral Code: ${savedRef};
+
+    // Default message
+    let message = "Yenko, I'm interested in a verified U.S. number.";
+
+    // If referral exists, include it in message
+    if (savedRef) {
+      message +=  Referral Code: ${savedRef};
+    }
+
+    // Encode and set new link
     whatsappBtn.href = baseUrl + encodeURIComponent(message);
   }
 </script>
-  
  <footer>
   <p><strong>Verified U.S. & global numbers, your key to effortless verification.</strong></p>
   <p>&copy; 2025 YenkoVerify. Powered by <strong>The Word // Asem Technologies</strong>. All rights reserved.</p>
