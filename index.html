@@ -765,6 +765,8 @@ body::before {
       // Base WhatsApp link
       const baseUrl = "https://wa.me/233505858712?text=";
 
+      const savedRef = localStorage.getItem("yenko_ref") || sessionStorage.getItem("yenko_ref");
+
       // Default message
       let message = "Yenko, I'm interested in a verified U.S. number.";
 
