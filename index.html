@@ -700,5 +700,41 @@ body::before {
   <p><strong>Verified U.S. & global numbers, your key to effortless verification.</strong></p>
   <p>&copy; 2025 YenkoVerify. Powered by <strong>The Word // Asem Technologies</strong>. All rights reserved.</p>
 </footer>
+
+  <a id="whatsapp-btn"
+   href="https://wa.me/233505858712?text=Yenko%2C+I'm+interested+in+getting+a+verified+U.S.+number."
+   class="btn">
+   Get Verified
+</a>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    try {
+      const params = new URLSearchParams(window.location.search);
+      const ref = params.get("ref");
+
+      if (ref) {
+        localStorage.setItem("yenko_ref", ref);
+      }
+
+      const savedRef = localStorage.getItem("yenko_ref");
+      const whatsappBtn = document.getElementById("whatsapp-btn");
+
+      if (whatsappBtn) {
+        const baseUrl = "https://wa.me/233505858712?text=";
+        let message = "Yenko, I'm interested in a verified U.S. number.";
+
+        if (savedRef && savedRef.trim() !== "") {
+          message +=  (Referral Code: ${savedRef});
+        }
+
+        const finalLink = baseUrl + encodeURIComponent(message);
+        whatsappBtn.setAttribute("href", finalLink);
+      }
+    } catch (err) {
+      console.error("Referral tracking error:", err);
+    }
+  });
+</script>
 </body>
 </html>
