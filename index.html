@@ -296,6 +296,12 @@ body::before {
 
 </p>
 <div>
+  <a id="whatsapp-btn"
+   href="https://wa.me/233505858712?text=Yenko%2C+I'm+interested+in+getting+a+verified+U.S.+number."
+   class="btn">
+   Get Verified
+</a>
+</div> 
 <script>
   document.addEventListener("DOMContentLoaded", () => {
     // Capture referral from URL (example: ?ref=ABC123)
@@ -330,6 +336,7 @@ body::before {
     }
   });
 </script>
+
   
 <a href="https://wa.me/233505858712?text=Yenko%2C+I%27m+interested+in+the+Reseller+Program."
    class="btn">
@@ -722,55 +729,7 @@ body::before {
 
 </section>
 
-<script>
-  const whatsappBtn = document.getElementById("whatsappBtn");
-  const telegramBtn = document.getElementById("telegramBtn");
 
-  function generateMessage() {
-    const name = document.getElementById("name").value.trim();
-    const number = document.getElementById("whatsapp").value.trim();
-    const esim = document.getElementById("esim").value.trim();
-    const selectedPackage = document.getElementById("package").value;
-
-    if (!name || !number || !selectedPackage) {
-      alert("Please fill all required fields.");
-      return null;
-    }
-
-    return `Yenko! I just submitted a refill order:\n\n🧍 Name: ${name}\n📞 WhatsApp: ${number}\n💳 eSIM ICCID: ${esim || 'N/A'}\n📦 Package: ${selectedPackage}`;
-  }
-
-  whatsappBtn.addEventListener("click", () => {
-    const msg = generateMessage();
-    if (msg) {
-      document.getElementById("confirmation").style.display = "block";
-      document.getElementById("refillForm").reset(); // ✅ Reset form
-      window.open(`https://wa.me/233505858712?text=${encodeURIComponent(msg)}`, "_blank");
-    }
-  });
-
-  telegramBtn.addEventListener("click", () => {
-    const msg = generateMessage();
-    if (msg) {
-      document.getElementById("confirmation").style.display = "block";
-      document.getElementById("refillForm").reset(); // ✅ Reset form
-      window.open("https://t.me/yenkoverify", "_blank");
-    }
-  });
-</script>
-
-
-
-  <script>
-    document.querySelectorAll('.faq-toggle').forEach(button => {
-      button.addEventListener('click', () => {
-        const faq = button.parentElement;
-        faq.classList.toggle('open');
-        const icon = button.querySelector('.icon');
-        icon.textContent = faq.classList.contains('open') ? '−' : '+';
-      });
-    });
-  </script>
 
  <footer>
   <p><strong>Verified U.S. & global numbers, your key to effortless verification.</strong></p>
