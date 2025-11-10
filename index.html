@@ -309,41 +309,6 @@ body::before {
 </div>
 
 
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    // Capture referral from URL (example: ?ref=ABC123)
-    const params = new URLSearchParams(window.location.search);
-    const ref = params.get("ref");
-
-    // Store referral code locally if found
-    if (ref) {
-      localStorage.setItem("yenko_ref", ref);
-    }
-
-    // Retrieve stored referral code
-    const savedRef = localStorage.getItem("yenko_ref");
-
-    // Find WhatsApp button
-    const whatsappBtn = document.getElementById("whatsapp-btn");
-
-    if (whatsappBtn) {
-      // Base WhatsApp link
-      const baseUrl = "https://wa.me/233505858712?text=";
-
-      // Default message
-      let message = "Yenko, I'm interested in a verified U.S. number.";
-
-      // If referral code exists, include it
-      if (savedRef) {
-        message +=  (Referral Code: ${savedRef});
-      }
-
-      // Encode and set final link
-      whatsappBtn.href = baseUrl + encodeURIComponent(message);
-    }
-  });
-</script>
-
  <section class="section" id="how-it-works">
   <h2>How It Works</h2>
   <ul style="list-style: none; padding: 0; max-width: 800px; margin: 0 auto; line-height: 1.8; font-size: 1.05em;">
