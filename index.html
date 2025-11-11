@@ -533,41 +533,6 @@ body::before {
   </div>
 </section>
 
-<style>
-  /* FAQ styles (self-contained) */
-  .faq-container { max-width: 900px; margin: 0 auto; }
-  .faq { border-bottom: 1px solid #222; padding: 12px 0; }
-  .faq-toggle {
-    width: 100%;
-    background: none;
-    border: none;
-    color: #e6c67a;
-    font-size: 1.03rem;
-    text-align: left;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 6px 0;
-  }
-  .faq-toggle .text { flex: 1; padding-right: 10px; color: #f5f0e6; }
-  .faq-toggle .icon { font-size: 1.25rem; color:#e6c67a; width: 28px; text-align:center; }
-  .faq-content {
-    max-height: 0;
-    overflow: hidden;
-    color: #ccc;
-    transition: max-height 0.36s ease, padding 0.36s ease;
-    padding: 0 4px;
-  }
-  .faq.active .faq-content { padding-top: 10px; padding-bottom: 8px; }
-  /* when expanded, set a high max-height so content can grow */
-  .faq.active .faq-content { max-height: 420px; }
-  /* small screens tweaks */
-  @media (max-width:600px) {
-    .faq-toggle { font-size: 1rem; }
-    .faq-toggle .icon { font-size: 1.05rem; }
-  }
-</style>
 
 
 <!-- END: FAQ SECTION -->
