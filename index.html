@@ -795,15 +795,23 @@ body::before {
 </section>
 
  <script>
-    document.querySelectorAll('.faq-toggle').forEach(button => {
-      button.addEventListener('click', () => {
-        const faq = button.parentElement;
-        faq.classList.toggle('open');
-        const icon = button.querySelector('.icon');
-        icon.textContent = faq.classList.contains('open') ? '−' : '+';
-      });
+  // FAQ toggle behavior
+  document.querySelectorAll('.faq-toggle').forEach(button => {
+    button.addEventListener('click', () => {
+      const faq = button.closest('.faq');
+      faq.classList.toggle('active');
+      
+      // Update icon (+ / -)
+      const icon = button.querySelector('.icon');
+      if (faq.classList.contains('active')) {
+        icon.textContent = '−';
+      } else {
+        icon.textContent = '+';
+      }
     });
-  </script>
+  });
+</script>
+
 
  <footer>
   <p><strong>Verified U.S. & global numbers, your key to effortless verification.</strong></p>
