@@ -383,11 +383,11 @@ body::before {
 </section>
 
 
-   <section class="section">
-  <h2>Supported Platforms </h2>
+<section class="section" id="supported-platforms">
+  <h2>Supported Platforms</h2>
   <p style="margin-bottom: 15px;">
     Choose from our most requested apps or services for instant OTP and verification codes.  
-    If your platform isn’t listed, select “Custom Request”  we’ll get it done.
+    If your platform isn’t listed, select “Custom Request” and we’ll get it done.
   </p>
 
   <div class="faq">
@@ -408,7 +408,7 @@ body::before {
   </div>
 
   <div class="faq">
-    <button class="faq-toggle"><span class="icon">+</span>  Finance & Payment Apps</button>
+    <button class="faq-toggle"><span class="icon">+</span> 💳 Finance & Payment Apps</button>
     <div class="faq-content">
       <ul>
         <li>Cash App</li>
@@ -423,7 +423,7 @@ body::before {
   </div>
 
   <div class="faq">
-    <button class="faq-toggle"><span class="icon">+</span> Dating & Lifestyle</button>
+    <button class="faq-toggle"><span class="icon">+</span> ❤️ Dating & Lifestyle</button>
     <div class="faq-content">
       <ul>
         <li>Ashley Madison</li>
@@ -436,7 +436,7 @@ body::before {
   </div>
 
   <div class="faq">
-    <button class="faq-toggle"><span class="icon">+</span> Tickets, Travel & Services</button>
+    <button class="faq-toggle"><span class="icon">+</span> ✈️ Tickets, Travel & Services</button>
     <div class="faq-content">
       <ul>
         <li>Ticketmaster</li>
@@ -449,7 +449,7 @@ body::before {
   </div>
 
   <div class="faq">
-    <button class="faq-toggle"><span class="icon">+</span>  Shopping & Brand Accounts</button>
+    <button class="faq-toggle"><span class="icon">+</span> 🛍️ Shopping & Brand Accounts</button>
     <div class="faq-content">
       <ul>
         <li>Adidas</li>
@@ -461,7 +461,7 @@ body::before {
   </div>
 
   <div class="faq">
-    <button class="faq-toggle"><span class="icon">+</span>  Custom & Others</button>
+    <button class="faq-toggle"><span class="icon">+</span> 🌍 Custom & Others</button>
     <div class="faq-content">
       <ul>
         <li>Service Not Listed (Custom Request)</li>
@@ -471,23 +471,21 @@ body::before {
   </div>
 </section>
 
-</div>
-
-    <!-- START: FAQ SECTION (copy-paste whole block) -->
+<!-- START: FAQ SECTION -->
 <section class="section" id="faqs">
   <h2>FAQs – Common Questions</h2>
 
   <div class="faq-container">
 
     <div class="faq">
-      <button class="faq-toggle" aria-expanded="false"><span class="text">Will my number work with WhatsApp, Gmail, or other apps?</span><span class="icon">+</span></button>
+      <button class="faq-toggle"><span class="text">Will my number work with WhatsApp, Gmail, or other apps?</span><span class="icon">+</span></button>
       <div class="faq-content">
         <p>Yes — all YenkoVerify numbers are designed for OTP and account verification purposes. You can use them for WhatsApp, Gmail, Telegram, TikTok, Facebook, and more. Platform policies may affect availability from time to time.</p>
       </div>
     </div>
 
     <div class="faq">
-      <button class="faq-toggle" aria-expanded="false"><span class="text">What’s included with each verification plan?</span><span class="icon">+</span></button>
+      <button class="faq-toggle"><span class="text">What’s included with each verification plan?</span><span class="icon">+</span></button>
       <div class="faq-content">
         <ul>
           <li>✅ Access to verified U.S. or international number</li>
@@ -498,17 +496,15 @@ body::before {
       </div>
     </div>
 
-    <!-- WhatsApp recovery -->
     <div class="faq">
-      <button class="faq-toggle" aria-expanded="false"><span class="text">My WhatsApp account was banned. Can YenkoVerify help me recover it?</span><span class="icon">+</span></button>
+      <button class="faq-toggle"><span class="text">My WhatsApp account was banned. Can YenkoVerify help me recover it?</span><span class="icon">+</span></button>
       <div class="faq-content">
         <p>Yes. We assist clients with legitimate <strong>WhatsApp banned account recovery</strong>. Our team guides you through the official appeal process, prepares your recovery email, and ensures your setup complies with WhatsApp’s policies.</p>
       </div>
     </div>
 
-    <!-- Reseller & affiliate -->
     <div class="faq">
-      <button class="faq-toggle" aria-expanded="false"><span class="text">How can I earn as a YenkoVerify promoter or reseller?</span><span class="icon">+</span></button>
+      <button class="faq-toggle"><span class="text">How can I earn as a YenkoVerify promoter or reseller?</span><span class="icon">+</span></button>
       <div class="faq-content">
         <p>You can earn in two ways:</p>
         <ul>
@@ -520,7 +516,7 @@ body::before {
     </div>
 
     <div class="faq">
-      <button class="faq-toggle" aria-expanded="false"><span class="text">Is there a minimum order or requirement to become a Reseller?</span><span class="icon">+</span></button>
+      <button class="faq-toggle"><span class="text">Is there a minimum order or requirement to become a Reseller?</span><span class="icon">+</span></button>
       <div class="faq-content">
         <ul>
           <li>🚀 <strong>Starter Resellers:</strong> 10% discount – 3–5 orders/month</li>
@@ -532,6 +528,27 @@ body::before {
 
   </div>
 </section>
+
+<!-- JS for collapsible behavior -->
+<script>
+  // Accordion behavior (only one open at a time)
+  document.querySelectorAll('.faq-toggle').forEach(button => {
+    button.addEventListener('click', () => {
+      const faq = button.closest('.faq');
+      const isActive = faq.classList.contains('active');
+
+      // Close all
+      document.querySelectorAll('.faq').forEach(f => f.classList.remove('active'));
+      document.querySelectorAll('.faq-toggle .icon').forEach(icon => icon.textContent = '+');
+
+      // Reopen the one clicked (if it wasn’t active)
+      if (!isActive) {
+        faq.classList.add('active');
+        button.querySelector('.icon').textContent = '−';
+      }
+    });
+  });
+</script>
 
 
 
