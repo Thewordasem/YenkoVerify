@@ -569,41 +569,7 @@ body::before {
   }
 </style>
 
-<script>
-  // Self-contained JS with debug info
-  document.addEventListener('DOMContentLoaded', function () {
-    try {
-      const toggles = document.querySelectorAll('.faq-toggle');
-      if (!toggles || toggles.length === 0) {
-        console.warn('FAQ: No toggles found. Check that the HTML was pasted correctly.');
-      }
-      toggles.forEach(btn => {
-        btn.addEventListener('click', () => {
-          const faq = btn.closest('.faq');
-          // toggle active class
-          const isActive = faq.classList.toggle('active');
-          // update aria-expanded for accessibility
-          btn.setAttribute('aria-expanded', isActive ? 'true' : 'false');
-          // update icon
-          const icon = btn.querySelector('.icon');
-          if (icon) icon.textContent = isActive ? '−' : '+';
-          // set maxHeight dynamically (helps if content length varies)
-          const content = faq.querySelector('.faq-content');
-          if (content) {
-            if (isActive) {
-              content.style.maxHeight = content.scrollHeight + 'px';
-            } else {
-              content.style.maxHeight = null;
-            }
-          }
-        });
-      });
-      console.log('FAQ: Toggle script loaded — found', toggles.length, 'items.');
-    } catch (err) {
-      console.error('FAQ script error:', err);
-    }
-  });
-</script>
+
 <!-- END: FAQ SECTION -->
   
 <section class="section" id="whatsapp-recovery">
@@ -828,13 +794,21 @@ body::before {
 
 </section>
 
-
+ <script>
+    document.querySelectorAll('.faq-toggle').forEach(button => {
+      button.addEventListener('click', () => {
+        const faq = button.parentElement;
+        faq.classList.toggle('open');
+        const icon = button.querySelector('.icon');
+        icon.textContent = faq.classList.contains('open') ? '−' : '+';
+      });
+    });
+  </script>
 
  <footer>
   <p><strong>Verified U.S. & global numbers, your key to effortless verification.</strong></p>
   <p>&copy; 2025 YenkoVerify. Powered by <strong>The Word // Asem Technologies</strong>. All rights reserved.</p>
 </footer>
-
 
 </body>
 </html>
