@@ -586,62 +586,61 @@ body::before {
   <p>Earn up to <strong>45% profit</strong> as a reseller or <strong>20% commission</strong> as a promoter. 
      Fill the form below to get started — our team will review your profile and contact you within 24 hours.</p>
 
-  <!-- Collapsible Table Section -->
   <div style="margin-top:25px; background:#111; border-radius:8px; padding:15px;">
-    <button id="toggleEarnings" style="width:100%; background:#e6c67a; color:#000; font-weight:bold; padding:12px; border:none; border-radius:6px; cursor:pointer;">
-      💎 Partner Earnings Overview ▼
+    <h3 style="color:#e6c67a;">💎 Partner Earnings Overview</h3>
+
+    <table style="width:100%; border-collapse:collapse; color:#ddd; margin-top:10px; font-size:0.9em;">
+      <thead>
+        <tr style="background:#222; color:#e6c67a;">
+          <th style="padding:8px; text-align:left;">Tier</th>
+          <th style="padding:8px; text-align:left;">Type</th>
+          <th style="padding:8px; text-align:left;">Discount / Commission</th>
+          <th style="padding:8px; text-align:left;">Min. Volume</th>
+          <th style="padding:8px; text-align:left;">Example Earnings</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="padding:8px;">Starter Reseller</td>
+          <td style="padding:8px;">Reseller</td>
+          <td style="padding:8px;">10% discount</td>
+          <td style="padding:8px;">3 numbers/month</td>
+          <td style="padding:8px;" class="earnings-cell">Buys at GHS 116 → sells at GHS 129+</td>
+        </tr>
+        <tr style="background:#1a1a1a;">
+          <td style="padding:8px;">Verified Reseller</td>
+          <td style="padding:8px;">Reseller</td>
+          <td style="padding:8px;">15% discount</td>
+          <td style="padding:8px;">10 numbers/month</td>
+          <td style="padding:8px;" class="earnings-cell">Buys at GHS 111 → sells at GHS 129+</td>
+        </tr>
+        <tr>
+          <td style="padding:8px;">Top Reseller</td>
+          <td style="padding:8px;">Reseller</td>
+          <td style="padding:8px;">20% discount</td>
+          <td style="padding:8px;">25+ numbers/month</td>
+          <td style="padding:8px;" class="earnings-cell">Buys at GHS 103 → sells at GHS 129+</td>
+        </tr>
+        <tr style="background:#1a1a1a;">
+          <td style="padding:8px;">Affiliate Promoter</td>
+          <td style="padding:8px;">Affiliate</td>
+          <td style="padding:8px;">10–20% per sale</td>
+          <td style="padding:8px;">No minimum</td>
+          <td style="padding:8px;" class="earnings-cell">Earns GHS 13–26 per referral sale</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <button id="toggleEarnings" style="margin-top:10px; background:#e6c67a; color:#000; border:none; border-radius:5px; padding:8px 15px; font-weight:bold; cursor:pointer;">
+      👁 Show Example Earnings
     </button>
-    
-    <div id="earningsTable" style="display:none; margin-top:15px;">
-      <table style="width:100%; border-collapse:collapse; color:#ddd; font-size:0.9em;">
-        <thead>
-          <tr style="background:#222; color:#e6c67a;">
-            <th style="padding:8px; text-align:left;">Tier</th>
-            <th style="padding:8px; text-align:left;">Type</th>
-            <th style="padding:8px; text-align:left;">Discount / Commission</th>
-            <th style="padding:8px; text-align:left;">Min. Volume</th>
-            <th style="padding:8px; text-align:left;">Example Earnings</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td style="padding:8px;">Starter Reseller</td>
-            <td style="padding:8px;">Reseller</td>
-            <td style="padding:8px;">10% discount</td>
-            <td style="padding:8px;">3 numbers/month</td>
-            <td style="padding:8px;">Buys at GHS 116 → sells at GHS 129+</td>
-          </tr>
-          <tr style="background:#1a1a1a;">
-            <td style="padding:8px;">Verified Reseller</td>
-            <td style="padding:8px;">Reseller</td>
-            <td style="padding:8px;">15% discount</td>
-            <td style="padding:8px;">10 numbers/month</td>
-            <td style="padding:8px;">Buys at GHS 111 → sells at GHS 129+</td>
-          </tr>
-          <tr>
-            <td style="padding:8px;">Top Reseller</td>
-            <td style="padding:8px;">Reseller</td>
-            <td style="padding:8px;">20% discount</td>
-            <td style="padding:8px;">25+ numbers/month</td>
-            <td style="padding:8px;">Buys at GHS 103 → sells at GHS 129+</td>
-          </tr>
-          <tr style="background:#1a1a1a;">
-            <td style="padding:8px;">Affiliate Promoter</td>
-            <td style="padding:8px;">Affiliate</td>
-            <td style="padding:8px;">10–20% per sale</td>
-            <td style="padding:8px;">No minimum</td>
-            <td style="padding:8px;">Earns GHS 13–26 per referral sale</td>
-          </tr>
-        </tbody>
-      </table>
-      <p style="color:#aaa; font-size:0.85em; margin-top:10px;">
-        *USD equivalents are automatically adjusted for international partners.<br>
-        *Higher tiers unlock bonuses and early feature access.
-      </p>
-    </div>
+
+    <p style="color:#aaa; font-size:0.85em; margin-top:10px;">
+      *USD equivalents are automatically adjusted for international partners.  
+      *Higher tiers unlock bonuses and early feature access.
+    </p>
   </div>
 
-  <!-- Partner Application Form -->
   <form id="partnerForm" action="https://formspree.io/f/xzzypkaa" method="POST" style="margin-top:25px;">
     <label style="display:block; margin-bottom:10px; color:#e6c67a;">Full Name:</label>
     <input type="text" name="Full Name" required style="width:100%; padding:10px; border:none; border-radius:6px; margin-bottom:15px;">
@@ -658,7 +657,7 @@ body::before {
       <option value="Promoter">Promoter (Affiliate)</option>
       <option value="Reseller">Reseller</option>
       <option value="Both">Both</option>
-    </select>
+      </select>
 
     <label style="display:block; margin-bottom:10px; color:#e6c67a;">Estimated Weekly Orders / Promotions:</label>
     <input type="text" name="Estimated Volume" placeholder="e.g. 10 orders or 3 posts per week" style="width:100%; padding:10px; border:none; border-radius:6px; margin-bottom:15px;">
@@ -680,17 +679,23 @@ body::before {
 </section>
 
 <script>
-  // Toggle earnings table visibility
-  document.getElementById('toggleEarnings').addEventListener('click', function() {
-    const table = document.getElementById('earningsTable');
-    const visible = table.style.display === 'block';
-    table.style.display = visible ? 'none' : 'block';
-    this.innerHTML = visible 
-      ? '💎 Partner Earnings Overview ▼'
-      : '💎 Partner Earnings Overview ▲';
-  });
+  // Collapse/expand Example Earnings
+  const toggleBtn = document.getElementById('toggleEarnings');
+  const earningsCells = document.querySelectorAll('.earnings-cell');
+  let shown = true;
 
-  // Redirect to thanks.html after successful form submission
+  function toggleEarnings() {
+    shown = !shown;
+    earningsCells.forEach(cell => {
+      cell.style.display = shown ? 'table-cell' : 'none';
+    });
+    toggleBtn.innerHTML = shown ? '🙈 Hide Example Earnings' : '👁 Show Example Earnings';
+  }
+
+  toggleBtn.addEventListener('click', toggleEarnings);
+  toggleEarnings(); // Start collapsed by default
+
+  // Redirect to thanks.html after successful submission
   const form = document.getElementById('partnerForm');
   form.addEventListener('submit', function(event) {
     event.preventDefault();
