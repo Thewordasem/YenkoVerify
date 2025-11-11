@@ -471,75 +471,118 @@ body::before {
   </div>
 </section>
 
-<section class="section">
-  <h2>FAQs – Common Questions</h2>
+</div>
 
-  <div class="faq">
-    <button class="faq-toggle"><span class="icon">+</span> Will my number work with WhatsApp, Gmail, or other apps?</button>
-    <div class="faq-content">
-      <p>Yes — our numbers are designed for OTP and verification purposes. You can use them to receive codes for WhatsApp, Gmail, Telegram, TikTok, and more. Availability may vary depending on each app’s policies.</p>
+    <!-- RESELLER & AFFILIATE -->
+    <div class="faq">
+      <button class="faq-toggle"><span class="icon">+</span> How can I earn as a YenkoVerify promoter or reseller?</button>
+      <div class="faq-content">
+        <p>You can earn in two ways:</p>
+        <ul>
+          <li>💰 <strong>Affiliate Promoters:</strong> Earn <strong>10–20% commission</strong> per sale through your referral link.</li>
+          <li>💎 <strong>Resellers:</strong> Get discounted pricing (up to <strong>20% off</strong>) and sell directly to clients for profit.</li>
+        </ul>
+        <p>Visit the <a href="#partners" style="color:#e6c67a; text-decoration:underline;">Partner Program</a> section to apply.</p>
+      </div>
     </div>
-  </div>
 
-  <div class="faq">
-    <button class="faq-toggle"><span class="icon">+</span> What’s included with each verification plan?</button>
-    <div class="faq-content">
-      <p>Each plan includes:</p>
-      <ul>
-        <li>✅ Access to verified U.S. number</li>
-        <li>✅ Real-time OTP delivery for multiple platforms</li>
-        <li>✅ Optional rental duration ( monthly, quarterly, & yearly)</li>
-        <li>✅ Support and quick replacement if a number fails</li>
-      </ul>
+    <div class="faq">
+      <button class="faq-toggle"><span class="icon">+</span> What’s the difference between a Promoter and a Reseller?</button>
+      <div class="faq-content">
+        <p><strong>Promoters</strong> share their link and earn a commission per sale. <br>
+           <strong>Resellers</strong> buy discounted plans and resell directly to customers — earning higher margins and more control.</p>
+      </div>
     </div>
-  </div>
 
-  <div class="faq">
-    <button class="faq-toggle"><span class="icon">+</span> How long does my verification number stay active?</button>
-    <div class="faq-content">
-      <p>One-time OTP numbers expire immediately after use. Rental plans last between monthly, 90 days, & yearly depending on your chosen duration. You can renew or extend at any time.</p>
+    <div class="faq">
+      <button class="faq-toggle"><span class="icon">+</span> Is there a minimum order or requirement to become a Reseller?</button>
+      <div class="faq-content">
+        <ul>
+          <li>🚀 <strong>Starter Resellers:</strong> 10% discount – 3–5 orders/month</li>
+          <li>⭐ <strong>Verified Resellers:</strong> 15% discount – 6–10 orders/month</li>
+          <li>💼 <strong>Top Resellers:</strong> 20% discount – 11+ orders/month</li>
+        </ul>
+      </div>
     </div>
-  </div>
 
-  <div class="faq">
-    <button class="faq-toggle"><span class="icon">+</span> Can I extend or upgrade my number later?</button>
-    <div class="faq-content">
-      <p>Yes. You can renew your existing number or upgrade to a longer-duration rental anytime. We’ll notify you before expiry to keep your access active.</p>
+    <div class="faq">
+      <button class="faq-toggle"><span class="icon">+</span> How will I track my referrals and earnings?</button>
+      <div class="faq-content">
+        <p>Each promoter receives a unique referral code or link that tracks sales and signups. We provide regular updates on your commissions and performance via WhatsApp or email.</p>
+      </div>
     </div>
-  </div>
 
-  <div class="faq">
-    <button class="faq-toggle"><span class="icon">+</span> Do I need an ID or Ghana Card to buy?</button>
-    <div class="faq-content">
-      <p>No ID required. All numbers are provided via trusted, verified global telecom partners and are pre-registered. Just select a plan and start verifying instantly.</p>
+    <div class="faq">
+      <button class="faq-toggle"><span class="icon">+</span> How do I get approved after applying?</button>
+      <div class="faq-content">
+        <p>After you submit the form, our team reviews your profile within 24–48 hours. Once approved, you’ll receive your referral link or reseller instructions via WhatsApp or email.</p>
+      </div>
     </div>
-  </div>
 
-  <div class="faq">
-    <button class="faq-toggle"><span class="icon">+</span> Is this legal and secure?</button>
-    <div class="faq-content">
-      <p>Yes. YenkoVerify works with authorized platforms to provide legal and secure verification access. Your data and activity remain private, we do not store or reuse OTPs after delivery.</p>
-    </div>
-  </div>
-
-  <div class="faq">
-    <button class="faq-toggle"><span class="icon">+</span> What if my OTP doesn’t arrive?</button>
-    <div class="faq-content">
-      <p>If a code delays or fails, contact support immediately. We’ll verify the issue and provide a new number or retry session at no extra cost.</p>
-    </div>
   </div>
 </section>
 
- <section class="section" id="vouches">
+<!-- VOUCHES SECTION -->
+<section class="section" id="vouches">
   <h2>Real Feedback From Customers</h2>
   <p>Want to see proof of real orders, chat flows, and happy clients?</p>
   <a href="https://t.me/yenkoVerify_vouches" target="_blank" class="btn">View Vouches on Telegram</a>
   <p style="margin-top: 10px; font-size: 0.9em; color: #bbb;">
-     Screenshots of completed orders, feedback, and setup confirmations from real customers.
+    Screenshots of completed orders, feedback, and recovery confirmations from verified customers.
   </p>
-    
 </section>
 
+<!-- FAQ ANIMATION SCRIPT -->
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const toggles = document.querySelectorAll(".faq-toggle");
+    toggles.forEach(btn => {
+      btn.addEventListener("click", () => {
+        const faq = btn.parentElement;
+        faq.classList.toggle("active");
+        const content = btn.nextElementSibling;
+        if (faq.classList.contains("active")) {
+          btn.querySelector(".icon").textContent = "–";
+          content.style.maxHeight = content.scrollHeight + "px";
+        } else {
+          btn.querySelector(".icon").textContent = "+";
+          content.style.maxHeight = null;
+        }
+      });
+    });
+  });
+</script>
+
+<style>
+  .faq-container { max-width: 800px; margin: auto; }
+  .faq { border-bottom: 1px solid #333; padding: 12px 0; }
+  .faq-toggle {
+    width: 100%;
+    background: none;
+    border: none;
+    color: #e6c67a;
+    font-size: 1.05em;
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .faq-content {
+    max-height: 0;
+    overflow: hidden;
+    color: #ccc;
+    transition: max-height 0.4s ease;
+    line-height: 1.6;
+  }
+  .faq.active .faq-content { padding-top: 10px; }
+  .faq .icon {
+    font-size: 1.3em;
+    font-weight: bold;
+    margin-right: 8px;
+    color: #e6c67a;
+  }
+</style>
 
 
   
