@@ -473,9 +473,42 @@ body::before {
 
 </div>
 
-    <!-- RESELLER & AFFILIATE -->
+    <!-- START: FAQ SECTION (copy-paste whole block) -->
+<section class="section" id="faqs">
+  <h2>FAQs – Common Questions</h2>
+
+  <div class="faq-container">
+
     <div class="faq">
-      <button class="faq-toggle"><span class="icon">+</span> How can I earn as a YenkoVerify promoter or reseller?</button>
+      <button class="faq-toggle" aria-expanded="false"><span class="text">Will my number work with WhatsApp, Gmail, or other apps?</span><span class="icon">+</span></button>
+      <div class="faq-content">
+        <p>Yes — all YenkoVerify numbers are designed for OTP and account verification purposes. You can use them for WhatsApp, Gmail, Telegram, TikTok, Facebook, and more. Platform policies may affect availability from time to time.</p>
+      </div>
+    </div>
+
+    <div class="faq">
+      <button class="faq-toggle" aria-expanded="false"><span class="text">What’s included with each verification plan?</span><span class="icon">+</span></button>
+      <div class="faq-content">
+        <ul>
+          <li>✅ Access to verified U.S. or international number</li>
+          <li>✅ Real-time OTP delivery for multiple platforms</li>
+          <li>✅ Flexible durations — monthly, quarterly, or yearly</li>
+          <li>✅ Priority support and replacement if a number fails</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- WhatsApp recovery -->
+    <div class="faq">
+      <button class="faq-toggle" aria-expanded="false"><span class="text">My WhatsApp account was banned. Can YenkoVerify help me recover it?</span><span class="icon">+</span></button>
+      <div class="faq-content">
+        <p>Yes. We assist clients with legitimate <strong>WhatsApp banned account recovery</strong>. Our team guides you through the official appeal process, prepares your recovery email, and ensures your setup complies with WhatsApp’s policies.</p>
+      </div>
+    </div>
+
+    <!-- Reseller & affiliate -->
+    <div class="faq">
+      <button class="faq-toggle" aria-expanded="false"><span class="text">How can I earn as a YenkoVerify promoter or reseller?</span><span class="icon">+</span></button>
       <div class="faq-content">
         <p>You can earn in two ways:</p>
         <ul>
@@ -487,15 +520,7 @@ body::before {
     </div>
 
     <div class="faq">
-      <button class="faq-toggle"><span class="icon">+</span> What’s the difference between a Promoter and a Reseller?</button>
-      <div class="faq-content">
-        <p><strong>Promoters</strong> share their link and earn a commission per sale. <br>
-           <strong>Resellers</strong> buy discounted plans and resell directly to customers — earning higher margins and more control.</p>
-      </div>
-    </div>
-
-    <div class="faq">
-      <button class="faq-toggle"><span class="icon">+</span> Is there a minimum order or requirement to become a Reseller?</button>
+      <button class="faq-toggle" aria-expanded="false"><span class="text">Is there a minimum order or requirement to become a Reseller?</span><span class="icon">+</span></button>
       <div class="faq-content">
         <ul>
           <li>🚀 <strong>Starter Resellers:</strong> 10% discount – 3–5 orders/month</li>
@@ -505,86 +530,81 @@ body::before {
       </div>
     </div>
 
-    <div class="faq">
-      <button class="faq-toggle"><span class="icon">+</span> How will I track my referrals and earnings?</button>
-      <div class="faq-content">
-        <p>Each promoter receives a unique referral code or link that tracks sales and signups. We provide regular updates on your commissions and performance via WhatsApp or email.</p>
-      </div>
-    </div>
-
-    <div class="faq">
-      <button class="faq-toggle"><span class="icon">+</span> How do I get approved after applying?</button>
-      <div class="faq-content">
-        <p>After you submit the form, our team reviews your profile within 24–48 hours. Once approved, you’ll receive your referral link or reseller instructions via WhatsApp or email.</p>
-      </div>
-    </div>
-
   </div>
 </section>
 
-<!-- VOUCHES SECTION -->
-<section class="section" id="vouches">
-  <h2>Real Feedback From Customers</h2>
-  <p>Want to see proof of real orders, chat flows, and happy clients?</p>
-  <a href="https://t.me/yenkoVerify_vouches" target="_blank" class="btn">View Vouches on Telegram</a>
-  <p style="margin-top: 10px; font-size: 0.9em; color: #bbb;">
-    Screenshots of completed orders, feedback, and recovery confirmations from verified customers.
-  </p>
-</section>
-
-<!-- FAQ ANIMATION SCRIPT -->
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const toggles = document.querySelectorAll(".faq-toggle");
-    toggles.forEach(btn => {
-      btn.addEventListener("click", () => {
-        const faq = btn.parentElement;
-        faq.classList.toggle("active");
-        const content = btn.nextElementSibling;
-        if (faq.classList.contains("active")) {
-          btn.querySelector(".icon").textContent = "–";
-          content.style.maxHeight = content.scrollHeight + "px";
-        } else {
-          btn.querySelector(".icon").textContent = "+";
-          content.style.maxHeight = null;
-        }
-      });
-    });
-  });
-</script>
-
 <style>
-  .faq-container { max-width: 800px; margin: auto; }
-  .faq { border-bottom: 1px solid #333; padding: 12px 0; }
+  /* FAQ styles (self-contained) */
+  .faq-container { max-width: 900px; margin: 0 auto; }
+  .faq { border-bottom: 1px solid #222; padding: 12px 0; }
   .faq-toggle {
     width: 100%;
     background: none;
     border: none;
     color: #e6c67a;
-    font-size: 1.05em;
+    font-size: 1.03rem;
     text-align: left;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 6px 0;
   }
+  .faq-toggle .text { flex: 1; padding-right: 10px; color: #f5f0e6; }
+  .faq-toggle .icon { font-size: 1.25rem; color:#e6c67a; width: 28px; text-align:center; }
   .faq-content {
     max-height: 0;
     overflow: hidden;
     color: #ccc;
-    transition: max-height 0.4s ease;
-    line-height: 1.6;
+    transition: max-height 0.36s ease, padding 0.36s ease;
+    padding: 0 4px;
   }
-  .faq.active .faq-content { padding-top: 10px; }
-  .faq .icon {
-    font-size: 1.3em;
-    font-weight: bold;
-    margin-right: 8px;
-    color: #e6c67a;
+  .faq.active .faq-content { padding-top: 10px; padding-bottom: 8px; }
+  /* when expanded, set a high max-height so content can grow */
+  .faq.active .faq-content { max-height: 420px; }
+  /* small screens tweaks */
+  @media (max-width:600px) {
+    .faq-toggle { font-size: 1rem; }
+    .faq-toggle .icon { font-size: 1.05rem; }
   }
 </style>
 
-
+<script>
+  // Self-contained JS with debug info
+  document.addEventListener('DOMContentLoaded', function () {
+    try {
+      const toggles = document.querySelectorAll('.faq-toggle');
+      if (!toggles || toggles.length === 0) {
+        console.warn('FAQ: No toggles found. Check that the HTML was pasted correctly.');
+      }
+      toggles.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const faq = btn.closest('.faq');
+          // toggle active class
+          const isActive = faq.classList.toggle('active');
+          // update aria-expanded for accessibility
+          btn.setAttribute('aria-expanded', isActive ? 'true' : 'false');
+          // update icon
+          const icon = btn.querySelector('.icon');
+          if (icon) icon.textContent = isActive ? '−' : '+';
+          // set maxHeight dynamically (helps if content length varies)
+          const content = faq.querySelector('.faq-content');
+          if (content) {
+            if (isActive) {
+              content.style.maxHeight = content.scrollHeight + 'px';
+            } else {
+              content.style.maxHeight = null;
+            }
+          }
+        });
+      });
+      console.log('FAQ: Toggle script loaded — found', toggles.length, 'items.');
+    } catch (err) {
+      console.error('FAQ script error:', err);
+    }
+  });
+</script>
+<!-- END: FAQ SECTION -->
   
 <section class="section" id="whatsapp-recovery">
   <h2>WhatsApp Recovery Assistance</h2>
