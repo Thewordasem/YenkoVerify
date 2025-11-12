@@ -382,98 +382,7 @@ body::before {
   </p>
 </section>
 
-
-   <section class="section">
-  <h2>Supported Platforms </h2>
-  <p style="margin-bottom: 15px;">
-    Choose from our most requested apps or services for instant OTP and verification codes.  
-    If your platform isn’t listed, select “Custom Request”  we’ll get it done.
-  </p>
-
-  <div class="faq">
-    <button class="faq-toggle"><span class="icon">+</span> 🔥 Popular & Social Apps</button>
-    <div class="faq-content">
-      <ul>
-        <li>WhatsApp</li>
-        <li>Telegram</li>
-        <li>Facebook</li>
-        <li>TikTok</li>
-        <li>Gmail / Google</li>
-        <li>Instagram</li>
-        <li>Twitter (X)</li>
-        <li>Snapchat</li>
-        <li>Discord</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="faq">
-    <button class="faq-toggle"><span class="icon">+</span>  Finance & Payment Apps</button>
-    <div class="faq-content">
-      <ul>
-        <li>Cash App</li>
-        <li>PayPal</li>
-        <li>Venmo</li>
-        <li>Mercado Pago</li>
-        <li>TransUnion</li>
-        <li>Chime</li>
-        <li>Robinhood</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="faq">
-    <button class="faq-toggle"><span class="icon">+</span> Dating & Lifestyle</button>
-    <div class="faq-content">
-      <ul>
-        <li>Ashley Madison</li>
-        <li>Match.com</li>
-        <li>3Fun</li>
-        <li>7 Cups</li>
-        <li>5Miles</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="faq">
-    <button class="faq-toggle"><span class="icon">+</span> Tickets, Travel & Services</button>
-    <div class="faq-content">
-      <ul>
-        <li>Ticketmaster</li>
-        <li>Airbnb</li>
-        <li>Uber / Lyft</li>
-        <li>99Ranch</li>
-        <li>AARP</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="faq">
-    <button class="faq-toggle"><span class="icon">+</span>  Shopping & Brand Accounts</button>
-    <div class="faq-content">
-      <ul>
-        <li>Adidas</li>
-        <li>Academy Sports</li>
-        <li>Acima</li>
-        <li>Action Network</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="faq">
-    <button class="faq-toggle"><span class="icon">+</span>  Custom & Others</button>
-    <div class="faq-content">
-      <ul>
-        <li>Service Not Listed (Custom Request)</li>
-        <li>We support many more apps, just tell us which one you need.</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-</div>
-
-    <!-- START: FAQ SECTION (copy-paste whole block) -->
+<!-- START: FAQ SECTION (copy-paste whole block) -->
 <section class="section" id="faqs">
   <h2>FAQs – Common Questions</h2>
 
@@ -569,7 +478,42 @@ body::before {
   }
 </style>
 
-
+<script>
+  // Self-contained JS with debug info
+  document.addEventListener('DOMContentLoaded', function () {
+    try {
+      const toggles = document.querySelectorAll('.faq-toggle');
+      if (!toggles || toggles.length === 0) {
+        console.warn('FAQ: No toggles found. Check that the HTML was pasted correctly.');
+      }
+      toggles.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const faq = btn.closest('.faq');
+          // toggle active class
+          const isActive = faq.classList.toggle('active');
+          // update aria-expanded for accessibility
+          btn.setAttribute('aria-expanded', isActive ? 'true' : 'false');
+          // update icon
+          const icon = btn.querySelector('.icon');
+          if (icon) icon.textContent = isActive ? '−' : '+';
+          // set maxHeight dynamically (helps if content length varies)
+          const content = faq.querySelector('.faq-content');
+          if (content) {
+            if (isActive) {
+              content.style.maxHeight = content.scrollHeight + 'px';
+            } else {
+              content.style.maxHeight = null;
+            }
+          }
+        });
+      });
+      console.log('FAQ: Toggle script loaded — found', toggles.length, 'items.');
+    } catch (err) {
+      console.error('FAQ script error:', err);
+    }
+  });
+</script>
+<!-- END: FAQ SECTION -->
 <!-- END: FAQ SECTION -->
   
 <section class="section" id="whatsapp-recovery">
