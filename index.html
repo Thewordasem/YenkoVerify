@@ -738,24 +738,139 @@ body::before {
 
 </section>
 
- <script>
-  // FAQ toggle behavior
-  document.querySelectorAll('.faq-toggle').forEach(button => {
-    button.addEventListener('click', () => {
-      const faq = button.closest('.faq');
-      faq.classList.toggle('active');
-      
-      // Update icon (+ / -)
-      const icon = button.querySelector('.icon');
-      if (faq.classList.contains('active')) {
-        icon.textContent = '−';
-      } else {
-        icon.textContent = '+';
+<!-- START: FAQ SECTION (copy-paste whole block) -->
+<section class="section" id="faqs">
+  <h2>FAQs – Common Questions</h2>
+
+  <div class="faq-container">
+
+    <div class="faq">
+      <button class="faq-toggle" aria-expanded="false"><span class="text">Will my number work with WhatsApp, Gmail, or other apps?</span><span class="icon">+</span></button>
+      <div class="faq-content">
+        <p>Yes — all YenkoVerify numbers are designed for OTP and account verification purposes. You can use them for WhatsApp, Gmail, Telegram, TikTok, Facebook, and more. Platform policies may affect availability from time to time.</p>
+      </div>
+    </div>
+
+    <div class="faq">
+      <button class="faq-toggle" aria-expanded="false"><span class="text">What’s included with each verification plan?</span><span class="icon">+</span></button>
+      <div class="faq-content">
+        <ul>
+          <li>✅ Access to verified U.S. or international number</li>
+          <li>✅ Real-time OTP delivery for multiple platforms</li>
+          <li>✅ Flexible durations — monthly, quarterly, or yearly</li>
+          <li>✅ Priority support and replacement if a number fails</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- WhatsApp recovery -->
+    <div class="faq">
+      <button class="faq-toggle" aria-expanded="false"><span class="text">My WhatsApp account was banned. Can YenkoVerify help me recover it?</span><span class="icon">+</span></button>
+      <div class="faq-content">
+        <p>Yes. We assist clients with legitimate <strong>WhatsApp banned account recovery</strong>. Our team guides you through the official appeal process, prepares your recovery email, and ensures your setup complies with WhatsApp’s policies.</p>
+      </div>
+    </div>
+
+    <!-- Reseller & affiliate -->
+    <div class="faq">
+      <button class="faq-toggle" aria-expanded="false"><span class="text">How can I earn as a YenkoVerify promoter or reseller?</span><span class="icon">+</span></button>
+      <div class="faq-content">
+        <p>You can earn in two ways:</p>
+        <ul>
+          <li>💰 <strong>Affiliate Promoters:</strong> Earn <strong>10–20% commission</strong> per sale through your referral link.</li>
+          <li>💎 <strong>Resellers:</strong> Get discounted pricing (up to <strong>20% off</strong>) and sell directly to clients for profit.</li>
+        </ul>
+        <p>Visit the <a href="#partners" style="color:#e6c67a; text-decoration:underline;">Partner Program</a> section to apply.</p>
+      </div>
+    </div>
+
+    <div class="faq">
+      <button class="faq-toggle" aria-expanded="false"><span class="text">Is there a minimum order or requirement to become a Reseller?</span><span class="icon">+</span></button>
+      <div class="faq-content">
+        <ul>
+          <li>🚀 <strong>Starter Resellers:</strong> 10% discount – 3–5 orders/month</li>
+          <li>⭐ <strong>Verified Resellers:</strong> 15% discount – 6–10 orders/month</li>
+          <li>💼 <strong>Top Resellers:</strong> 20% discount – 11+ orders/month</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  /* FAQ styles (self-contained) */
+  .faq-container { max-width: 900px; margin: 0 auto; }
+  .faq { border-bottom: 1px solid #222; padding: 12px 0; }
+  .faq-toggle {
+    width: 100%;
+    background: none;
+    border: none;
+    color: #e6c67a;
+    font-size: 1.03rem;
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 6px 0;
+  }
+  .faq-toggle .text { flex: 1; padding-right: 10px; color: #f5f0e6; }
+  .faq-toggle .icon { font-size: 1.25rem; color:#e6c67a; width: 28px; text-align:center; }
+  .faq-content {
+    max-height: 0;
+    overflow: hidden;
+    color: #ccc;
+    transition: max-height 0.36s ease, padding 0.36s ease;
+    padding: 0 4px;
+  }
+  .faq.active .faq-content { padding-top: 10px; padding-bottom: 8px; }
+  /* when expanded, set a high max-height so content can grow */
+  .faq.active .faq-content { max-height: 420px; }
+  /* small screens tweaks */
+  @media (max-width:600px) {
+    .faq-toggle { font-size: 1rem; }
+    .faq-toggle .icon { font-size: 1.05rem; }
+  }
+</style>
+
+<script>
+  // Self-contained JS with debug info
+  document.addEventListener('DOMContentLoaded', function () {
+    try {
+      const toggles = document.querySelectorAll('.faq-toggle');
+      if (!toggles || toggles.length === 0) {
+        console.warn('FAQ: No toggles found. Check that the HTML was pasted correctly.');
       }
-    });
+      toggles.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const faq = btn.closest('.faq');
+          // toggle active class
+          const isActive = faq.classList.toggle('active');
+          // update aria-expanded for accessibility
+          btn.setAttribute('aria-expanded', isActive ? 'true' : 'false');
+          // update icon
+          const icon = btn.querySelector('.icon');
+          if (icon) icon.textContent = isActive ? '−' : '+';
+          // set maxHeight dynamically (helps if content length varies)
+          const content = faq.querySelector('.faq-content');
+          if (content) {
+            if (isActive) {
+              content.style.maxHeight = content.scrollHeight + 'px';
+            } else {
+              content.style.maxHeight = null;
+            }
+          }
+        });
+      });
+      console.log('FAQ: Toggle script loaded — found', toggles.length, 'items.');
+    } catch (err) {
+      console.error('FAQ script error:', err);
+    }
   });
 </script>
-
+<!-- END: FAQ SECTION -->
+<!-- END: FAQ SECTION -->
 
  <footer>
   <p><strong>Verified U.S. & global numbers, your key to effortless verification.</strong></p>
