@@ -383,6 +383,244 @@ body::before {
 </section>
 
 
+
+  <!-- ✅ YenkoVerify Supported Platforms Section -->
+<section id="platforms" class="section">
+  <h2 class="faq-heading">Supported Platforms</h2>
+
+  <style>
+    /* ======== YenkoVerify Supported Platforms Style ======== */
+    #platforms {
+      max-width: 950px;
+      margin: 60px auto;
+      padding: 0 20px;
+      font-family: "Poppins", Arial, sans-serif;
+    }
+
+    #platforms .faq-heading {
+      text-align: center;
+      color: #e6c67a;
+      font-size: 2em;
+      margin-bottom: 25px;
+      letter-spacing: 0.5px;
+    }
+
+    details.platform-item {
+      background: #0f0f0f;
+      border: 1px solid #1c1c1c;
+      border-radius: 10px;
+      margin-bottom: 14px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    details.platform-item[open] {
+      border-color: #e6c67a;
+      box-shadow: 0 0 12px rgba(230, 198, 122, 0.15);
+      background: #131313;
+    }
+
+    summary.platform-question {
+      cursor: pointer;
+      padding: 18px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 1.05em;
+      font-weight: 500;
+      color: #e6c67a;
+      position: relative;
+      transition: color 0.3s ease;
+      list-style: none;
+    }
+
+    summary.platform-question:hover {
+      color: #f1d77a;
+    }
+
+    summary.platform-question::-webkit-details-marker {
+      display: none;
+    }
+
+    .platform-icon {
+      font-size: 1.2em;
+      color: #e6c67a;
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    details[open] .platform-icon {
+      transform: rotate(45deg);
+      color: #f1d77a;
+    }
+
+    .platform-answer {
+      padding: 0 20px 18px 20px;
+      color: #d6cfa3;
+      line-height: 1.7;
+      border-top: 1px solid #222;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .platform-answer ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .platform-answer li {
+      padding-left: 18px;
+      text-indent: -10px;
+    }
+
+    .platform-answer li::before {
+      content: "• ";
+      color: #e6c67a;
+      font-weight: bold;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-5px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 600px) {
+      #platforms .faq-heading {
+        font-size: 1.6em;
+      }
+      summary.platform-question {
+        font-size: 1em;
+        padding: 16px;
+      }
+      .platform-answer {
+        padding: 0 16px 16px 16px;
+      }
+    }
+  </style>
+
+  <!-- PLATFORM ITEMS -->
+  <details class="platform-item">
+    <summary class="platform-question">
+      WhatsApp Verification
+      <span class="platform-icon">+</span>
+    </summary>
+    <div class="platform-answer">
+      <ul>
+        <li>Instant OTP delivery for new account registration</li>
+        <li>Works with both Business and Personal WhatsApp</li>
+        <li>Supports reactivation after number change</li>
+        <li>Compatible with Android, iOS, and WhatsApp Web</li>
+      </ul>
+    </div>
+  </details>
+
+  <details class="platform-item">
+    <summary class="platform-question">
+      Gmail & Google Accounts
+      <span class="platform-icon">+</span>
+    </summary>
+    <div class="platform-answer">
+      <ul>
+        <li>Use for Google account creation or recovery</li>
+        <li>Full compatibility with 2FA (Two-Factor Authentication)</li>
+        <li>Numbers verified and accepted by Google’s global system</li>
+        <li>Perfect for business or brand Gmail setup</li>
+      </ul>
+    </div>
+  </details>
+
+  <details class="platform-item">
+    <summary class="platform-question">
+      Telegram & Signal
+      <span class="platform-icon">+</span>
+    </summary>
+    <div class="platform-answer">
+      <ul>
+        <li>Fast verification for secure messaging platforms</li>
+        <li>Ideal for anonymous or business Telegram channels</li>
+        <li>Instant re-login support</li>
+        <li>Fully compatible with both apps</li>
+      </ul>
+    </div>
+  </details>
+
+  <details class="platform-item">
+    <summary class="platform-question">
+      Facebook & Instagram
+      <span class="platform-icon">+</span>
+    </summary>
+    <div class="platform-answer">
+      <ul>
+        <li>Use for account creation and ad account verifications</li>
+        <li>Supports both personal and business pages</li>
+        <li>Seamless OTP receipt via SMS or code window</li>
+        <li>Recommended for professional marketers</li>
+      </ul>
+    </div>
+  </details>
+
+  <details class="platform-item">
+    <summary class="platform-question">
+      TikTok & X (Twitter)
+      <span class="platform-icon">+</span>
+    </summary>
+    <div class="platform-answer">
+      <ul>
+        <li>Perfect for content creators and brand verification</li>
+        <li>Works for both login and registration processes</li>
+        <li>Compliant with app verification standards</li>
+        <li>Enhances security for social media influencers</li>
+      </ul>
+    </div>
+  </details>
+
+  <details class="platform-item">
+    <summary class="platform-question">
+      Business & Developer Tools
+      <span class="platform-icon">+</span>
+    </summary>
+    <div class="platform-answer">
+      <ul>
+        <li>Supports platforms like AWS, GitHub, and Slack</li>
+        <li>Used for API access, dashboards, and software trials</li>
+        <li>Private and secure OTP handling</li>
+        <li>Ideal for freelancers, developers, and startups</li>
+      </ul>
+    </div>
+  </details>
+
+  <details class="platform-item">
+    <summary class="platform-question">
+      Banking & Fintech Apps
+      <span class="platform-icon">+</span>
+    </summary>
+    <div class="platform-answer">
+      <ul>
+        <li>Verified compatibility with most online banking systems</li>
+        <li>Use for digital wallets and international payment apps</li>
+        <li>Tested with PayPal, Skrill, Wise, and Cash App</li>
+        <li>Highly secure and globally trusted channels</li>
+      </ul>
+    </div>
+  </details>
+
+  <!-- Script for Single Toggle -->
+  <script>
+    document.querySelectorAll(".platform-item").forEach((item) => {
+      item.addEventListener("toggle", function () {
+        if (this.open) {
+          document.querySelectorAll(".platform-item").forEach((other) => {
+            if (other !== this && other.open) other.removeAttribute("open");
+          });
+        }
+      });
+    });
+  </script>
+</section>
   
 <section class="section" id="whatsapp-recovery">
   <h2>WhatsApp Recovery Assistance</h2>
@@ -781,7 +1019,7 @@ body::before {
       <span class="faq-icon">+</span>
     </summary>
     <div class="faq-answer">
-      Yes — you can extend or upgrade at any time. We’ll remind you before expiry so your access stays active.
+      Yes, you can extend or upgrade at any time. We’ll remind you before expiry so your access stays active.
     </div>
   </details>
 
