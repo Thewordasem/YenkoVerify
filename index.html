@@ -607,65 +607,52 @@ body::before {
 </section>
 
 <!-- START: FAQ SECTION (copy-paste whole block) -->
-<section class="section" id="faqs">
-  <h2>FAQs – Common Questions</h2>
+<!-- ===== DETAILS (NO-JS) FAQ BLOCK ===== -->
+<section id="yv-faqs-details" class="yv-section">
+  <h2 class="yv-h2">FAQs – Common Questions</h2>
 
-  <div class="faq-container">
+  <style>
+    /* Minimal styling for details/summary */
+    #yv-faqs-details { max-width:920px; margin:36px auto; padding:0 16px; font-family:Poppins, Arial, sans-serif; }
+    .yv-h2 { text-align:center; color:#e6c67a; margin-bottom:14px; font-size:1.5rem; }
+    details.yv-item { background:#0f0f0f; border-bottom:1px solid #222; padding:0; margin:0; border-radius:4px; overflow:hidden; }
+    summary.yv-summary { list-style:none; cursor:pointer; padding:14px 12px; color:#f5f0e6; display:flex; justify-content:space-between; align-items:center; font-size:1rem; }
+    summary.yv-summary::-webkit-details-marker { display:none; } /* hide default marker */
+    .yv-marker { color:#e6c67a; font-weight:700; margin-left:12px; }
+    .yv-content { padding:12px 12px 18px 12px; color:#cfcfcf; background:#121212; line-height:1.6; }
+    @media (max-width:600px){ .yv-h2{font-size:1.25rem;} summary.yv-summary{font-size:0.98rem;} }
+  </style>
 
-    <div class="faq">
-      <button class="faq-toggle" aria-expanded="false"><span class="text">Will my number work with WhatsApp, Gmail, or other apps?</span><span class="icon">+</span></button>
-      <div class="faq-content">
-        <p>Yes — all YenkoVerify numbers are designed for OTP and account verification purposes. You can use them for WhatsApp, Gmail, Telegram, TikTok, Facebook, and more. Platform policies may affect availability from time to time.</p>
-      </div>
+  <details class="yv-item">
+    <summary class="yv-summary">Will my number work with WhatsApp, Gmail, or other apps? <span class="yv-marker">+</span></summary>
+    <div class="yv-content">Yes — all YenkoVerify numbers are designed for OTP and account verification. Use them for WhatsApp, Gmail, Telegram, TikTok, and more. Platform policies may affect availability from time to time.</div>
+  </details>
+
+  <details class="yv-item">
+    <summary class="yv-summary">What’s included with each verification plan? <span class="yv-marker">+</span></summary>
+    <div class="yv-content">
+      <ul>
+        <li>✅ Access to verified U.S. or global number</li>
+        <li>✅ Real-time OTP delivery</li>
+        <li>✅ Monthly, quarterly, or yearly rental options</li>
+        <li>✅ Support and replacement if a number fails</li>
+      </ul>
     </div>
+  </details>
 
-    <div class="faq">
-      <button class="faq-toggle" aria-expanded="false"><span class="text">What’s included with each verification plan?</span><span class="icon">+</span></button>
-      <div class="faq-content">
-        <ul>
-          <li>✅ Access to verified U.S. or international number</li>
-          <li>✅ Real-time OTP delivery for multiple platforms</li>
-          <li>✅ Flexible durations — monthly, quarterly, or yearly</li>
-          <li>✅ Priority support and replacement if a number fails</li>
-        </ul>
-      </div>
-    </div>
+  <details class="yv-item">
+    <summary class="yv-summary">My WhatsApp account was banned. Can you help me recover it? <span class="yv-marker">+</span></summary>
+    <div class="yv-content">Yes — we assist with WhatsApp banned account recovery using official appeals and compliance steps. We do not use illegal bypasses.</div>
+  </details>
 
-    <!-- WhatsApp recovery -->
-    <div class="faq">
-      <button class="faq-toggle" aria-expanded="false"><span class="text">My WhatsApp account was banned. Can YenkoVerify help me recover it?</span><span class="icon">+</span></button>
-      <div class="faq-content">
-        <p>Yes. We assist clients with legitimate <strong>WhatsApp banned account recovery</strong>. Our team guides you through the official appeal process, prepares your recovery email, and ensures your setup complies with WhatsApp’s policies.</p>
-      </div>
-    </div>
+  <details class="yv-item">
+    <summary class="yv-summary">How can I earn as a promoter or reseller? <span class="yv-marker">+</span></summary>
+    <div class="yv-content">Promoters: Earn 10–20% commission via referral links. Resellers: Get up to 20% discount to resell and profit. Apply via the <a href="#partners" style="color:#e6c67a;">Partner Program</a> form.</div>
+  </details>
 
-    <!-- Reseller & affiliate -->
-    <div class="faq">
-      <button class="faq-toggle" aria-expanded="false"><span class="text">How can I earn as a YenkoVerify promoter or reseller?</span><span class="icon">+</span></button>
-      <div class="faq-content">
-        <p>You can earn in two ways:</p>
-        <ul>
-          <li>💰 <strong>Affiliate Promoters:</strong> Earn <strong>10–20% commission</strong> per sale through your referral link.</li>
-          <li>💎 <strong>Resellers:</strong> Get discounted pricing (up to <strong>20% off</strong>) and sell directly to clients for profit.</li>
-        </ul>
-        <p>Visit the <a href="#partners" style="color:#e6c67a; text-decoration:underline;">Partner Program</a> section to apply.</p>
-      </div>
-    </div>
-
-    <div class="faq">
-      <button class="faq-toggle" aria-expanded="false"><span class="text">Is there a minimum order or requirement to become a Reseller?</span><span class="icon">+</span></button>
-      <div class="faq-content">
-        <ul>
-          <li>🚀 <strong>Starter Resellers:</strong> 10% discount – 3–5 orders/month</li>
-          <li>⭐ <strong>Verified Resellers:</strong> 15% discount – 6–10 orders/month</li>
-          <li>💼 <strong>Top Resellers:</strong> 20% discount – 11+ orders/month</li>
-        </ul>
-      </div>
-    </div>
-
-  </div>
 </section>
 
+  
 <style>
   /* FAQ styles (self-contained) */
   .faq-container { max-width: 900px; margin: 0 auto; }
