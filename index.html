@@ -596,7 +596,275 @@ body::before {
 
 
 
-<section>
+
+
+<!-- START: FAQ SECTION (copy-paste whole block) -->
+<!-- ✅ Enhanced Professional FAQ Section -->
+<section id="faqs" class="section">
+  <h2 class="faq-heading">Frequently Asked Questions</h2>
+
+  <style>
+    /* ======== YenkoVerify FAQ Enhanced ======== */
+    #faqs {
+      max-width: 950px;
+      margin: 60px auto;
+      padding: 0 20px;
+      font-family: "Poppins", Arial, sans-serif;
+    }
+
+    .faq-heading {
+      text-align: center;
+      color: #e6c67a;
+      font-size: 2em;
+      margin-bottom: 25px;
+      letter-spacing: 0.5px;
+    }
+
+    details.faq-item {
+      background: #0f0f0f;
+      border: 1px solid #1c1c1c;
+      border-radius: 10px;
+      margin-bottom: 14px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    details.faq-item[open] {
+      border-color: #e6c67a;
+      box-shadow: 0 0 12px rgba(230, 198, 122, 0.15);
+      background: #131313;
+    }
+
+    summary.faq-question {
+      cursor: pointer;
+      padding: 18px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 1.05em;
+      font-weight: 500;
+      color: #f0f0f0;
+      position: relative;
+      transition: color 0.3s ease;
+      list-style: none;
+    }
+
+    summary.faq-question::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-icon {
+      font-size: 1.2em;
+      color: #e6c67a;
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    details[open] .faq-icon {
+      transform: rotate(45deg);
+      color: #f1d77a;
+    }
+
+    .faq-answer {
+      padding: 0 20px 18px 20px;
+      color: #cfcfcf;
+      line-height: 1.7;
+      border-top: 1px solid #222;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .faq-answer ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .faq-answer li {
+      padding-left: 18px;
+      text-indent: -10px;
+    }
+
+    .faq-answer li::before {
+      content: "✅ ";
+      color: #e6c67a;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-5px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .faq-heading {
+        font-size: 1.5em;
+      }
+      summary.faq-question {
+        font-size: 1em;
+        padding: 16px;
+      }
+      .faq-answer {
+        padding: 0 16px 16px 16px;
+      }
+    }
+  </style>
+
+  <!-- FAQ ITEMS -->
+  <details class="faq-item">
+    <summary class="faq-question">
+      Will my number work with WhatsApp, Gmail, or other apps?
+      <span class="faq-icon">+</span>
+    </summary>
+    <div class="faq-answer">
+      Yes — our numbers are optimized for OTP and verification. Use them for WhatsApp, Gmail, Telegram, TikTok, and more.
+    </div>
+  </details>
+
+  <details class="faq-item">
+    <summary class="faq-question">
+      What’s included with each verification plan?
+      <span class="faq-icon">+</span>
+    </summary>
+    <div class="faq-answer">
+      <ul>
+        <li>Access to verified U.S. or global number</li>
+        <li>Real-time OTP delivery</li>
+        <li>Flexible duration (monthly, quarterly, yearly)</li>
+        <li>Customer support and replacements</li>
+      </ul>
+    </div>
+  </details>
+
+  <details class="faq-item">
+    <summary class="faq-question">
+      My WhatsApp account was banned. Can you help me recover it?
+      <span class="faq-icon">+</span>
+    </summary>
+    <div class="faq-answer">
+      Yes, we assist clients with banned WhatsApp account recovery using official appeal and verification processes. 
+      We do not use any illegal bypass methods.
+    </div>
+  </details>
+
+  <details class="faq-item">
+    <summary class="faq-question">
+      How long does my verification number stay active?
+      <span class="faq-icon">+</span>
+    </summary>
+    <div class="faq-answer">
+      One-time OTP numbers expire after use. Rental plans last between 30 days to 12 months based on your selection. 
+      You can renew or upgrade anytime.
+    </div>
+  </details>
+
+  <details class="faq-item">
+    <summary class="faq-question">
+      Can I extend or upgrade my number later?
+      <span class="faq-icon">+</span>
+    </summary>
+
+    <div class="faq-answer">
+      Yes, you can extend or upgrade at any time. We’ll remind you before expiry so your access stays active.
+    </div>
+  </details>
+
+  <details class="faq-item">
+    <summary class="faq-question">
+      How can I earn as a promoter or reseller?
+      <span class="faq-icon">+</span>
+    </summary>
+    <div class="faq-answer">
+      <strong>Promoters:</strong> Earn 10–20% commission through your unique referral link. <br>
+      <strong>Resellers:</strong> Get up to 20% discount for bulk purchases to resell and profit. 
+      Apply via the <a href="#partners" style="color:#e6c67a;">Partner Program</a> form.
+    </div>
+  </details>
+
+  <details class="faq-item">
+    <summary class="faq-question">
+      Is YenkoVerify legal and secure?
+      <span class="faq-icon">+</span>
+    </summary>
+    <div class="faq-answer">
+      100%. We partner with trusted providers to ensure legitimate, secure, and private verification services. 
+      Your data is never shared or reused.
+    </div>
+  </details>
+
+</section>
+
+  <script>
+(function(){
+  // Defensive immediate init in case DOMContentLoaded was missed
+  function initYVFAQ() {
+    try {
+      const items = document.querySelectorAll('#yv-faqs .yv-faq, #yv-support .yv-faq');
+      if (!items || items.length === 0) {
+        console.warn('YV-FAQ: No items found — check that the HTML block is present.');
+        return;
+      }
+      // Attach listeners
+      items.forEach(item => {
+        const btn = item.querySelector('.yv-faq-btn');
+        const ans = item.querySelector('.yv-ans');
+        if (!btn || !ans) return;
+        // Ensure initial hidden attribute
+        ans.hidden = true;
+        btn.setAttribute('aria-expanded', 'false');
+
+        btn.addEventListener('click', () => {
+          const already = item.classList.contains('active');
+          // Close all items in same container
+          const siblingList = item.parentElement.querySelectorAll('.yv-faq');
+          siblingList.forEach(sib => {
+            sib.classList.remove('active');
+            const sibAns = sib.querySelector('.yv-ans');
+            if (sibAns) {
+              sibAns.style.maxHeight = null;
+              sibAns.hidden = true;
+              const sibBtn = sib.querySelector('.yv-faq-btn');
+              if (sibBtn) sibBtn.setAttribute('aria-expanded', 'false');
+            }
+          });
+
+          if (!already) {
+            // open this one
+            item.classList.add('active');
+            ans.hidden = false;
+            // force a reflow then set maxHeight so transition works
+            const h = ans.scrollHeight;
+            ans.style.maxHeight = h + 'px';
+            btn.setAttribute('aria-expanded', 'true');
+          } else {
+            // if was open, we already closed above
+            btn.setAttribute('aria-expanded', 'false');
+          }
+        });
+      });
+      console.log('YV-FAQ: initialized —', items.length, 'items');
+    } catch (e) {
+      console.error('YV-FAQ init error:', e);
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initYVFAQ);
+  } else {
+    // DOM already ready
+    initYVFAQ();
+  }
+  // Also try once more after a short timeout in case page builders mutate the DOM later
+  setTimeout(initYVFAQ, 800);
+})();
+</script>
+<!-- ===== END: Self-contained FAQ + Supp
+<!-- END: FAQ SECTION -->
+<!-- END: FAQ SECTION -->
+
+  <section>
   <div>
   💬 Prefer email? Reach us at 
   <a href="mailto:yenkoverify@gmail.com" style="color: #cfb254; text-decoration: none;">
@@ -605,127 +873,6 @@ body::before {
 </div>
 
 </section>
-
-<!-- START: FAQ SECTION (copy-paste whole block) -->
-<!-- ===== DETAILS (NO-JS) FAQ BLOCK ===== -->
-<section id="yv-faqs-details" class="yv-section">
-  <h2 class="yv-h2">FAQs – Common Questions</h2>
-
-  <style>
-    /* Minimal styling for details/summary */
-    #yv-faqs-details { max-width:920px; margin:36px auto; padding:0 16px; font-family:Poppins, Arial, sans-serif; }
-    .yv-h2 { text-align:center; color:#e6c67a; margin-bottom:14px; font-size:1.5rem; }
-    details.yv-item { background:#0f0f0f; border-bottom:1px solid #222; padding:0; margin:0; border-radius:4px; overflow:hidden; }
-    summary.yv-summary { list-style:none; cursor:pointer; padding:14px 12px; color:#f5f0e6; display:flex; justify-content:space-between; align-items:center; font-size:1rem; }
-    summary.yv-summary::-webkit-details-marker { display:none; } /* hide default marker */
-    .yv-marker { color:#e6c67a; font-weight:700; margin-left:12px; }
-    .yv-content { padding:12px 12px 18px 12px; color:#cfcfcf; background:#121212; line-height:1.6; }
-    @media (max-width:600px){ .yv-h2{font-size:1.25rem;} summary.yv-summary{font-size:0.98rem;} }
-  </style>
-
-  <details class="yv-item">
-    <summary class="yv-summary">Will my number work with WhatsApp, Gmail, or other apps? <span class="yv-marker">+</span></summary>
-    <div class="yv-content">Yes — all YenkoVerify numbers are designed for OTP and account verification. Use them for WhatsApp, Gmail, Telegram, TikTok, and more. Platform policies may affect availability from time to time.</div>
-  </details>
-
-  <details class="yv-item">
-    <summary class="yv-summary">What’s included with each verification plan? <span class="yv-marker">+</span></summary>
-    <div class="yv-content">
-      <ul>
-        <li>✅ Access to verified U.S. or global number</li>
-        <li>✅ Real-time OTP delivery</li>
-        <li>✅ Monthly, quarterly, or yearly rental options</li>
-        <li>✅ Support and replacement if a number fails</li>
-      </ul>
-    </div>
-  </details>
-
-  <details class="yv-item">
-    <summary class="yv-summary">My WhatsApp account was banned. Can you help me recover it? <span class="yv-marker">+</span></summary>
-    <div class="yv-content">Yes — we assist with WhatsApp banned account recovery using official appeals and compliance steps. We do not use illegal bypasses.</div>
-  </details>
-
-  <details class="yv-item">
-    <summary class="yv-summary">How can I earn as a promoter or reseller? <span class="yv-marker">+</span></summary>
-    <div class="yv-content">Promoters: Earn 10–20% commission via referral links. Resellers: Get up to 20% discount to resell and profit. Apply via the <a href="#partners" style="color:#e6c67a;">Partner Program</a> form.</div>
-  </details>
-
-</section>
-
-  
-<style>
-  /* FAQ styles (self-contained) */
-  .faq-container { max-width: 900px; margin: 0 auto; }
-  .faq { border-bottom: 1px solid #222; padding: 12px 0; }
-  .faq-toggle {
-    width: 100%;
-    background: none;
-    border: none;
-    color: #e6c67a;
-    font-size: 1.03rem;
-    text-align: left;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 6px 0;
-  }
-  .faq-toggle .text { flex: 1; padding-right: 10px; color: #f5f0e6; }
-  .faq-toggle .icon { font-size: 1.25rem; color:#e6c67a; width: 28px; text-align:center; }
-  .faq-content {
-    max-height: 0;
-    overflow: hidden;
-    color: #ccc;
-    transition: max-height 0.36s ease, padding 0.36s ease;
-    padding: 0 4px;
-  }
-  .faq.active .faq-content { padding-top: 10px; padding-bottom: 8px; }
-  /* when expanded, set a high max-height so content can grow */
-  .faq.active .faq-content { max-height: 420px; }
-  /* small screens tweaks */
-  @media (max-width:600px) {
-    .faq-toggle { font-size: 1rem; }
-    .faq-toggle .icon { font-size: 1.05rem; }
-  }
-</style>
-
-<script>
-  // Self-contained JS with debug info
-  document.addEventListener('DOMContentLoaded', function () {
-    try {
-      const toggles = document.querySelectorAll('.faq-toggle');
-      if (!toggles || toggles.length === 0) {
-        console.warn('FAQ: No toggles found. Check that the HTML was pasted correctly.');
-      }
-      toggles.forEach(btn => {
-        btn.addEventListener('click', () => {
-          const faq = btn.closest('.faq');
-          // toggle active class
-          const isActive = faq.classList.toggle('active');
-          // update aria-expanded for accessibility
-          btn.setAttribute('aria-expanded', isActive ? 'true' : 'false');
-          // update icon
-          const icon = btn.querySelector('.icon');
-          if (icon) icon.textContent = isActive ? '−' : '+';
-          // set maxHeight dynamically (helps if content length varies)
-          const content = faq.querySelector('.faq-content');
-          if (content) {
-            if (isActive) {
-              content.style.maxHeight = content.scrollHeight + 'px';
-            } else {
-              content.style.maxHeight = null;
-            }
-          }
-        });
-      });
-      console.log('FAQ: Toggle script loaded — found', toggles.length, 'items.');
-    } catch (err) {
-      console.error('FAQ script error:', err);
-    }
-  });
-</script>
-<!-- END: FAQ SECTION -->
-<!-- END: FAQ SECTION -->
 
  <footer>
   <p><strong>Verified U.S. & global numbers, your key to effortless verification.</strong></p>
