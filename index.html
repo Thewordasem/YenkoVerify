@@ -599,12 +599,12 @@ body::before {
 
 
 <!-- START: FAQ SECTION (copy-paste whole block) -->
-<!-- ✅ Enhanced Professional FAQ Section -->
+<!-- ✅ YenkoVerify FAQ Section (Gold Theme + Single Toggle) -->
 <section id="faqs" class="section">
   <h2 class="faq-heading">Frequently Asked Questions</h2>
 
   <style>
-    /* ======== YenkoVerify FAQ Enhanced ======== */
+    /* ======== YenkoVerify FAQ (Final Enhanced Version) ======== */
     #faqs {
       max-width: 950px;
       margin: 60px auto;
@@ -643,10 +643,14 @@ body::before {
       justify-content: space-between;
       font-size: 1.05em;
       font-weight: 500;
-      color: #f0f0f0;
+      color: #e6c67a;
       position: relative;
       transition: color 0.3s ease;
       list-style: none;
+    }
+
+    summary.faq-question:hover {
+      color: #f1d77a;
     }
 
     summary.faq-question::-webkit-details-marker {
@@ -666,10 +670,20 @@ body::before {
 
     .faq-answer {
       padding: 0 20px 18px 20px;
-      color: #cfcfcf;
+      color: #d6cfa3;
       line-height: 1.7;
       border-top: 1px solid #222;
       animation: fadeIn 0.3s ease;
+    }
+
+    .faq-answer a {
+      color: #e6c67a;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .faq-answer a:hover {
+      text-decoration: underline;
     }
 
     .faq-answer ul {
@@ -683,8 +697,9 @@ body::before {
     }
 
     .faq-answer li::before {
-      content: "✅ ";
+      content: "• ";
       color: #e6c67a;
+      font-weight: bold;
     }
 
     @keyframes fadeIn {
@@ -700,7 +715,7 @@ body::before {
 
     @media (max-width: 600px) {
       .faq-heading {
-        font-size: 1.5em;
+        font-size: 1.6em;
       }
       summary.faq-question {
         font-size: 1em;
@@ -733,7 +748,7 @@ body::before {
         <li>Access to verified U.S. or global number</li>
         <li>Real-time OTP delivery</li>
         <li>Flexible duration (monthly, quarterly, yearly)</li>
-        <li>Customer support and replacements</li>
+        <li>Customer support and quick replacements</li>
       </ul>
     </div>
   </details>
@@ -744,8 +759,8 @@ body::before {
       <span class="faq-icon">+</span>
     </summary>
     <div class="faq-answer">
-      Yes, we assist clients with banned WhatsApp account recovery using official appeal and verification processes. 
-      We do not use any illegal bypass methods.
+      Yes — we assist clients with banned WhatsApp account recovery through official appeal and verification methods.  
+      We never use illegal or third-party bypass tools.
     </div>
   </details>
 
@@ -755,7 +770,7 @@ body::before {
       <span class="faq-icon">+</span>
     </summary>
     <div class="faq-answer">
-      One-time OTP numbers expire after use. Rental plans last between 30 days to 12 months based on your selection. 
+      One-time OTP numbers expire after use. Rental plans last between 30 days to 12 months based on your selection.  
       You can renew or upgrade anytime.
     </div>
   </details>
@@ -765,9 +780,8 @@ body::before {
       Can I extend or upgrade my number later?
       <span class="faq-icon">+</span>
     </summary>
-
     <div class="faq-answer">
-      Yes, you can extend or upgrade at any time. We’ll remind you before expiry so your access stays active.
+      Yes — you can extend or upgrade at any time. We’ll remind you before expiry so your access stays active.
     </div>
   </details>
 
@@ -777,9 +791,9 @@ body::before {
       <span class="faq-icon">+</span>
     </summary>
     <div class="faq-answer">
-      <strong>Promoters:</strong> Earn 10–20% commission through your unique referral link. <br>
-      <strong>Resellers:</strong> Get up to 20% discount for bulk purchases to resell and profit. 
-      Apply via the <a href="#partners" style="color:#e6c67a;">Partner Program</a> form.
+      <strong>Promoters:</strong> Earn 10–20% commission via your referral link. <br>
+      <strong>Resellers:</strong> Get up to 20% discount for bulk purchases to resell and profit.  
+      Apply through the <a href="#partners">Partner Program</a> form.
     </div>
   </details>
 
@@ -789,13 +803,25 @@ body::before {
       <span class="faq-icon">+</span>
     </summary>
     <div class="faq-answer">
-      100%. We partner with trusted providers to ensure legitimate, secure, and private verification services. 
+      100%. We partner with trusted providers to ensure legitimate, secure, and private verification access.  
       Your data is never shared or reused.
     </div>
   </details>
 
+  <!-- Script for Single Toggle -->
+  <script>
+    document.querySelectorAll(".faq-item").forEach((item) => {
+      item.addEventListener("toggle", function () {
+        if (this.open) {
+          document.querySelectorAll(".faq-item").forEach((other) => {
+            if (other !== this && other.open) other.removeAttribute("open");
+          });
+        }
+      });
+    });
+  </script>
 </section>
-
+  
   <script>
 (function(){
   // Defensive immediate init in case DOMContentLoaded was missed
