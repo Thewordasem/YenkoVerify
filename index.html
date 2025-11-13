@@ -421,6 +421,31 @@ document.addEventListener("DOMContentLoaded", function() {
 
     </div>
 
+  <script>
+document.addEventListener("DOMContentLoaded", function() {
+  // 1. Capture the referral code from URL (?ref=ABC123)
+  const urlParams = new URLSearchParams(window.location.search);
+  const refCode = urlParams.get("ref");
+
+  // 2. Base WhatsApp message
+  let message = "Yenko, I'm interested in getting a verified U.S. number.";
+
+  // 3. Append referral if available
+  if (refCode) {
+    message += ` My referral code is: ${refCode.toUpperCase()}.`;
+  }
+
+  // 4. Encode message and update the WhatsApp link
+  const whatsappBtn = document.getElementById("whatsapp-btn");
+  if (whatsappBtn) {
+    const phoneNumber = "233505858712";
+    const encodedMessage = encodeURIComponent(message);
+    whatsappBtn.href = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+  }
+});
+</script>
+
+
 
 
   <p style="margin-top: 15px; font-size: 0.95em; color: #ccc;">
