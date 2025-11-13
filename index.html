@@ -306,35 +306,49 @@ body::before {
 </a>
 
 
-    <a href="https://wa.me/233505858712?text=Yenko%2C+I%27m+interested+in+the+Reseller+Program."
+<a id="reseller-btn" 
+   href="https://wa.me/233505858712?text=Yenko%2C+I'm+interested+in+the+Reseller+Program." 
    class="btn">
    🔗 Join as a Yenko Reseller
 </a>
+
 </div>
 
 <script>
 document.addEventListener("DOMContentLoaded", function() {
-  // 1. Capture the referral code from URL (?ref=ABC123)
+  // 1️⃣ Capture referral code from URL (?ref=ABC123)
   const urlParams = new URLSearchParams(window.location.search);
   const refCode = urlParams.get("ref");
 
-  // 2. Base WhatsApp message
-  let message = "Yenko, I'm interested in getting a verified U.S. number.";
+  // 2️⃣ Base message for "Get Verified"
+  let verifiedMsg = "Yenko, I'm interested in getting a verified U.S. number.";
 
-  // 3. Append referral if available
+  // 3️⃣ Base message for "Join as a Reseller"
+  let resellerMsg = "Hi Yenko team, I'm interested in joining as a reseller or affiliate.";
+
+  // 4️⃣ Append referral code if available
   if (refCode) {
-    message += ` My referral code is: ${refCode.toUpperCase()}.`;
+    verifiedMsg += ` My referral code is: ${refCode.toUpperCase()}.`;
+    resellerMsg += ` My referral code is: ${refCode.toUpperCase()}.`;
   }
 
-  // 4. Encode message and update the WhatsApp link
-  const whatsappBtn = document.getElementById("whatsapp-btn");
-  if (whatsappBtn) {
-    const phoneNumber = "233505858712";
-    const encodedMessage = encodeURIComponent(message);
-    whatsappBtn.href = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+  // 5️⃣ Encode and update WhatsApp links
+  const phoneNumber = "233505858712";
+  const verifiedBtn = document.getElementById("whatsapp-btn");
+  const resellerBtn = document.getElementById("reseller-btn");
+
+  const encodedVerified = encodeURIComponent(verifiedMsg);
+  const encodedReseller = encodeURIComponent(resellerMsg);
+
+  if (verifiedBtn) {
+    verifiedBtn.href = `https://wa.me/${phoneNumber}?text=${encodedVerified}`;
+  }
+  if (resellerBtn) {
+    resellerBtn.href = `https://wa.me/${phoneNumber}?text=${encodedReseller}`;
   }
 });
 </script>
+
 
   
  <section class="section" id="how-it-works">
