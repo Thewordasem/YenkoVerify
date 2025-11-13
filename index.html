@@ -314,27 +314,28 @@ body::before {
 
 <script>
 document.addEventListener("DOMContentLoaded", function() {
-  // 1. Get URL parameter (e.g. ?ref=KEN123)
+  // 1. Capture the referral code from URL (?ref=ABC123)
   const urlParams = new URLSearchParams(window.location.search);
-  const refCode = urlParams.get('ref');
+  const refCode = urlParams.get("ref");
 
-  // 2. Define your base message
+  // 2. Base WhatsApp message
   let message = "Yenko, I'm interested in getting a verified U.S. number.";
 
-  // 3. If referral code exists, append it
+  // 3. Append referral if available
   if (refCode) {
-    message +=  My referral code is: ${refCode.toUpperCase()};
+    message += ` My referral code is: ${refCode.toUpperCase()}.`;
   }
 
-  // 4. Encode and update WhatsApp link dynamically
-  const whatsappBtn = document.getElementById('whatsapp-btn');
+  // 4. Encode message and update the WhatsApp link
+  const whatsappBtn = document.getElementById("whatsapp-btn");
   if (whatsappBtn) {
-    const phoneNumber = "233505858712"; // your business number
+    const phoneNumber = "233505858712";
     const encodedMessage = encodeURIComponent(message);
-    whatsappBtn.href = https://wa.me/${phoneNumber}?text=${encodedMessage};
+    whatsappBtn.href = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
   }
 });
 </script>
+
   
  <section class="section" id="how-it-works">
   <h2>How It Works</h2>
