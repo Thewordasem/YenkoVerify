@@ -4,269 +4,242 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- SEO -->
-  <title>YenkoVerify | Verified U.S. & Global Numbers for OTP Verification</title>
-  <meta name="description" content="Rent or buy verified U.S. & global virtual numbers for WhatsApp, Gmail, Telegram, TikTok & more. One-time OTPs or rental numbers. Fast, secure, professional." />
-  <meta name="keywords" content="YenkoVerify, US OTP number, WhatsApp verification, Gmail OTP, Telegram verification, virtual numbers Ghana" />
+  <title>YenkoVerify | Verified U.S. Numbers for OTP & Account Verifications</title>
+
+  <meta name="description" content="Get verified U.S. virtual numbers for WhatsApp, Gmail, Telegram & more. One-time OTPs or rental numbers available." />
+  <meta name="keywords" content="yenkoverify, us number for otp, whatsapp otp, gmail verification number" />
   <meta name="author" content="YenkoVerify" />
+  <meta name="robots" content="index, follow" />
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="YenkoVerify | Verified U.S. Numbers" />
-  <meta property="og:description" content="Secure OTP & rental numbers trusted by professionals across Africa." />
-  <meta property="og:image" content="https://yenkoverify.com/logo.jpg" />
-  <meta property="og:type" content="website" />
+  <link rel="icon" href="bckgrnd.ico" />
 
-  <link rel="icon" href="favicon.ico" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
+  <!-- GLOBAL STYLES -->
   <style>
     :root {
       --gold: #e6c67a;
-      --gold-soft: #f1d77a;
-      --bg-dark: #000;
-      --panel: rgba(15,15,15,0.85);
-      --text-soft: #cfcfcf;
+      --dark: #0b0b0b;
+      --panel: rgba(0,0,0,0.75);
+      --max-width: 1400px;
     }
 
     * { box-sizing: border-box; }
 
     body {
       margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background: radial-gradient(circle at top, #0b0b0b, #000 70%);
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      background: url('photo_5140874849302547301_y.jpg') center/cover fixed no-repeat;
       color: var(--gold);
-      text-align: center;
     }
 
     body::before {
-      content: "";
+      content:"";
       position: fixed;
       inset: 0;
-      background: url('photo_5140874849302547301_y.jpg') center/cover no-repeat;
-      opacity: 0.18;
+      background: rgba(0,0,0,0.55);
       z-index: -1;
     }
 
-    header {
-      padding: 70px 20px 40px;
+    a { color: var(--gold); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ===== WRAPPER ===== */
+    .container {
+      max-width: var(--max-width);
+      margin: auto;
+      padding: 0 30px;
     }
 
-    .logo {
-      width: 160px;
+    /* ===== HERO (HORIZONTAL) ===== */
+    .hero {
+      min-height: 90vh;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      align-items: center;
+      gap: 60px;
+    }
+
+    .hero img {
+      width: 200px;
       margin-bottom: 20px;
     }
 
-    h1 {
-      font-size: 2.8rem;
-      margin: 10px 0;
-      letter-spacing: 1px;
+    .hero h1 {
+      font-size: clamp(2.5rem, 4vw, 3.6rem);
+      margin-bottom: 15px;
     }
 
-    .tagline {
-      max-width: 820px;
-      margin: 20px auto 40px;
-      font-size: 1.1rem;
-      color: var(--text-soft);
-      line-height: 1.8;
+    .hero p {
+      font-size: 1.15rem;
+      line-height: 1.7;
+      max-width: 700px;
+    }
+
+    .hero-buttons {
+      margin-top: 25px;
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
     }
 
     .btn {
-      display: inline-block;
-      margin: 10px;
-      padding: 14px 34px;
-      border-radius: 10px;
-      background: linear-gradient(135deg, var(--gold), var(--gold-soft));
+      background: var(--gold);
       color: #000;
+      padding: 14px 30px;
+      border-radius: 8px;
       font-weight: 600;
-      text-decoration: none;
-      transition: transform .25s ease, box-shadow .25s ease;
+      transition: transform .2s ease;
     }
 
-    .btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 0 18px rgba(230,198,122,.45);
-    }
+    .btn:hover { transform: scale(1.05); }
 
-    section {
+    .hero-card {
       background: var(--panel);
-      max-width: 1100px;
-      margin: 50px auto;
-      padding: 40px 25px;
-      border-radius: 16px;
-      box-shadow: 0 0 40px rgba(0,0,0,0.6);
+      padding: 40px;
+      border-radius: 14px;
     }
 
-    h2 {
+    /* ===== SECTIONS ===== */
+    section.section {
+      background: var(--panel);
+      border-radius: 14px;
+      margin: 60px auto;
+      padding: 50px;
+      max-width: var(--max-width);
+    }
+
+    section h2 {
       font-size: 2rem;
       margin-bottom: 20px;
+      text-align: center;
     }
 
-    p, li {
-      color: var(--text-soft);
-      line-height: 1.8;
-      font-size: 0.95rem;
-    }
-
-    ul { list-style: none; padding: 0; }
-    li::before { content: '• '; color: var(--gold); }
-
-    .pricing {
+    /* ===== GRIDS ===== */
+    .pricing,
+    .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 24px;
-      margin-top: 30px;
+      grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+      gap: 30px;
     }
 
     .price-card {
-      background: #0d0d0d;
-      padding: 26px;
-      border-radius: 14px;
-      border: 1px solid #1c1c1c;
-      transition: transform .25s ease, border .25s ease;
+      background: #fff;
+      color: #111;
+      padding: 30px;
+      border-radius: 12px;
+      transition: transform .2s ease;
     }
 
-    .price-card:hover {
-      transform: translateY(-4px);
-      border-color: var(--gold);
-    }
+    .price-card:hover { transform: translateY(-6px); }
 
-    .price {
-      font-size: 1.6rem;
-      margin: 12px 0;
-      color: var(--gold-soft);
-      font-weight: 700;
-    }
-
-    details {
-      background:#0f0f0f;
-      border:1px solid #1c1c1c;
-      border-radius:10px;
-      margin-bottom:14px;
-      padding:0;
-    }
-
-    summary {
-      cursor:pointer;
-      padding:18px 20px;
-      font-weight:500;
-      color:var(--gold);
-      list-style:none;
-    }
-
-    details[open] {
-      border-color:var(--gold);
-      box-shadow:0 0 12px rgba(230,198,122,.15);
-    }
-
-    .answer {
-      padding:0 20px 18px;
-      color:var(--text-soft);
+    .price-card.highlight {
+      border: 2px solid #2b3a67;
+      background: #f4f8ff;
     }
 
     footer {
-      margin: 60px 20px 30px;
-      color: #999;
-      font-size: 0.85rem;
+      text-align: center;
+      padding: 40px 20px;
+      color: #bbb;
     }
 
-    @media (max-width: 600px) {
-      h1 { font-size: 2.2rem; }
-      section { margin: 35px 15px; padding: 28px 18px; }
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .hero-buttons { justify-content: center; }
     }
   </style>
 </head>
+
 <body>
 
-<header>
-  <img src="logo.jpg" class="logo" alt="YenkoVerify Logo">
-  <h1>YenkoVerify</h1>
-  <p class="tagline">
-    Akwaaba 👋 Rent or buy <strong>verified U.S. & global virtual numbers</strong> for OTP and account verification.<br>
-    One‑time OTPs or rental numbers for WhatsApp, Gmail, Telegram, TikTok & more.
-  </p>
+<!-- ================= HERO ================= -->
+<div class="container hero">
+  <div>
+    <img src="logo.jpg" alt="YenkoVerify Logo" />
+    <h1>YenkoVerify</h1>
+    <p>
+      Akwaaba! Rent or buy verified U.S. & international numbers for WhatsApp, Gmail,
+      Telegram, TikTok and more — instantly, safely, and affordably.
+    </p>
 
-  <a id="whatsapp-btn" class="btn">Get Verified</a>
-  <a id="reseller-btn" class="btn">Join as Reseller</a>
-</header>
+    <div class="hero-buttons">
+      <a id="whatsapp-btn" class="btn">Get Verified</a>
+      <a id="reseller-btn" class="btn">Join as Reseller</a>
+    </div>
+  </div>
 
-<section>
+  <div class="hero-card">
+    <h3>Why YenkoVerify?</h3>
+    <ul>
+      <li>✔ Real verified U.S. numbers</li>
+      <li>✔ Instant OTP delivery</li>
+      <li>✔ One-time or rental access</li>
+      <li>✔ Trusted by freelancers & businesses</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ================= HOW IT WORKS ================= -->
+<section class="section">
   <h2>How It Works</h2>
-  <ul>
-    <li>Contact us via WhatsApp</li>
-    <li>Select One‑Time OTP or Rental Number</li>
-    <li>Pay via Mobile Money, Crypto or Bank Transfer</li>
-    <li>Receive OTP instantly or within minutes</li>
-  </ul>
+  <div class="grid">
+    <p>💬 Chat with us via WhatsApp</p>
+    <p>💳 Pay via MoMo, Crypto, Bank</p>
+    <p>📲 Receive OTP instantly</p>
+    <p>✅ Verify your account</p>
+  </div>
 </section>
 
-<section>
+<!-- ================= PRICING ================= -->
+<section class="section">
   <h2>Plans & Pricing</h2>
   <div class="pricing">
     <div class="price-card">
-      <h3>⚡ One‑Time OTP</h3>
-      <p>Single‑use verification for quick account setup.</p>
-      <div class="price">From GHS 59</div>
+      <h3>⚡ One-Time OTP</h3>
+      <p>Single-use verification</p>
+      <strong>From GHS 59</strong>
     </div>
 
     <div class="price-card">
-      <h3>🔁 Rental Numbers</h3>
-      <p>Long‑term verified numbers for WhatsApp, Gmail & more.</p>
-      <div class="price">From GHS 129 / month</div>
+      <h3>Rental Numbers</h3>
+      <p>Monthly / Quarterly / Yearly</p>
+      <strong>From GHS 129</strong>
     </div>
 
-    <div class="price-card">
-      <h3>💼 Multi‑Platform</h3>
-      <p>One number usable across multiple platforms.</p>
-      <div class="price">From GHS 333</div>
+    <div class="price-card highlight">
+      <h3>Reseller Access</h3>
+      <p>Up to 30% discount</p>
     </div>
   </div>
 </section>
 
-<section id="faqs">
-  <h2>Frequently Asked Questions</h2>
-
-  <details>
-    <summary>Will my number work for WhatsApp, Gmail or Telegram?</summary>
-    <div class="answer">Yes. Our numbers are optimized for OTP verification across major platforms.</div>
-  </details>
-
-  <details>
-    <summary>How long do rental numbers stay active?</summary>
-    <div class="answer">Rental numbers stay active based on your plan — monthly, quarterly or yearly.</div>
-  </details>
-
-  <details>
-    <summary>Do you help with WhatsApp recovery?</summary>
-    <div class="answer">Yes. We assist with official WhatsApp recovery and appeal processes.</div>
-  </details>
-</section>
-
-<section id="partners">
-  <h2>Partner Program</h2>
-  <p>Earn up to <strong>30% reseller discount</strong> or <strong>20% affiliate commission</strong>.</p>
-  <a class="btn" href="https://wa.me/233505858712">Apply Now</a>
-</section>
-
+<!-- ================= FOOTER ================= -->
 <footer>
-  <p><strong>YenkoVerify</strong> — Verified numbers, professional access.</p>
-  <p>© 2025 YenkoVerify • Powered by The Word / Asem Technologies</p>
+  <p><strong>Verified U.S. & global numbers — effortless verification.</strong></p>
+  <p>&copy; 2025 YenkoVerify • The Word / Asem Technologies</p>
 </footer>
 
+<!-- ================= WHATSAPP SCRIPT ================= -->
 <script>
-  const phone = '233505858712';
-  const params = new URLSearchParams(window.location.search);
-  const ref = params.get('ref');
-
-  let verifyMsg = "Yenko, I'm interested in getting a verified U.S. number.";
-  let resellerMsg = "Yenko, I'm interested in joining the reseller program.";
+document.addEventListener("DOMContentLoaded", function () {
+  const ref = new URLSearchParams(window.location.search).get("ref");
+  let msg1 = "Yenko, I'm interested in getting a verified U.S. number.";
+  let msg2 = "Hi Yenko team, I'm interested in joining as a reseller.";
 
   if (ref) {
-    verifyMsg += ` My referral code is: ${ref.toUpperCase()}.`;
-    resellerMsg += ` My referral code is: ${ref.toUpperCase()}.`;
+    msg1 += ` My referral code is: ${ref.toUpperCase()}.`;
+    msg2 += ` My referral code is: ${ref.toUpperCase()}.`;
   }
 
-  document.getElementById('whatsapp-btn').href = `https://wa.me/${phone}?text=${encodeURIComponent(verifyMsg)}`;
-  document.getElementById('reseller-btn').href = `https://wa.me/${phone}?text=${encodeURIComponent(resellerMsg)}`;
+  document.getElementById("whatsapp-btn").href =
+    "https://wa.me/233505858712?text=" + encodeURIComponent(msg1);
+
+  document.getElementById("reseller-btn").href =
+    "https://wa.me/233505858712?text=" + encodeURIComponent(msg2);
+});
 </script>
 
 </body>
