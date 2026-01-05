@@ -66,16 +66,9 @@
       gap: 70px;
     }
 
-    /* ✅ FIX: left side vertical centering */
-    .hero-left {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    .hero-left img {
-      width: 180px;
-      margin-bottom: 18px;
+    .hero img {
+      width: 190px;
+      margin-bottom: 22px;
       filter: drop-shadow(0 0 20px rgba(230,198,122,0.25));
     }
 
@@ -172,13 +165,25 @@
       transition: transform .25s ease;
     }
 
-    .step:hover { transform: translateY(-6px); }
+    .step:hover {
+      transform: translateY(-6px);
+    }
 
     .step i {
       font-size: 2.6rem;
       color: var(--gold);
       margin-bottom: 16px;
       display: block;
+    }
+
+    .step h4 {
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    .step p {
+      font-size: 0.95rem;
+      opacity: 0.85;
     }
 
     /* ===== PRICING ===== */
@@ -198,7 +203,22 @@
       box-shadow: 0 20px 60px rgba(0,0,0,0.25);
     }
 
-    .price-card:hover { transform: translateY(-8px); }
+    .price-card:hover {
+      transform: translateY(-8px);
+    }
+
+    .price-card h3 {
+      margin-bottom: 8px;
+    }
+
+    .price-card strong {
+      font-size: 1.4rem;
+    }
+
+    .price-card.highlight {
+      border: 3px solid var(--gold);
+      transform: scale(1.03);
+    }
 
     footer {
       text-align: center;
@@ -212,8 +232,9 @@
         grid-template-columns: 1fr;
         text-align: center;
       }
-      .hero-buttons { justify-content: center; }
-      .hero-left { align-items: center; }
+      .hero-buttons {
+        justify-content: center;
+      }
     }
   </style>
 </head>
@@ -222,13 +243,12 @@
 
 <!-- HERO -->
 <div class="container hero">
-
-  <div class="hero-left">
+  <div>
     <img src="IMG_3153.PNG" alt="YenkoVerify Logo">
     <h1>YenkoVerify</h1>
     <p>
       Akwaaba! Rent or buy verified U.S. & international numbers for WhatsApp,
-      Gmail, Telegram, TikTok and more — instantly, securely, and affordably.
+      Gmail, Telegram, TikTok and more, instantly, securely, and affordably.
     </p>
 
     <div class="hero-buttons">
@@ -246,17 +266,37 @@
       <li>Trusted by freelancers & businesses</li>
     </ul>
   </div>
-
 </div>
 
 <!-- HOW IT WORKS -->
 <section class="section">
   <h2>How It Works</h2>
   <div class="grid">
-    <div class="step"><i class="ph-chat-circle-dots"></i><h4>Contact Us</h4></div>
-    <div class="step"><i class="ph-credit-card"></i><h4>Make Payment</h4></div>
-    <div class="step"><i class="ph-key"></i><h4>Receive OTP</h4></div>
-    <div class="step"><i class="ph-check-circle"></i><h4>Verify Account</h4></div>
+
+    <div class="step">
+      <i class="ph-chat-circle-dots"></i>
+      <h4>Contact Us</h4>
+      <p>Reach out via WhatsApp to request a number</p>
+    </div>
+
+    <div class="step">
+      <i class="ph-credit-card"></i>
+      <h4>Make Payment</h4>
+      <p>Pay securely via MoMo, Crypto or Bank</p>
+    </div>
+
+    <div class="step">
+      <i class="ph-key"></i>
+      <h4>Receive OTP</h4>
+      <p>Instant delivery of your verification code</p>
+    </div>
+
+    <div class="step">
+      <i class="ph-check-circle"></i>
+      <h4>Verify Account</h4>
+      <p>Complete verification successfully</p>
+    </div>
+
   </div>
 </section>
 
@@ -264,14 +304,29 @@
 <section class="section">
   <h2>Plans & Pricing</h2>
   <div class="pricing">
-    <div class="price-card"><h3>One-Time OTP</h3><strong>From GHS 59</strong></div>
-    <div class="price-card"><h3>Rental Numbers</h3><strong>From GHS 99</strong></div>
-    <div class="price-card highlight"><h3>Reseller Access</h3></div>
+
+    <div class="price-card">
+      <h3>One-Time OTP</h3>
+      <p>Single-use verification</p>
+      <strong>From GHS 59</strong>
+    </div>
+
+    <div class="price-card">
+      <h3>Rental Numbers</h3>
+      <p>Monthly / Quarterly / Yearly</p>
+      <strong>From GHS 99</strong>
+    </div>
+
+    <div class="price-card highlight">
+      <h3>Reseller Access</h3>
+      <p>Up to 30% discount</p>
+    </div>
+
   </div>
 </section>
 
 <footer>
-  <p><strong>Verified U.S. & global numbers — effortless verification.</strong></p>
+  <p><strong>Verified U.S. & global numbers - effortless verification.</strong></p>
   <p>&copy; 2026 YenkoVerify • The Word / Asem Technologies</p>
 </footer>
 
@@ -280,12 +335,15 @@ document.addEventListener("DOMContentLoaded", function () {
   const ref = new URLSearchParams(window.location.search).get("ref");
   let msg1 = "Yenko, I'm interested in getting a verified U.S. number.";
   let msg2 = "Hi Yenko team, I'm interested in joining as a reseller.";
+
   if (ref) {
     msg1 += ` My referral code is: ${ref.toUpperCase()}.`;
     msg2 += ` My referral code is: ${ref.toUpperCase()}.`;
   }
+
   document.getElementById("whatsapp-btn").href =
     "https://wa.me/233505858712?text=" + encodeURIComponent(msg1);
+
   document.getElementById("reseller-btn").href =
     "https://wa.me/233505858712?text=" + encodeURIComponent(msg2);
 });
