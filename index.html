@@ -17,7 +17,8 @@
 }
 
 *{box-sizing:border-box}
-a{ text-decoration:none; color:inherit } /* 🔥 BUTTON FIX */
+a{ text-decoration:none; color:inherit }
+a.btn{ cursor:pointer; } /* ✅ CLICK FIX */
 
 body{
   margin:0;
@@ -28,12 +29,10 @@ body{
   transition:background 1s ease;
 }
 
-/* SCROLL GOLD TRANSITION */
 body.gold{
   background:radial-gradient(circle at top, rgba(230,198,122,.18), #050505 65%);
 }
 
-/* BACKGROUND */
 body::before{
   content:"";
   position:fixed;
@@ -50,14 +49,12 @@ body::before{
   z-index:-2;
 }
 
-/* LAYOUT */
 .container{
   max-width:1400px;
   margin:auto;
   padding:0 32px;
 }
 
-/* HERO */
 .hero{
   min-height:95vh;
   display:grid;
@@ -83,7 +80,6 @@ body::before{
   line-height:1.75;
 }
 
-/* BUTTONS */
 .hero-buttons{
   margin-top:30px;
   display:flex;
@@ -91,6 +87,7 @@ body::before{
   flex-wrap:wrap;
 }
 .btn{
+  display:inline-block;
   padding:15px 34px;
   border-radius:12px;
   font-weight:700;
@@ -101,7 +98,6 @@ body::before{
 }
 .btn:hover{transform:translateY(-3px)}
 
-/* MAP */
 .map{
   margin:120px auto 60px;
   text-align:center;
@@ -116,11 +112,8 @@ body::before{
   stroke-dasharray:4 6;
   animation:dash 4s linear infinite;
 }
-@keyframes dash{
-  to{stroke-dashoffset:-60}
-}
+@keyframes dash{ to{stroke-dashoffset:-60} }
 
-/* PRICING */
 .pricing{
   padding:120px 0;
 }
@@ -144,41 +137,22 @@ body::before{
   padding:36px;
   backdrop-filter:blur(16px);
   box-shadow:0 30px 80px rgba(0,0,0,.6);
-  position:relative;
 }
 .plan.featured{
   border-color:var(--gold);
   box-shadow:0 0 0 1px var(--gold),0 40px 120px rgba(230,198,122,.25);
 }
-.plan h3{
-  color:var(--gold);
-  font-size:1.4rem;
-}
-.price{
-  font-size:2.2rem;
-  font-weight:800;
-  margin:20px 0;
-}
-.plan ul{
-  padding:0;
-  list-style:none;
-  line-height:1.9;
-}
-.plan .btn{
-  display:inline-block;
-  margin-top:25px;
-  width:100%;
-  text-align:center;
-}
+.plan h3{ color:var(--gold); }
+.price{ font-size:2.2rem; font-weight:800; margin:20px 0; }
+.plan ul{ padding:0; list-style:none; line-height:1.9; }
+.plan .btn{ width:100%; text-align:center; margin-top:25px; }
 
-/* FOOTER */
 footer{
   text-align:center;
   padding:50px 20px;
   color:#aaa;
 }
 
-/* MOBILE */
 @media(max-width:900px){
   .hero{grid-template-columns:1fr;text-align:center}
   .hero-buttons{justify-content:center}
@@ -193,7 +167,7 @@ footer{
 <section class="container hero">
   <div>
     <div class="brand">
-      <img src="IMG_3157.PNG">
+      <img src="IMG_3157.PNG" alt="YenkoVerify">
       <h1>YenkoVerify</h1>
     </div>
 
@@ -203,8 +177,8 @@ footer{
     </p>
 
     <div class="hero-buttons">
-      <a id="whatsapp" class="btn">Get Verified</a>
-      <a id="reseller" class="btn">Join as Reseller</a>
+      <a id="whatsapp" class="btn" href="#">Get Verified</a>
+      <a id="reseller" class="btn" href="#">Join as Reseller</a>
     </div>
   </div>
 
@@ -219,7 +193,6 @@ footer{
   </div>
 </section>
 
-<!-- 🌐 WORLD MAP -->
 <section class="map">
 <svg viewBox="0 0 1000 500">
   <path d="M100 250 L400 180" class="route"/>
@@ -233,7 +206,6 @@ footer{
 <p>Global routing • Real carrier paths • Low latency</p>
 </section>
 
-<!-- 💰 PRICING -->
 <section class="pricing container">
 <h2>Pricing</h2>
 
@@ -246,7 +218,7 @@ footer{
       <li>Instant delivery</li>
       <li>No reuse</li>
     </ul>
-    <a class="btn">Buy Now</a>
+    <a class="btn" href="#">Buy Now</a>
   </div>
 
   <div class="plan">
@@ -257,7 +229,7 @@ footer{
       <li>Multiple OTPs</li>
       <li>Auto-renew option</li>
     </ul>
-    <a class="btn">Get Rental</a>
+    <a class="btn" href="#">Get Rental</a>
   </div>
 
   <div class="plan featured">
@@ -268,7 +240,7 @@ footer{
       <li>Priority routes</li>
       <li>Dedicated support</li>
     </ul>
-    <a class="btn">Apply</a>
+    <a class="btn" href="#">Apply</a>
   </div>
 </div>
 </section>
@@ -283,7 +255,19 @@ addEventListener("scroll",()=>{
   document.body.classList.toggle("gold",scrollY>400);
 });
 
-/* PARTICLES (STABLE) */
+/* BUTTON LOGIC */
+const phone = "233505858712";
+document.getElementById("whatsapp").href =
+  "https://wa.me/" + phone + "?text=" + encodeURIComponent(
+    "Hi YenkoVerify, I want to get a verified virtual number."
+  );
+
+document.getElementById("reseller").href =
+  "https://wa.me/" + phone + "?text=" + encodeURIComponent(
+    "Hi YenkoVerify, I'm interested in reseller access."
+  );
+
+/* PARTICLES (POWERFUL VERSION — KEPT) */
 const c=document.getElementById("bg"),ctx=c.getContext("2d");
 let w,h,dpr;
 const nodes=[];
