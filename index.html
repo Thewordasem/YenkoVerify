@@ -1,329 +1,294 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>YenkoVerify | Verified Virtual Numbers</title>
 
-  <title>YenkoVerify | Verified U.S. Numbers for OTP & Account Verifications</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://unpkg.com/phosphor-icons@1.4.2/src/css/phosphor.css" rel="stylesheet">
 
-  <meta name="description" content="Get verified U.S. virtual numbers for WhatsApp, Gmail, Telegram & more. One-time OTPs or rental numbers available." />
-  <meta name="keywords" content="yenkoverify, us number for otp, whatsapp otp, gmail verification number" />
-  <meta name="author" content="YenkoVerify" />
-  <meta name="robots" content="index, follow" />
+<style>
+:root{
+  --gold:#e6c67a;
+  --dark:#050505;
+  --panel:rgba(15,15,15,.72);
+  --border:rgba(255,255,255,.08);
+  --max:1400px;
+}
 
-  <link rel="icon" href="bckgrnd.ico" />
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:Inter,system-ui,sans-serif;
+  background:#050505;
+  color:#f5f5f5;
+  overflow-x:hidden;
+}
 
-  <!-- GOOGLE FONT -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+/* GRADIENT OVERLAY */
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(230,198,122,.18), transparent 45%),
+    linear-gradient(to bottom, rgba(0,0,0,.55), rgba(0,0,0,.92));
+  z-index:-3;
+}
 
-  <!-- PHOSPHOR ICONS -->
-  <link href="https://unpkg.com/phosphor-icons@1.4.2/src/css/phosphor.css" rel="stylesheet">
+/* PARTICLES */
+#bg{
+  position:fixed;
+  inset:0;
+  z-index:-2;
+}
 
-  <style>
-    :root {
-      --gold: #e6c67a;
-      --dark: #070707;
-      --panel: rgba(15,15,15,0.72);
-      --border: rgba(255,255,255,0.08);
-      --max-width: 1400px;
-    }
+/* CONTAINER */
+.container{
+  max-width:var(--max);
+  margin:auto;
+  padding:0 32px;
+}
 
-    * { box-sizing: border-box; }
+/* HERO */
+.hero{
+  min-height:95vh;
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:70px;
+  align-items:center;
+}
 
-    body {
-      margin: 0;
-      font-family: 'Inter', system-ui, sans-serif;
-      background: url('photo_5140874849302547301_y.jpg') center/cover fixed no-repeat;
-      color: #f5f5f5;
-    }
+/* BRAND */
+.brand img{
+  width:180px;
+  filter:drop-shadow(0 0 28px rgba(230,198,122,.35));
+  transition:.3s;
+}
+.brand h1{
+  margin:6px 0 0;
+  font-size:clamp(2.8rem,4vw,3.8rem);
+  font-weight:800;
+  color:var(--gold);
+}
 
-    body::before {
-      content:"";
-      position: fixed;
-      inset: 0;
-      background: linear-gradient(
-        to bottom,
-        rgba(0,0,0,0.65),
-        rgba(0,0,0,0.85)
-      );
-      z-index: -1;
-    }
+/* TEXT */
+.hero p{
+  max-width:640px;
+  font-size:1.15rem;
+  line-height:1.75;
+  opacity:.95;
+}
 
-    a { color: inherit; text-decoration: none; }
+/* BUTTONS */
+.hero-buttons{
+  margin-top:30px;
+  display:flex;
+  gap:16px;
+  flex-wrap:wrap;
+}
+.btn{
+  padding:15px 34px;
+  border-radius:12px;
+  font-weight:700;
+  background:linear-gradient(135deg,#f1d58c,#d9b45f);
+  color:#111;
+  box-shadow:0 14px 40px rgba(230,198,122,.35);
+  transition:.25s;
+  position:relative;
+  overflow:hidden;
+}
+.btn::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(120deg,transparent,rgba(255,255,255,.4),transparent);
+  transform:translateX(-120%);
+}
+.btn:hover::after{transform:translateX(120%);transition:.6s}
+.btn:hover{transform:translateY(-3px)}
 
-    .container {
-      max-width: var(--max-width);
-      margin: auto;
-      padding: 0 32px;
-    }
+/* GLASS CARD */
+.hero-card{
+  background:var(--panel);
+  backdrop-filter:blur(18px);
+  border:1px solid var(--border);
+  padding:45px;
+  border-radius:18px;
+  box-shadow:0 30px 90px rgba(0,0,0,.6);
+}
+.hero-card h3{color:var(--gold);font-size:1.6rem}
 
-    /* ===== HERO ===== */
-    .hero {
-      min-height: 95vh;
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      align-items: center;
-      gap: 70px;
-    }
+/* COUNTRY CHIPS */
+.chips{
+  position:fixed;
+  left:20px;
+  bottom:30px;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  z-index:5;
+}
+.chip{
+  background:var(--panel);
+  border:1px solid var(--border);
+  padding:6px 12px;
+  border-radius:999px;
+  font-size:.85rem;
+  backdrop-filter:blur(14px);
+}
 
-    /* LOGO + TITLE LOCKED UNIT */
-    .brand {
-      display: inline-flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 6px;
-      animation: fadeUp 1s ease forwards;
-    }
+/* SIM HUD */
+.sim{
+  position:fixed;
+  right:30px;
+  bottom:30px;
+  background:var(--panel);
+  border:1px solid var(--border);
+  padding:14px 18px;
+  border-radius:14px;
+  backdrop-filter:blur(16px);
+  z-index:5;
+}
+.sim span{color:var(--gold)}
 
-    .brand img {
-      width: 180px;
-      transition: width 0.3s ease;
-      filter: drop-shadow(0 0 20px rgba(230,198,122,0.25));
-    }
+footer{
+  text-align:center;
+  padding:50px 20px;
+  color:#aaa;
+  font-size:.95rem;
+}
 
-    .brand h1 {
-      font-size: clamp(2.8rem, 4vw, 3.8rem);
-      font-weight: 800;
-      margin: 0;
-      color: var(--gold);
-      letter-spacing: -0.02em;
-    }
-
-    .hero p {
-      margin-top: 16px;
-      font-size: 1.15rem;
-      line-height: 1.75;
-      max-width: 640px;
-      opacity: 0.95;
-      animation: fadeUp 1.2s ease forwards;
-    }
-
-    .hero-buttons {
-      margin-top: 30px;
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
-      animation: fadeUp 1.4s ease forwards;
-    }
-
-    .btn {
-      background: linear-gradient(135deg, #f1d58c, #d9b45f);
-      color: #111;
-      padding: 15px 34px;
-      border-radius: 10px;
-      font-weight: 700;
-      transition: all .25s ease;
-      box-shadow: 0 10px 30px rgba(230,198,122,0.25);
-    }
-
-    .btn:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 16px 40px rgba(230,198,122,0.4);
-    }
-
-    .hero-card {
-      background: var(--panel);
-      backdrop-filter: blur(16px);
-      border: 1px solid var(--border);
-      padding: 45px;
-      border-radius: 18px;
-      box-shadow: 0 30px 80px rgba(0,0,0,0.5);
-      animation: fadeUp 1.3s ease forwards;
-    }
-
-    .hero-card h3 {
-      color: var(--gold);
-      font-size: 1.6rem;
-      margin-bottom: 18px;
-    }
-
-    .hero-card ul {
-      list-style: none;
-      padding: 0;
-      line-height: 2;
-    }
-
-    /* ===== SECTION ===== */
-    section.section {
-      background: var(--panel);
-      backdrop-filter: blur(14px);
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      margin: 80px auto;
-      padding: 70px 50px;
-      max-width: var(--max-width);
-      box-shadow: 0 30px 80px rgba(0,0,0,0.45);
-    }
-
-    section h2 {
-      text-align: center;
-      font-size: 2.2rem;
-      margin-bottom: 45px;
-      color: var(--gold);
-    }
-
-    /* ===== HOW IT WORKS ===== */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
-      gap: 30px;
-      text-align: center;
-    }
-
-    .step {
-      background: rgba(255,255,255,0.04);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 35px 25px;
-      transition: transform .25s ease;
-    }
-
-    .step:hover {
-      transform: translateY(-6px);
-    }
-
-    .step i {
-      font-size: 2.6rem;
-      color: var(--gold);
-      margin-bottom: 16px;
-      display: block;
-    }
-
-    /* ===== PRICING ===== */
-    .pricing {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
-      gap: 35px;
-    }
-
-    .price-card {
-      background: #fff;
-      color: #111;
-      padding: 40px 30px;
-      border-radius: 18px;
-      text-align: center;
-      transition: all .25s ease;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.25);
-    }
-
-    .price-card.highlight {
-      border: 3px solid var(--gold);
-      transform: scale(1.03);
-    }
-
-    footer {
-      text-align: center;
-      padding: 50px 20px;
-      color: #aaa;
-      font-size: 0.95rem;
-    }
-
-    /* ===== ANIMATIONS ===== */
-    @keyframes fadeUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @media (max-width: 900px) {
-      .hero {
-        grid-template-columns: 1fr;
-        text-align: center;
-      }
-      .brand {
-        align-items: center;
-      }
-      .hero-buttons {
-        justify-content: center;
-      }
-    }
-  </style>
+/* MOBILE */
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr;text-align:center}
+  .hero-buttons{justify-content:center}
+}
+</style>
 </head>
 
 <body>
 
-<!-- HERO -->
+<canvas id="bg"></canvas>
+
 <div class="container hero">
   <div>
-    <div class="brand" id="brand">
-      <img src="IMG_3157.PNG" alt="YenkoVerify Logo" id="logo">
+    <div class="brand">
+      <img src="IMG_3157.PNG" id="logo">
       <h1>YenkoVerify</h1>
     </div>
 
     <p>
-      Akwaaba! Rent or buy verified U.S. & international numbers for WhatsApp,
-      Gmail, Telegram, TikTok and more, instantly, securely, and affordably.
+      Carrier-grade virtual numbers for WhatsApp, Gmail, Telegram & more.
+      Real signals. Instant OTP delivery.
     </p>
 
     <div class="hero-buttons">
-      <a id="whatsapp-btn" class="btn">Get Verified</a>
-      <a id="reseller-btn" class="btn">Join as Reseller</a>
+      <a id="whatsapp" class="btn">Get Verified</a>
+      <a id="reseller" class="btn">Join as Reseller</a>
     </div>
   </div>
 
   <div class="hero-card">
-    <h3>Why YenkoVerify?</h3>
+    <h3>Why YenkoVerify</h3>
     <ul>
-      <li>Real verified U.S. numbers</li>
-      <li>Instant OTP delivery</li>
-      <li>One-time or rental access</li>
-      <li>Trusted by freelancers & businesses</li>
+      <li>Live U.S. & global routes</li>
+      <li>High OTP success rate</li>
+      <li>One-time & rental access</li>
+      <li>Trusted by businesses</li>
     </ul>
   </div>
 </div>
 
-<!-- HOW IT WORKS -->
-<section class="section">
-  <h2>How It Works</h2>
-  <div class="grid">
-    <div class="step"><i class="ph-chat-circle-dots"></i><h4>Contact Us</h4><p>Reach out via WhatsApp</p></div>
-    <div class="step"><i class="ph-credit-card"></i><h4>Make Payment</h4><p>MoMo, Crypto or Bank</p></div>
-    <div class="step"><i class="ph-key"></i><h4>Receive OTP</h4><p>Instant delivery</p></div>
-    <div class="step"><i class="ph-check-circle"></i><h4>Verify</h4><p>Complete successfully</p></div>
-  </div>
-</section>
+<div class="chips">
+  <div class="chip">🇺🇸 +1 USA</div>
+  <div class="chip">🇬🇧 +44 UK</div>
+  <div class="chip">🇩🇪 +49 DE</div>
+  <div class="chip">🇬🇭 +233 GH</div>
+</div>
 
-<!-- PRICING -->
-<section class="section">
-  <h2>Plans & Pricing</h2>
-  <div class="pricing">
-    <div class="price-card"><h3>One-Time OTP</h3><strong>From GHS 59</strong></div>
-    <div class="price-card"><h3>Rental Numbers</h3><strong>From GHS 99</strong></div>
-    <div class="price-card highlight"><h3>Reseller Access</h3><p>Up to 30% discount</p></div>
-  </div>
-</section>
+<div class="sim">
+  NETWORK: <span>LTE / 5G</span><br>
+  STATUS: <span>ACTIVE</span>
+</div>
 
 <footer>
-  <p><strong>Verified U.S. & global numbers - effortless verification.</strong></p>
-  <p>&copy; 2026 YenkoVerify • The Word / Asem Technologies</p>
+  © 2026 YenkoVerify • Asem Technologies
 </footer>
 
 <script>
-  // WhatsApp logic
-  const ref = new URLSearchParams(window.location.search).get("ref");
-  let msg1 = "Yenko, I'm interested in getting a verified U.S. number.";
-  let msg2 = "Hi Yenko team, I'm interested in joining as a reseller.";
+/* ===== PARTICLES (FIXED) ===== */
+const c=document.getElementById("bg");
+const ctx=c.getContext("2d");
+let w,h,dpr;
+const nodes=[];
 
-  if (ref) {
-    msg1 += ` My referral code is: ${ref.toUpperCase()}.`;
-    msg2 += ` My referral code is: ${ref.toUpperCase()}.`;
-  }
+function resize(){
+  dpr=Math.min(devicePixelRatio,2);
+  w=innerWidth;
+  h=innerHeight;
+  c.width=w*dpr;
+  c.height=h*dpr;
+  c.style.width=w+"px";
+  c.style.height=h+"px";
+  ctx.setTransform(dpr,0,0,dpr,0,0); // 🔥 FIX
+}
+resize();
+addEventListener("resize",resize);
 
-  document.getElementById("whatsapp-btn").href =
-    "https://wa.me/233505858712?text=" + encodeURIComponent(msg1);
-  document.getElementById("reseller-btn").href =
-    "https://wa.me/233505858712?text=" + encodeURIComponent(msg2);
-
-  // Logo resize on scroll
-  window.addEventListener("scroll", () => {
-    const logo = document.getElementById("logo");
-    logo.style.width = window.scrollY > 80 ? "140px" : "180px";
+for(let i=0;i<90;i++){
+  nodes.push({
+    x:Math.random()*w,
+    y:Math.random()*h,
+    vx:(Math.random()-.5)*.35,
+    vy:(Math.random()-.5)*.35,
+    p:Math.random()*Math.PI*2
   });
+}
+
+function draw(){
+  ctx.clearRect(0,0,w,h);
+
+  nodes.forEach((a,i)=>{
+    a.x+=a.vx; a.y+=a.vy; a.p+=.02;
+    if(a.x<0||a.x>w)a.vx*=-1;
+    if(a.y<0||a.y>h)a.vy*=-1;
+
+    const r=1.6+Math.sin(a.p)*.8;
+    ctx.fillStyle="rgba(230,198,122,.9)";
+    ctx.beginPath(); ctx.arc(a.x,a.y,r,0,Math.PI*2); ctx.fill();
+
+    nodes.slice(i+1).forEach(b=>{
+      const d=Math.hypot(a.x-b.x,a.y-b.y);
+      if(d<130){
+        ctx.strokeStyle=`rgba(230,198,122,${1-d/130})`;
+        ctx.lineWidth=.6;
+        ctx.beginPath();
+        ctx.moveTo(a.x,a.y);
+        ctx.lineTo(b.x,b.y);
+        ctx.stroke();
+      }
+    });
+
+    // 5G pulse
+    ctx.strokeStyle="rgba(230,198,122,.08)";
+    ctx.beginPath();
+    ctx.arc(a.x,a.y,12+Math.sin(a.p)*6,0,Math.PI*2);
+    ctx.stroke();
+  });
+
+  requestAnimationFrame(draw);
+}
+draw();
+
+/* WHATSAPP */
+whatsapp.href="https://wa.me/233505858712?text="+encodeURIComponent("Hi Yenko, I want a verified number.");
+reseller.href="https://wa.me/233505858712?text="+encodeURIComponent("Hello, I want reseller access.");
+
+addEventListener("scroll",()=>{
+  logo.style.width=scrollY>80?"140px":"180px";
+});
 </script>
 
 </body>
