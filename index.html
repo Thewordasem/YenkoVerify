@@ -4,10 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<title>YenkoVerify | Verified U.S. Numbers for OTP & Account Verifications</title>
-
-<meta name="description" content="Get verified U.S. virtual numbers for WhatsApp, Gmail, Telegram & more." />
-<link rel="icon" href="bckgrnd.ico" />
+<title>YenkoVerify | Verified Virtual Numbers</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link href="https://unpkg.com/phosphor-icons@1.4.2/src/css/phosphor.css" rel="stylesheet">
@@ -15,7 +12,7 @@
 <style>
 :root{
   --gold:#e6c67a;
-  --dark:#070707;
+  --dark:#050505;
   --panel:rgba(15,15,15,.72);
   --border:rgba(255,255,255,.08);
   --max:1400px;
@@ -27,25 +24,23 @@ body{
   margin:0;
   font-family:Inter,system-ui,sans-serif;
   color:#f5f5f5;
-  background:url('photo_5140874849302547301_y.jpg') center/cover fixed no-repeat;
+  background:#050505;
   overflow-x:hidden;
 }
 
-/* OVERLAY */
+/* GRADIENT OVERLAY */
 body::before{
   content:"";
   position:fixed;
   inset:0;
-  background:linear-gradient(
-    to bottom,
-    rgba(0,0,0,.55),
-    rgba(0,0,0,.9)
-  );
+  background:
+    radial-gradient(circle at 20% 20%, rgba(230,198,122,.15), transparent 40%),
+    linear-gradient(to bottom, rgba(0,0,0,.55), rgba(0,0,0,.9));
   z-index:-3;
 }
 
 /* PARTICLE CANVAS */
-#particles{
+#telecom-bg{
   position:fixed;
   inset:0;
   z-index:-2;
@@ -68,18 +63,13 @@ body::before{
 }
 
 /* BRAND */
-.brand{
-  display:flex;
-  flex-direction:column;
-  gap:6px;
-}
 .brand img{
   width:180px;
-  filter:drop-shadow(0 0 20px rgba(230,198,122,.25));
+  filter:drop-shadow(0 0 25px rgba(230,198,122,.35));
   transition:.3s;
 }
 .brand h1{
-  margin:0;
+  margin:6px 0 0;
   font-size:clamp(2.8rem,4vw,3.8rem);
   font-weight:800;
   color:var(--gold);
@@ -117,7 +107,7 @@ body::before{
 /* GLASS CARD */
 .hero-card{
   background:var(--panel);
-  backdrop-filter:blur(16px);
+  backdrop-filter:blur(18px);
   border:1px solid var(--border);
   padding:45px;
   border-radius:18px;
@@ -133,62 +123,22 @@ body::before{
   line-height:2;
 }
 
-/* SECTION */
-.section{
-  margin:80px auto;
-  padding:70px 50px;
-  max-width:var(--max);
+/* FLOATING SIM HUD */
+.sim-hud{
+  position:fixed;
+  right:30px;
+  bottom:30px;
+  padding:14px 18px;
   background:var(--panel);
-  backdrop-filter:blur(14px);
   border:1px solid var(--border);
-  border-radius:18px;
-  box-shadow:0 30px 80px rgba(0,0,0,.45);
+  border-radius:14px;
+  backdrop-filter:blur(16px);
+  font-size:.9rem;
+  box-shadow:0 20px 50px rgba(0,0,0,.5);
+  z-index:5;
 }
-.section h2{
-  text-align:center;
+.sim-hud span{
   color:var(--gold);
-  font-size:2.2rem;
-  margin-bottom:45px;
-}
-
-/* GRID */
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-  gap:30px;
-  text-align:center;
-}
-.step{
-  padding:35px 25px;
-  background:rgba(255,255,255,.04);
-  border:1px solid var(--border);
-  border-radius:16px;
-  transition:.25s;
-}
-.step:hover{transform:translateY(-6px)}
-.step i{
-  font-size:2.6rem;
-  color:var(--gold);
-  margin-bottom:16px;
-}
-
-/* PRICING */
-.pricing{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:35px;
-}
-.price-card{
-  background:#fff;
-  color:#111;
-  padding:40px 30px;
-  border-radius:18px;
-  text-align:center;
-  box-shadow:0 20px 60px rgba(0,0,0,.25);
-}
-.price-card.highlight{
-  border:3px solid var(--gold);
-  transform:scale(1.03);
 }
 
 /* FOOTER */
@@ -210,9 +160,8 @@ footer{
 
 <body>
 
-<canvas id="particles"></canvas>
+<canvas id="telecom-bg"></canvas>
 
-<!-- HERO -->
 <div class="container hero">
   <div>
     <div class="brand">
@@ -221,8 +170,8 @@ footer{
     </div>
 
     <p>
-      Akwaaba! Rent or buy verified U.S. & international numbers for WhatsApp,
-      Gmail, Telegram, TikTok and more — instantly, securely and affordably.
+      Premium virtual numbers for WhatsApp, Gmail, Telegram & more.
+      Real carrier signals. Instant OTP delivery.
     </p>
 
     <div class="hero-buttons">
@@ -232,76 +181,101 @@ footer{
   </div>
 
   <div class="hero-card">
-    <h3>Why YenkoVerify?</h3>
+    <h3>Carrier-Grade Access</h3>
     <ul>
-      <li>Carrier-grade verified numbers</li>
-      <li>Instant OTP delivery</li>
-      <li>One-time or rental access</li>
-      <li>Trusted by freelancers & teams</li>
+      <li>Live U.S. & global routes</li>
+      <li>OTP-ready infrastructure</li>
+      <li>One-time & rental numbers</li>
+      <li>High success rate</li>
     </ul>
   </div>
 </div>
 
+<div class="sim-hud">
+  SIM STATUS: <span>ACTIVE</span><br>
+  NETWORK: <span>LTE / 5G</span>
+</div>
+
 <footer>
-  <p><strong>Verified numbers. Real signals. Real results.</strong></p>
-  <p>© 2026 YenkoVerify • Asem Technologies</p>
+  © 2026 YenkoVerify • Asem Technologies
 </footer>
 
 <script>
-/* TELECOM PARTICLES */
-const canvas=document.getElementById("particles");
-const c=canvas.getContext("2d");
-let w,h,pts=[];
-function resize(){
-  w=canvas.width=innerWidth;
-  h=canvas.height=innerHeight;
-}
-window.onresize=resize;resize();
+/* ================= TELECOM PARTICLES ================= */
+const canvas=document.getElementById("telecom-bg");
+const ctx=canvas.getContext("2d");
+let W,H,DPR=Math.min(window.devicePixelRatio,2);
+let nodes=[];
 
-for(let i=0;i<90;i++){
-  pts.push({
-    x:Math.random()*w,
-    y:Math.random()*h,
-    vx:(Math.random()-.5)*.4,
-    vy:(Math.random()-.5)*.4
+function resize(){
+  W=canvas.width=innerWidth*DPR;
+  H=canvas.height=innerHeight*DPR;
+  canvas.style.width=innerWidth+"px";
+  canvas.style.height=innerHeight+"px";
+  ctx.scale(DPR,DPR);
+}
+resize();
+addEventListener("resize",resize);
+
+for(let i=0;i<85;i++){
+  nodes.push({
+    x:Math.random()*innerWidth,
+    y:Math.random()*innerHeight,
+    vx:(Math.random()-.5)*0.35,
+    vy:(Math.random()-.5)*0.35,
+    pulse:Math.random()*Math.PI*2
   });
 }
 
 function draw(){
-  c.clearRect(0,0,w,h);
-  pts.forEach((p,i)=>{
-    p.x+=p.vx;p.y+=p.vy;
-    if(p.x<0||p.x>w)p.vx*=-1;
-    if(p.y<0||p.y>h)p.vy*=-1;
+  ctx.clearRect(0,0,innerWidth,innerHeight);
 
-    c.fillStyle="rgba(230,198,122,.8)";
-    c.fillRect(p.x,p.y,2,2);
+  nodes.forEach((p,i)=>{
+    p.x+=p.vx;
+    p.y+=p.vy;
+    p.pulse+=0.02;
 
-    pts.slice(i).forEach(o=>{
-      let d=Math.hypot(p.x-o.x,p.y-o.y);
-      if(d<140){
-        c.strokeStyle=`rgba(230,198,122,${1-d/140})`;
-        c.beginPath();
-        c.moveTo(p.x,p.y);
-        c.lineTo(o.x,o.y);
-        c.stroke();
+    if(p.x<0||p.x>innerWidth)p.vx*=-1;
+    if(p.y<0||p.y>innerHeight)p.vy*=-1;
+
+    const r=1.8+Math.sin(p.pulse)*0.8;
+    ctx.fillStyle="rgba(230,198,122,.9)";
+    ctx.beginPath();
+    ctx.arc(p.x,p.y,r,0,Math.PI*2);
+    ctx.fill();
+
+    for(let j=i+1;j<nodes.length;j++){
+      const o=nodes[j];
+      const d=Math.hypot(p.x-o.x,p.y-o.y);
+      if(d<130){
+        ctx.strokeStyle=`rgba(230,198,122,${1-d/130})`;
+        ctx.lineWidth=0.6;
+        ctx.beginPath();
+        ctx.moveTo(p.x,p.y);
+        ctx.lineTo(o.x,o.y);
+        ctx.stroke();
       }
-    });
+    }
   });
   requestAnimationFrame(draw);
 }
 draw();
 
-/* WHATSAPP */
+/* ================= WHATSAPP ================= */
 const ref=new URLSearchParams(location.search).get("ref");
-let m1="Yenko, I'm interested in a verified U.S. number.";
-let m2="Hi Yenko team, I'd like reseller access.";
+let m1="Hi Yenko, I want a verified U.S. number.";
+let m2="Hello Yenko team, I want reseller access.";
 if(ref){
   m1+=` Referral: ${ref.toUpperCase()}`;
   m2+=` Referral: ${ref.toUpperCase()}`;
 }
 whatsapp-btn.href="https://wa.me/233505858712?text="+encodeURIComponent(m1);
 reseller-btn.href="https://wa.me/233505858712?text="+encodeURIComponent(m2);
+
+/* LOGO SHRINK */
+addEventListener("scroll",()=>{
+  logo.style.width=scrollY>80?"140px":"180px";
+});
 </script>
 
 </body>
