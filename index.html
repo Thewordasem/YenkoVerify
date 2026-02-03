@@ -18,7 +18,7 @@
 
 *{box-sizing:border-box}
 a{ text-decoration:none; color:inherit }
-a.btn{ cursor:pointer; } /* ✅ CLICK FIX */
+a.btn{ cursor:pointer; }
 
 body{
   margin:0;
@@ -30,7 +30,7 @@ body{
 }
 
 body.gold{
-  background:radial-gradient(circle at top, rgba(230,198,122,.18), #050505 65%);
+  background:radial-gradient(circle at top, rgba(230,198,122,.12), #050505 70%);
 }
 
 body::before{
@@ -38,7 +38,7 @@ body::before{
   position:fixed;
   inset:0;
   background:
-    radial-gradient(circle at 20% 20%, rgba(230,198,122,.18), transparent 45%),
+    radial-gradient(circle at 20% 20%, rgba(230,198,122,.08), transparent 45%),
     linear-gradient(to bottom, rgba(0,0,0,.55), rgba(0,0,0,.92));
   z-index:-3;
 }
@@ -167,7 +167,7 @@ footer{
 <section class="container hero">
 <div>
     <div class="brand">
-      <img src="2026logo.png">
+      <img src="2026logo.png" alt="YenkoVerify Logo">
       <h1>Carrier-grade virtual numbers</h1>
     </div>
 
@@ -177,8 +177,8 @@ footer{
     </p>
 
     <div class="hero-buttons">
-      <a id="whatsapp" class="btn" href="#">Get Verified</a>
-      <a id="reseller" class="btn" href="#">Join as Reseller</a>
+      <a id="whatsapp" class="btn">Get Verified</a>
+      <a id="reseller" class="btn">Join as Reseller</a>
     </div>
   </div>
 
@@ -218,7 +218,7 @@ footer{
       <li>Instant delivery</li>
       <li>No reuse</li>
     </ul>
-    <a class="btn" href="#">Buy Now</a>
+    <a class="btn">Buy Now</a>
   </div>
 
   <div class="plan">
@@ -229,7 +229,7 @@ footer{
       <li>Multiple OTPs</li>
       <li>Auto-renew option</li>
     </ul>
-    <a class="btn" href="#">Get Rental</a>
+    <a class="btn">Get Rental</a>
   </div>
 
   <div class="plan featured">
@@ -240,7 +240,7 @@ footer{
       <li>Priority routes</li>
       <li>Dedicated support</li>
     </ul>
-    <a class="btn" href="#">Apply</a>
+    <a class="btn">Apply</a>
   </div>
 </div>
 </section>
@@ -261,13 +261,12 @@ document.getElementById("whatsapp").href =
   "https://wa.me/" + phone + "?text=" + encodeURIComponent(
     "Hi YenkoVerify, I want to get a verified virtual number."
   );
-
 document.getElementById("reseller").href =
   "https://wa.me/" + phone + "?text=" + encodeURIComponent(
     "Hi YenkoVerify, I'm interested in reseller access."
   );
 
-/* PARTICLES (POWERFUL VERSION — KEPT) */
+/* POWERFUL BUT SUBTLE PARTICLES */
 const c=document.getElementById("bg"),ctx=c.getContext("2d");
 let w,h,dpr;
 const nodes=[];
@@ -280,21 +279,27 @@ function resize(){
 }
 resize(); addEventListener("resize",resize);
 
-for(let i=0;i<90;i++)nodes.push({x:Math.random()*w,y:Math.random()*h,vx:(Math.random()-.5)*.35,vy:(Math.random()-.5)*.35});
+for(let i=0;i<70;i++)nodes.push({
+  x:Math.random()*w,
+  y:Math.random()*h,
+  vx:(Math.random()-.5)*0.25,
+  vy:(Math.random()-.5)*0.25,
+  r:1.5 + Math.random()*1.5
+});
 
 (function draw(){
   ctx.clearRect(0,0,w,h);
   nodes.forEach((a,i)=>{
-    a.x+=a.vx;a.y+=a.vy;
+    a.x+=a.vx; a.y+=a.vy;
     if(a.x<0||a.x>w)a.vx*=-1;
     if(a.y<0||a.y>h)a.vy*=-1;
-    ctx.fillStyle="rgba(230,198,122,.9)";
-    ctx.beginPath();ctx.arc(a.x,a.y,1.8,0,Math.PI*2);ctx.fill();
+    ctx.fillStyle="rgba(230,198,122,0.75)";
+    ctx.beginPath(); ctx.arc(a.x,a.y,a.r,0,Math.PI*2); ctx.fill();
     nodes.slice(i+1).forEach(b=>{
       const d=Math.hypot(a.x-b.x,a.y-b.y);
-      if(d<130){
-        ctx.strokeStyle=`rgba(230,198,122,${1-d/130})`;
-        ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke();
+      if(d<100){
+        ctx.strokeStyle=`rgba(230,198,122,${0.4*(1-d/100)})`;
+        ctx.beginPath(); ctx.moveTo(a.x,a.y); ctx.lineTo(b.x,b.y); ctx.stroke();
       }
     });
   });
