@@ -64,14 +64,19 @@ body::before{
 }
 
 .brand img{
-  width:180px;
-  filter:drop-shadow(0 0 28px rgba(230,198,122,.35));
+  width:200px;
+  filter:
+    drop-shadow(0 0 8px rgba(230,198,122,.8))
+    drop-shadow(0 0 16px rgba(230,198,122,.6))
+    drop-shadow(0 0 24px rgba(230,198,122,.5));
+  margin-bottom:10px;
 }
 .brand h1{
   margin:6px 0 0;
   font-size:clamp(2.8rem,4vw,3.8rem);
   font-weight:800;
   color:var(--gold);
+  text-shadow: 0 0 8px rgba(230,198,122,0.6);
 }
 
 .hero p{
@@ -266,7 +271,7 @@ document.getElementById("reseller").href =
     "Hi YenkoVerify, I'm interested in reseller access."
   );
 
-/* POWERFUL BUT SUBTLE PARTICLES */
+/* SUBTLE POWERFUL PARTICLES */
 const c=document.getElementById("bg"),ctx=c.getContext("2d");
 let w,h,dpr;
 const nodes=[];
